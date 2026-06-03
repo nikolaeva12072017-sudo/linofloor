@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lino floor — Premium Flooring</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --cream: #f7f3ee;
+    --cream2: #f0ebe3;
+    --cream3: #e8e0d4;
+    --white: #ffffff;
+    --dark: #1c1814;
+    --dark2: #2e2820;
+    --brown: #6b5a48;
+    --brown-light: #9a8778;
+    --gold: #8a6e3e;
+    --gold-mid: #b8923e;
+    --gold-light: #d4a855;
+    --gold-pale: #f0e0c0;
+    --border: rgba(107,90,72,0.15);
+    --border-mid: rgba(107,90,72,0.25);
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--cream); color: var(--dark); font-family: var(--sans); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.5rem 4rem;
+    background: rgba(247,243,238,0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border-mid);
+    transition: padding 0.3s, box-shadow 0.3s;
+  }
+  nav.scrolled { box-shadow: 0 4px 40px rgba(107,90,72,0.08); }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    color: var(--dark);
+  }
+  .nav-logo span { color: var(--gold); }
+  .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brown);
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-lang { display: flex; gap: 0.4rem; align-items: center; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .lang-btn { background: none; border: none; cursor: pointer; padding: 4px 8px; font-family: var(--sans); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--brown-light); transition: color 0.2s; }
+  .lang-btn.active { color: var(--gold); font-weight: 500; }
+  .lang-sep { color: var(--border-mid); }
+  .nav-cta {
+    background: var(--dark); color: var(--cream);
+    padding: 9px 24px; cursor: pointer;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 400;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    transition: all 0.25s; border: none; border-radius: 1px;
+  }
+  .nav-cta:hover { background: var(--gold); }
+  .nav-manager {
+    background: var(--gold); color: var(--white);
+    padding: 9px 20px; cursor: pointer;
+    font-family: var(--sans); font-size: 0.75rem; font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: all 0.25s; border: none; border-radius: 1px;
+    white-space: nowrap;
+  }
+  .nav-manager:hover { background: var(--gold-light); }
+  .nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    padding-top: 90px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 4rem;
+    position: relative;
+  }
+  .hero-right {
+    position: relative; overflow: hidden;
+    background: var(--cream3);
+  }
+  /* Decorative floor grid pattern */
+  .hero-right-bg {
+    position: absolute; inset: 0;
+    background: url("images/hero_interior.jpg") center/cover no-repeat;
+    opacity: 1;
+  }
+  .hero-right-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent 40%, rgba(138,110,62,0.06) 100%);
+  }
+  /* Large decorative letter */
+  .hero-deco-letter {
+    position: absolute; bottom: -2rem; right: -1rem;
+    font-family: var(--serif); font-size: 22rem; font-weight: 400; font-style: italic;
+    color: rgba(138,110,62,0.06); line-height: 1; pointer-events: none;
+    user-select: none;
+  }
+  /* Floating product card */
+  .hero-product-card {
+    position: absolute; bottom: 3rem; left: 3rem;
+    background: var(--white);
+    border: 0.5px solid var(--border-mid);
+    padding: 1.5rem;
+    width: 220px;
+    box-shadow: 0 8px 40px rgba(107,90,72,0.12);
+  }
+  .hero-card-swatch {
+    width: 100%; height: 80px;
+    background: repeating-linear-gradient(45deg, #d4c8b4, #d4c8b4 4px, #c8bca8 4px, #c8bca8 8px);
+    margin-bottom: 1rem;
+  }
+  .hero-card-name { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--dark); margin-bottom: 0.2rem; }
+  .hero-card-sub { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown-light); }
+  .hero-stat-badge {
+    position: absolute; top: 3rem; right: 3rem;
+    background: var(--gold-pale); border: 0.5px solid rgba(138,110,62,0.2);
+    padding: 1rem 1.5rem; text-align: center;
+  }
+  .hero-stat-num { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--gold); line-height: 1; }
+  .hero-stat-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brown); margin-top: 4px; }
+
+  .hero-eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--gold); }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4.5vw, 4.2rem);
+    font-weight: 400; line-height: 1.1; letter-spacing: 0.01em;
+    color: var(--dark); margin-bottom: 1.8rem;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; }
+  .hero-sub { font-size: 0.95rem; color: var(--brown); max-width: 420px; line-height: 1.85; margin-bottom: 3rem; }
+  .hero-actions { display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap; }
+  .btn-dark {
+    background: var(--dark); color: var(--cream);
+    padding: 14px 32px; border: none; cursor: pointer;
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 400;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    transition: all 0.25s; border-radius: 1px;
+  }
+  .btn-dark:hover { background: var(--gold); }
+  .btn-outline {
+    background: none; color: var(--dark);
+    padding: 13px 32px; border: 0.5px solid var(--brown-light); cursor: pointer;
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 400;
+    letter-spacing: 0.16em; text-transform: uppercase;
+    transition: all 0.25s; border-radius: 1px;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-clients {
+    margin-top: 4rem; padding-top: 2rem;
+    border-top: 0.5px solid var(--border);
+  }
+  .hero-clients-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 1rem; }
+  .hero-clients-logos { display: flex; gap: 2rem; align-items: center; }
+  .client-logo { font-family: var(--serif); font-size: 0.9rem; font-weight: 400; color: var(--brown-light); font-style: italic; letter-spacing: 0.06em; }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--dark);
+    display: grid; grid-template-columns: repeat(4, 1fr);
+  }
+  .stat-item {
+    padding: 2.8rem 2rem; text-align: center;
+    border-right: 0.5px solid rgba(255,255,255,0.06);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-number { font-family: var(--serif); font-size: 2.8rem; font-weight: 400; color: var(--gold-mid); line-height: 1; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,243,238,0.45); }
+
+  /* SECTIONS */
+  section { padding: 7rem 4rem; }
+  .section-tag {
+    font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .section-tag::before { content: ''; display: block; width: 28px; height: 0.5px; background: var(--gold); }
+  .section-title {
+    font-family: var(--serif); font-size: clamp(1.9rem, 3.5vw, 3rem);
+    font-weight: 400; line-height: 1.15; color: var(--dark); margin-bottom: 1.2rem;
+  }
+  .section-title em { color: var(--gold); font-style: italic; }
+  .section-sub { font-size: 0.9rem; color: var(--brown); max-width: 500px; line-height: 1.85; }
+
+  /* CATEGORIES */
+  .categories { background: var(--white); }
+  .categories-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+  .view-all {
+    font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); border-bottom: 0.5px solid var(--gold);
+    padding-bottom: 2px; transition: color 0.2s; white-space: nowrap; cursor: pointer;
+  }
+  .view-all:hover { color: var(--gold-light); border-color: var(--gold-light); }
+  .categories-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); }
+  .cat-card {
+    background: var(--white); padding: 2.5rem 2rem;
+    cursor: pointer; transition: background 0.3s;
+    position: relative; overflow: hidden; min-height: 300px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .cat-card:hover { background: var(--cream); }
+  .cat-card-bg { position: absolute; inset: 0; z-index: 0; transition: transform 0.5s ease; }
+  .cat-card:hover .cat-card-bg { transform: scale(1.03); }
+  .cat-1 .cat-card-bg { background: repeating-linear-gradient(90deg, rgba(138,110,62,0.04) 0px, rgba(138,110,62,0.04) 1px, transparent 1px, transparent 28px), repeating-linear-gradient(0deg, rgba(138,110,62,0.04) 0px, rgba(138,110,62,0.04) 1px, transparent 1px, transparent 14px), linear-gradient(135deg, #f7f0e4 0%, #ede4d4 100%); }
+  .cat-2 .cat-card-bg { background: repeating-linear-gradient(45deg, rgba(138,110,62,0.04) 0px, rgba(138,110,62,0.04) 1px, transparent 1px, transparent 18px), linear-gradient(135deg, #f0ede4 0%, #e4e0d4 100%); }
+  .cat-3 .cat-card-bg { background: repeating-linear-gradient(0deg, rgba(107,90,72,0.05) 0px, rgba(107,90,72,0.05) 1px, transparent 1px, transparent 22px), repeating-linear-gradient(90deg, rgba(107,90,72,0.05) 0px, rgba(107,90,72,0.05) 1px, transparent 1px, transparent 44px), linear-gradient(135deg, #edeae0 0%, #e4e0d4 100%); }
+  .cat-4 .cat-card-bg { background: repeating-conic-gradient(rgba(138,110,62,0.04) 0% 25%, transparent 0% 50%) 0 0 / 24px 24px, linear-gradient(135deg, #f4f0e8 0%, #ece8dc 100%); }
+  .cat-content { position: relative; z-index: 1; }
+  .cat-number { font-family: var(--serif); font-size: 3rem; font-weight: 400; color: rgba(138,110,62,0.12); line-height: 1; position: absolute; top: 1.5rem; right: 1.5rem; z-index: 1; }
+  .cat-icon { width: 32px; height: 32px; margin-bottom: 1.2rem; opacity: 0.6; }
+  .cat-name { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--dark); margin-bottom: 0.4rem; line-height: 1.2; }
+  .cat-count { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+  .cat-arrow { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--brown-light); transition: color 0.3s, gap 0.3s; }
+  .cat-card:hover .cat-arrow { color: var(--gold); gap: 10px; }
+
+  /* COLLECTIONS */
+  .collections { background: var(--cream); }
+  .collections-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .collection-filters { display: flex; gap: 0.5rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+  .filter-btn {
+    background: none; border: 0.5px solid var(--border-mid);
+    color: var(--brown); padding: 8px 18px; cursor: pointer;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 300;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    transition: all 0.2s; border-radius: 1px;
+  }
+  .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+  .collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .coll-card { background: var(--white); cursor: pointer; transition: background 0.3s; overflow: hidden; }
+  .coll-img { background: var(--cream); }
+  .coll-card:hover { background: var(--cream); }
+  .coll-img { height: 220px; position: relative; overflow: hidden; }
+  .coll-img-inner { width: 100%; height: 100%; transition: transform 0.5s ease; }
+  .coll-card:hover .coll-img-inner { transform: scale(1.05); }
+  .pattern-lino-1 { background: repeating-linear-gradient(45deg, #e0d8c8 0px, #e0d8c8 6px, #d4cbb8 6px, #d4cbb8 12px); }
+  .pattern-lino-2 { background: repeating-linear-gradient(0deg, #dde0e8 0px, #dde0e8 5px, #d0d4de 5px, #d0d4de 10px); }
+  .pattern-lino-3 { background: radial-gradient(circle at 50% 50%, #e8e0d0 0%, #d8cdb8 100%); }
+  .pattern-tile-1 { background: repeating-conic-gradient(#e4e0d8 0% 25%, #dcd8d0 0% 50%) 0 0 / 28px 28px; }
+  .pattern-tile-2 { background: repeating-linear-gradient(90deg, #d8ded8 0px, #d8ded8 18px, #ccd4cc 18px, #ccd4cc 36px); }
+  .pattern-tile-3 { background: repeating-linear-gradient(45deg, transparent, transparent 8px, rgba(138,110,62,0.06) 8px, rgba(138,110,62,0.06) 9px), #e8e4dc; }
+  .coll-badge { position: absolute; top: 1rem; left: 1rem; background: var(--dark); color: var(--cream); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 10px; border-radius: 1px; font-weight: 400; }
+  .coll-body { padding: 1.5rem; border-top: 0.5px solid var(--border); }
+  .coll-category { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .coll-name { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--dark); margin-bottom: 0.4rem; }
+  .coll-desc { font-size: 0.8rem; color: var(--brown); line-height: 1.65; margin-bottom: 1.2rem; }
+  .coll-colors { display: flex; gap: 6px; align-items: center; margin-bottom: 1.2rem; }
+  .color-dot { width: 18px; height: 18px; border-radius: 50%; border: 1px solid rgba(107,90,72,0.15); cursor: pointer; transition: transform 0.2s, border-color 0.2s; }
+  .color-dot:hover, .color-dot.active { transform: scale(1.25); border-color: var(--gold); }
+  .color-more { font-size: 0.65rem; color: var(--brown-light); }
+  .coll-footer { display: flex; justify-content: space-between; align-items: center; }
+  .coll-link { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+  .coll-card:hover .coll-link { gap: 10px; }
+
+  /* CALCULATOR */
+  .calculator { background: var(--cream2); }
+  .calc-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .calc-info { padding-top: 1rem; }
+  .calc-list { list-style: none; margin-top: 2.5rem; }
+  .calc-list li { display: flex; align-items: flex-start; gap: 1rem; padding: 0.9rem 0; border-bottom: 0.5px solid var(--border); font-size: 0.85rem; color: var(--brown); line-height: 1.6; }
+  .calc-list li::before { content: ''; display: block; width: 4px; height: 4px; border-radius: 50%; background: var(--gold); margin-top: 0.55rem; flex-shrink: 0; }
+  .calc-box { background: var(--white); border: 0.5px solid var(--border-mid); padding: 3rem; }
+  .calc-box-title { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--dark); margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 0.5px solid var(--border); }
+  .form-group { margin-bottom: 1.4rem; }
+  .form-label { display: block; font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 0.5rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-input { width: 100%; background: var(--cream); border: 0.5px solid var(--border-mid); color: var(--dark); padding: 11px 14px; font-family: var(--sans); font-size: 0.88rem; transition: border-color 0.2s; outline: none; border-radius: 1px; }
+  .form-input:focus { border-color: var(--gold); background: var(--white); }
+  .form-select { width: 100%; background: var(--cream); border: 0.5px solid var(--border-mid); color: var(--dark); padding: 11px 14px; font-family: var(--sans); font-size: 0.88rem; transition: border-color 0.2s; outline: none; cursor: pointer; appearance: none; border-radius: 1px; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%239a8778' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; }
+  .form-select:focus { border-color: var(--gold); background-color: var(--white); }
+  .calc-result { background: var(--gold-pale); border: 0.5px solid rgba(138,110,62,0.25); padding: 1.5rem; margin: 1.5rem 0; display: none; }
+  .calc-result.show { display: block; }
+  .result-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .result-value { font-family: var(--serif); font-size: 2.8rem; font-weight: 400; color: var(--dark); line-height: 1; }
+  .result-sub { font-size: 0.78rem; color: var(--brown); margin-top: 0.4rem; }
+  .btn-primary { background: var(--dark); color: var(--cream); padding: 13px 32px; border: none; cursor: pointer; font-family: var(--sans); font-size: 0.78rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; transition: all 0.25s; border-radius: 1px; }
+  .btn-primary:hover { background: var(--gold); }
+  .btn-ghost { background: none; color: var(--dark); padding: 12px 32px; border: 0.5px solid var(--brown-light); cursor: pointer; font-family: var(--sans); font-size: 0.78rem; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase; transition: all 0.25s; border-radius: 1px; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-visual { position: relative; height: 540px; }
+  .about-block-main { width: 80%; height: 400px; position: absolute; top: 0; right: 0; background: repeating-linear-gradient(30deg, rgba(138,110,62,0.06) 0px, rgba(138,110,62,0.06) 1px, transparent 1px, transparent 36px), linear-gradient(135deg, #f0e8d8 0%, #e8dcc8 100%); border: 0.5px solid var(--border-mid); }
+  .about-block-accent { width: 48%; height: 180px; position: absolute; bottom: 0; left: 0; background: repeating-conic-gradient(#e8e4dc 0% 25%, #e0dcd4 0% 50%) 0 0 / 18px 18px; border: 0.5px solid var(--border); }
+  .about-year { position: absolute; top: 50%; right: -0.5rem; transform: translateY(-50%); font-family: var(--serif); font-size: 7rem; font-weight: 400; color: rgba(138,110,62,0.07); line-height: 1; white-space: nowrap; }
+  .about-badge { position: absolute; bottom: 2rem; right: 2rem; background: var(--dark); color: var(--cream); padding: 0.9rem 1.4rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
+  .about-text .section-sub { margin-bottom: 2rem; }
+  .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2.5rem; }
+  .value-item { padding: 1.4rem; border: 0.5px solid var(--border); background: var(--cream); transition: border-color 0.3s, background 0.3s; }
+  .value-item:hover { border-color: var(--gold); background: var(--gold-pale); }
+  .value-icon { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--gold); margin-bottom: 0.7rem; line-height: 1; }
+  .value-name { font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--dark); margin-bottom: 0.3rem; font-weight: 400; }
+  .value-desc { font-size: 0.78rem; color: var(--brown); line-height: 1.6; }
+
+  /* BLOG */
+  .blog { background: var(--cream2); }
+  .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
+  .blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1px; background: var(--border); }
+  .blog-card { background: var(--white); cursor: pointer; transition: background 0.3s; }
+  .blog-card:hover { background: var(--cream); }
+  .blog-img { overflow: hidden; }
+  .blog-card:nth-child(1) .blog-img { height: 280px; }
+  .blog-card:nth-child(2) .blog-img, .blog-card:nth-child(3) .blog-img { height: 140px; }
+  .blog-img-inner { width: 100%; height: 100%; transition: transform 0.5s ease; }
+  .blog-card:hover .blog-img-inner { transform: scale(1.04); }
+  .blog-img-1 { background: linear-gradient(135deg, #e8e0d0 0%, #d8cdb8 50%, #e8e0d0 100%); }
+  .blog-img-2 { background: linear-gradient(135deg, #d8dce8 0%, #c8ccd8 100%); }
+  .blog-img-3 { background: linear-gradient(135deg, #e4e0d4 0%, #d8d4c8 100%); }
+  .blog-body { padding: 1.8rem; border-top: 0.5px solid var(--border); }
+  .blog-meta { display: flex; gap: 1rem; align-items: center; font-size: 0.63rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 0.7rem; }
+  .blog-tag { color: var(--gold); }
+  .blog-title { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--dark); line-height: 1.35; margin-bottom: 0.7rem; }
+  .blog-card:nth-child(2) .blog-title, .blog-card:nth-child(3) .blog-title { font-size: 0.95rem; }
+  .blog-excerpt { font-size: 0.8rem; color: var(--brown); line-height: 1.65; }
+  .blog-card:nth-child(2) .blog-excerpt, .blog-card:nth-child(3) .blog-excerpt { display: none; }
+
+  /* CONTACT */
+  .contact { background: var(--white); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; }
+  .contact-info { padding-top: 1rem; }
+  .contact-items { margin-top: 3rem; }
+  .contact-item { display: flex; gap: 1.4rem; align-items: flex-start; padding: 1.4rem 0; border-bottom: 0.5px solid var(--border); }
+  .contact-icon { width: 42px; height: 42px; flex-shrink: 0; border: 0.5px solid var(--border-mid); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.9rem; background: var(--cream); }
+  .contact-item-label { font-size: 0.63rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.25rem; }
+  .contact-item-value { font-size: 0.88rem; color: var(--dark); }
+  .contact-form { background: var(--cream); border: 0.5px solid var(--border-mid); padding: 3rem; }
+  .contact-form-title { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; color: var(--dark); margin-bottom: 0.4rem; }
+  .contact-form-sub { font-size: 0.82rem; color: var(--brown); margin-bottom: 2.5rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-full { grid-column: 1 / -1; }
+  .form-textarea { width: 100%; background: var(--white); border: 0.5px solid var(--border-mid); color: var(--dark); padding: 12px 14px; font-family: var(--sans); font-size: 0.88rem; transition: border-color 0.2s; outline: none; resize: vertical; min-height: 120px; border-radius: 1px; }
+  .form-textarea:focus { border-color: var(--gold); }
+  .form-checkbox { display: flex; align-items: flex-start; gap: 0.8rem; margin: 1.2rem 0; }
+  .form-checkbox input { width: 15px; height: 15px; margin-top: 3px; accent-color: var(--gold); flex-shrink: 0; }
+  .form-checkbox label { font-size: 0.74rem; color: var(--brown); line-height: 1.5; cursor: pointer; }
+  .form-submit { display: flex; align-items: center; gap: 1.5rem; }
+  .submit-note { font-size: 0.72rem; color: var(--brown-light); }
+
+  /* FOOTER */
+  footer { background: var(--dark); padding: 4rem 4rem 2rem; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 0.5px solid rgba(247,243,238,0.08); margin-bottom: 2rem; }
+  .footer-logo { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; letter-spacing: 0.06em; margin-bottom: 1rem; color: var(--cream); }
+  .footer-logo span { color: var(--gold-mid); }
+  .footer-tagline { font-size: 0.8rem; color: rgba(247,243,238,0.45); line-height: 1.7; max-width: 260px; margin-bottom: 1.5rem; }
+  .footer-social { display: flex; gap: 1rem; }
+  .social-btn { width: 34px; height: 34px; border: 0.5px solid rgba(247,243,238,0.15); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: rgba(247,243,238,0.4); transition: all 0.2s; cursor: pointer; }
+  .social-btn:hover { border-color: var(--gold-mid); color: var(--gold-mid); }
+  .footer-col-title { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 1.4rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .footer-links a { font-size: 0.8rem; color: rgba(247,243,238,0.4); transition: color 0.2s; }
+  .footer-links a:hover { color: rgba(247,243,238,0.85); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; color: rgba(247,243,238,0.28); }
+  .footer-bottom a { color: rgba(247,243,238,0.4); transition: color 0.2s; }
+  .footer-bottom a:hover { color: var(--gold-mid); }
+
+  /* MOBILE */
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(247,243,238,0.98); z-index: 99; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--serif); font-size: 2rem; font-weight: 400; color: var(--dark); }
+  .mobile-menu a:hover { color: var(--gold); }
+  .mobile-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; cursor: pointer; font-size: 1.4rem; color: var(--brown); }
+
+  /* LANG */
+  .content-en { display: none; }
+  .lang-en .content-en { display: block !important; }
+
+
+  /* RESPONSIVE */
+  @media (max-width: 1100px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .nav-mobile-toggle { display: block; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 4rem 2rem; }
+    section { padding: 5rem 2rem; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .categories-grid { grid-template-columns: repeat(2, 1fr); }
+    .collections-grid { grid-template-columns: repeat(2, 1fr); }
+    .calc-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .about-visual { display: none; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-card:nth-child(2) .blog-excerpt, .blog-card:nth-child(3) .blog-excerpt { display: block; }
+    .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .form-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .categories-grid, .collections-grid { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+
+  .doc-buttons { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 0.8rem; }
+  .btn-specs {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--brown); border: 0.5px solid var(--border-mid);
+    padding: 7px 14px; cursor: pointer; background: none;
+    font-family: var(--sans); transition: all 0.2s; border-radius: 1px;
+  }
+  .btn-specs:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-certs {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--brown); border: 0.5px solid var(--border-mid);
+    padding: 7px 14px; cursor: pointer; background: none;
+    font-family: var(--sans); transition: all 0.2s; border-radius: 1px;
+  }
+  .btn-certs:hover { border-color: var(--gold); color: var(--gold); }
+
+
+  .cert-modal-overlay { display:none; position:fixed; inset:0; z-index:1001; background:rgba(28,24,20,0.85); backdrop-filter:blur(6px); align-items:center; justify-content:center; }
+  .cert-modal-overlay.open { display:flex; }
+  .cert-modal-box { background:var(--cream); max-width:860px; width:92%; max-height:90vh; overflow-y:auto; padding:2.5rem; position:relative; border:0.5px solid var(--border-mid); box-shadow:0 24px 80px rgba(28,24,20,0.3); }
+  .cert-modal-close { position:absolute; top:1rem; right:1.5rem; background:none; border:none; cursor:pointer; font-size:1.4rem; color:var(--brown); transition:color 0.2s; z-index:10; }
+  .cert-modal-close:hover { color:var(--gold); }
+  .cert-modal-title { font-family:var(--serif); font-size:1.6rem; font-weight:400; color:var(--dark); margin-bottom:0.3rem; }
+  .cert-modal-sub { font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; padding-bottom:1.5rem; border-bottom:0.5px solid var(--border); }
+  .cert-tabs { display:flex; gap:0.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+  .cert-tab { background:none; border:0.5px solid var(--border-mid); color:var(--brown); padding:8px 14px; cursor:pointer; font-family:var(--sans); font-size:0.7rem; letter-spacing:0.1em; transition:all 0.2s; border-radius:1px; }
+  .cert-tab:hover { border-color:var(--gold); color:var(--gold); }
+  .cert-tab.active { background:var(--dark); color:var(--cream); border-color:var(--dark); }
+  .cert-content { display:none; }
+  .cert-content.active { display:block; }
+  .cert-page { margin-bottom:1rem; border:0.5px solid var(--border); box-shadow:0 4px 20px rgba(28,24,20,0.08); }
+  .cert-page img { width:100%; display:block; }
+  .cert-page-label { text-align:center; font-size:0.68rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--brown-light); padding:0.6rem; background:var(--cream2); border-top:0.5px solid var(--border); }
+  .btn-certs { display:inline-flex; align-items:center; gap:6px; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--brown); border:0.5px solid var(--border-mid); padding:7px 14px; cursor:pointer; background:none; font-family:var(--sans); transition:all 0.2s; border-radius:1px; }
+  .btn-certs:hover { border-color:var(--gold); color:var(--gold); }
+  .btn-specs { display:inline-flex; align-items:center; gap:6px; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; color:var(--brown); border:0.5px solid var(--border-mid); padding:7px 14px; cursor:pointer; background:none; font-family:var(--sans); transition:all 0.2s; border-radius:1px; }
+  .btn-specs:hover { border-color:var(--gold); color:var(--gold); }
+  .doc-buttons { display:flex; gap:0.6rem; flex-wrap:wrap; }
+
+
+  .modal-overlay { display:none; position:fixed; inset:0; z-index:1000; background:rgba(28,24,20,0.7); backdrop-filter:blur(4px); align-items:center; justify-content:center; }
+  .modal-overlay.open { display:flex; }
+  .modal-box { background:var(--white); max-width:780px; width:90%; max-height:85vh; overflow-y:auto; padding:3rem; position:relative; border:0.5px solid var(--border-mid); box-shadow:0 20px 60px rgba(28,24,20,0.2); }
+  .modal-close { position:absolute; top:1.2rem; right:1.5rem; background:none; border:none; cursor:pointer; font-size:1.4rem; color:var(--brown); transition:color 0.2s; }
+  .modal-close:hover { color:var(--gold); }
+  .modal-title { font-family:var(--serif); font-size:1.8rem; font-weight:400; color:var(--dark); margin-bottom:0.4rem; }
+  .modal-subtitle { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:2rem; }
+  .specs-table { width:100%; border-collapse:collapse; }
+  .specs-table tr { border-bottom:0.5px solid var(--border); }
+  .specs-table tr:last-child { border-bottom:none; }
+  .specs-table td { padding:0.7rem 0.5rem; font-size:0.82rem; color:var(--dark); line-height:1.5; }
+  .specs-table td:first-child { color:var(--brown); width:55%; }
+  .specs-section { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); padding:1rem 0.5rem 0.3rem; font-weight:500; }
+
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav id="navbar">
+<a class="nav-logo" href="#"><img alt="Linofloor" src="images/logo.png" style="height:40px;width:auto;display:block;"/></a>
+<div class="nav-links">
+<a href="#categories">Products</a>
+<a href="#collections">Collections</a>
+<a href="#about">About</a>
+<a href="#blog">Inspiration</a>
+<a href="#contact">Contact</a>
+</div>
+<div style="display:flex; align-items:center; gap:1.5rem;">
+
+<button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact manager</button>
+<button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')">
+<svg fill="none" height="16" viewbox="0 0 22 16" width="22">
+<line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
+<line stroke="#8a6e3e" stroke-width="1" x1="0" x2="22" y1="8" y2="8"></line>
+<line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="15" y2="15"></line>
+</svg>
+</button>
+</div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+<button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
+<a href="#categories" onclick="document.getElementById('mobileMenu').classList.remove('open')">Products</a>
+<a href="#collections" onclick="document.getElementById('mobileMenu').classList.remove('open')">Collections</a>
+<a href="#calculator" onclick="document.getElementById('mobileMenu').classList.remove('open')">Calculator</a>
+<a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About us</a>
+<a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Contacts</a>
+</div>
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="hero-left">
+<div class="hero-eyebrow reveal">Premium Flooring Manufacturer</div>
+<h1 class="reveal reveal-delay-1">
+<span>Flooring that <em>defines</em> the space</span>
+</h1>
+<p class="hero-sub reveal reveal-delay-2">Premium linoleum and tile for commercial and corporate interiors. Own manufacturing. Working with designers and developers.</p>
+<div class="hero-actions reveal reveal-delay-3">
+<button class="btn-dark" onclick="document.getElementById('collections').scrollIntoView({behavior:'smooth'})">View collections</button>
+<button class="btn-outline" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})">Area calculator</button>
+</div>
+<div class="hero-clients reveal">
+<div class="hero-clients-label">Trusted by</div>
+<div class="hero-clients-logos">
+<span class="client-logo">Archform</span>
+<span class="client-logo">Studio Kimo</span>
+<span class="client-logo">Devnova</span>
+<span class="client-logo">Prembuild</span>
+</div>
+</div>
+</div>
+<div class="hero-right">
+<div class="hero-right-bg"></div>
+<div class="hero-right-overlay"></div>
+<div class="hero-deco-letter">L</div>
+
+<div class="hero-stat-badge reveal reveal-delay-2">
+<div class="hero-stat-num" style="font-size:1.6rem;line-height:1.2;">✓</div>
+<div class="hero-stat-label">Certified<br/>products</div>
+</div>
+</div>
+</section>
+<!-- STATS -->
+<div class="stats-bar">
+<div class="stat-item reveal"><div class="stat-number">15+</div><div class="stat-label">Years experience</div></div>
+<div class="stat-item reveal reveal-delay-1"><div class="stat-number">1200+</div><div class="stat-label">Projects</div></div>
+<div class="stat-item reveal reveal-delay-2"><div class="stat-number" style="font-size:2rem;">✓</div><div class="stat-label">Certified products</div></div>
+<div class="stat-item reveal reveal-delay-3"><div class="stat-number">B2B</div><div class="stat-label">Partner program</div></div>
+</div>
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+<div class="categories-header">
+<div>
+<div class="section-tag reveal">Assortment</div>
+<h2 class="section-title reveal"><span>Two categories of <em>flooring</em></span></h2>
+</div>
+<a class="view-all reveal" href="#collections">Full catalog →</a>
+</div>
+<div class="categories-grid">
+<div class="cat-card cat-1 reveal" onclick="filterCollection('linoleum')" style="min-height:280px">
+<div class="cat-card-bg"></div>
+<div class="cat-number">01</div>
+<div class="cat-content">
+<svg class="cat-icon" fill="none" stroke="#8a6e3e" stroke-width="1" viewbox="0 0 36 36"><rect height="28" rx="1" width="28" x="4" y="4"></rect><line x1="4" x2="32" y1="12" y2="12"></line><line x1="4" x2="32" y1="20" y2="20"></line><line x1="4" x2="32" y1="28" y2="28"></line></svg>
+<div class="cat-name">Linoleum</div>
+<div class="cat-count">5 collections</div>
+<div class="cat-arrow">Browse →</div>
+</div>
+</div>
+<div class="cat-card cat-3 reveal reveal-delay-1" onclick="filterCollection('pvc')" style="min-height:280px">
+<div class="cat-card-bg"></div>
+<div class="cat-number">02</div>
+<div class="cat-content">
+<svg class="cat-icon" fill="none" stroke="#8a6e3e" stroke-width="1" viewbox="0 0 36 36"><rect height="12" rx="0.5" width="12" x="4" y="4"></rect><rect height="12" rx="0.5" width="12" x="20" y="4"></rect><rect height="12" rx="0.5" width="12" x="4" y="20"></rect><rect height="12" rx="0.5" width="12" x="20" y="20"></rect></svg>
+<div class="cat-name">Vinyl tile</div>
+<div class="cat-count">3 collections</div>
+<div class="cat-arrow">Browse →</div>
+</div>
+</div>
+</div>
+</section>
+<!-- COLLECTIONS -->
+<section class="collections" id="collections">
+<div class="collections-header">
+<div>
+<div class="section-tag reveal">Catalog</div>
+<h2 class="section-title reveal"><span>Current <em>collections</em></span></h2>
+</div>
+</div>
+<div class="collection-filters">
+<button class="filter-btn active" onclick="setFilter(this,'all')"><span>All</span></button>
+<button class="filter-btn" onclick="setFilter(this,'linoleum')"><span>Linoleum</span></button>
+<button class="filter-btn" onclick="setFilter(this,'pvc')"><span>Vinyl tile</span></button>
+</div>
+<div class="collections-grid" id="collectionsGrid"><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Power" id="img-power" src="images/linoleum/power_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">Bestseller</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Power</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34 — very heavy duty. Suitable for healthcare, education, hotels, offices and trade.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-power','images/linoleum/power_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_steel_en.jpg')" style="background:#888888" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_sky_en.jpg')" style="background:#7090b0" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_beige_en.jpg')" style="background:#c8b090" title="Beige"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div>
+<div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
+<button class="btn-specs" onclick="document.getElementById('powerModal').classList.add('open')">☰ Specifications</button>
+
+</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Concept" id="img-concept" src="images/linoleum/concept_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Heterogeneous linoleum</div><div class="coll-name">Concept</div><div class="coll-desc">Compact heterogeneous flooring. Class 32. Wear resistant, antibacterial, with 19 dB acoustic insulation.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concept','images/linoleum/concept_gray_en.jpg')" style="background:#6a6a6a" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-concept','images/linoleum/concept_silver_en.jpg')" style="background:#a0a090" title="Silver"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div>
+<div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
+<button class="btn-specs" onclick="document.getElementById('conceptModal').classList.add('open')">☰ Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="linoleum"><div class="coll-img"><img alt="Amperage" id="img-amperage" src="images/linoleum/amperage_sky_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Amperage</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34. Electrical resistance, 2 dB soundproofing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_sky_en.jpg')" style="background:#8898b8" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_dark_gray_en.jpg')" style="background:#585858" title="Dark Gray"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_coast_en.jpg')" style="background:#909090" title="Coast"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div>
+<div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
+<button class="btn-specs" onclick="document.getElementById('amperageModal').classList.add('open')">☰ Specifications</button>
+</div></div></div><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Concrete" id="img-concrete" src="images/linoleum/concrete_steel_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Concrete</div><div class="coll-desc">Thickness 2.0 mm, weight 2800 g/m². Flexibility — excellent. Suitable for underfloor heating up to 30°C. Fire rating B1.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_steel_en.jpg')" style="background:#8a8a8a" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_anthracite_en.jpg')" style="background:#505050" title="Anthracite"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div>
+<div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
+<button class="btn-specs" onclick="document.getElementById('concreteModal').classList.add('open')">☰ Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Sport Power Flex" id="img-sport" src="images/linoleum/sport_wood_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Sports linoleum</div><div class="coll-name">Sport Power Flex</div><div class="coll-desc">Thickness 4.0 mm. Shock absorption 20.4–21.6%. Anti-slip value 84 BPN. For sports halls.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-sport','images/linoleum/sport_wood_en.jpg')" style="background:#c8a060" title="Wood"></div><div class="color-dot" onclick="switchColor(this,'img-sport','images/linoleum/sport_blue_en.jpg')" style="background:#5080b0" title="Blue"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div>
+<div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
+<button class="btn-specs" onclick="document.getElementById('sportModal').classList.add('open')">☰ Specifications</button>
+</div></div></div><div class="coll-card reveal" data-cat="pvc"><div class="coll-img"><img alt="Fortress" id="img-fortress" src="images/pvc/fortress_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Fortress</div><div class="coll-desc">Luxury Vinyl Tile 2.5 mm thick. Class 23/31. Formaldehyde free.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-fortress','images/pvc/fortress_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_black_en.jpg')" style="background:#3a3a3a" title="Calacatta Black"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_white_en.jpg')" style="background:#e0e0d8" title="Calacatta White"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="pvc"><div class="coll-img"><img alt="Urban" id="img-urban" src="images/pvc/urban_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Urban</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.7 mm top layer. Class 34. Pure PVC 100%.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-urban','images/pvc/urban_gray_en.jpg')" style="background:#707070" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_silver_en.jpg')" style="background:#a0a0a0" title="Silver"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_alicante_en.jpg')" style="background:#706860" title="Alicante"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="pvc"><div class="coll-img"><img alt="Loft" id="img-loft" src="images/pvc/loft_sevilla_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Loft</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.55 mm top layer. Class 34. MA embossing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-loft','images/pvc/loft_sevilla_en.jpg')" style="background:#b0a090" title="Sevilla"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_toledo_en.jpg')" style="background:#987040" title="Toledo"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_valencia_en.jpg')" style="background:#c8b898" title="Valencia"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample →</a></div></div></div>
+</section>
+<!-- CALCULATOR -->
+<section class="calculator" id="calculator">
+<div class="calc-wrapper">
+<div class="calc-info">
+<div class="section-tag reveal">Tool</div>
+<h2 class="section-title reveal"><span>Material <em>calculator</em></span></h2>
+<p class="section-sub reveal">Calculate the required amount of material. Includes allowance for cutting and installation.</p>
+<ul class="calc-list">
+<li class="reveal">Enter room dimensions or total area</li>
+<li class="reveal">Select covering type and collection</li>
+<li class="reveal">Get accurate calculation with waste allowance</li>
+<li class="reveal">Send result to our manager</li>
+</ul>
+</div>
+<div class="calc-box reveal">
+<div class="calc-box-title">Flooring quantity calculator</div>
+<div class="form-group">
+<label class="form-label">Calculation type</label>
+<select class="form-select" id="calcType" onchange="toggleCalcType()">
+<option value="dimensions">By room dimensions</option>
+<option value="area">Total area</option>
+</select>
+</div>
+<div id="dimensionsBlock">
+<div class="form-row">
+<div class="form-group">
+<label class="form-label">Length (m)</label>
+<input class="form-input" id="length" min="0" placeholder="12.5" step="0.1" type="number"/>
+</div>
+<div class="form-group">
+<label class="form-label">Width (m)</label>
+<input class="form-input" id="width" min="0" placeholder="8.0" step="0.1" type="number"/>
+</div>
+</div>
+</div>
+<div id="areaBlock" style="display:none">
+<div class="form-group">
+<label class="form-label">Area (m²)</label>
+<input class="form-input" id="area" min="0" placeholder="100" step="1" type="number"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label">Covering type</label>
+<select class="form-select" id="coveringType">
+<option value="7">Roll linoleum (7% waste)</option>
+<option value="5">Vinyl tile (5% waste)</option>
+</select>
+</div>
+<div class="calc-result" id="calcResult">
+<div class="result-label">Required quantity</div>
+<div class="result-value"><span id="resultValue">—</span> m²</div>
+<div class="result-sub" id="resultSub"></div>
+</div>
+<button class="btn-primary" onclick="calculate()" style="width:100%; margin-bottom: 1rem;"><span>Calculate</span></button>
+<button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="width:100%;"><span>Send to manager →</span></button>
+</div>
+</div>
+</section>
+<!-- ABOUT -->
+<section class="about" id="about">
+<div class="about-grid">
+<div class="about-visual">
+<div class="about-block-main"></div>
+<div class="about-block-accent"></div>
+<div class="about-year">2009</div>
+<div class="about-badge">Own manufacturing</div>
+</div>
+<div class="about-text">
+<div class="section-tag reveal">About</div>
+<h2 class="section-title reveal"><span>Lino floor — <em>standard</em> of quality</span></h2>
+<p class="section-sub reveal">We manufacture and supply premium floor coverings since 2009. Specialization: commercial and corporate spaces.</p>
+<div class="values-grid">
+<div class="value-item reveal"><div class="value-icon">◈</div><div class="value-name">Own production</div><div class="value-desc">Full quality control from raw materials to finished product</div></div>
+<div class="value-item reveal reveal-delay-1"><div class="value-icon">◇</div><div class="value-name">B2B partnership</div><div class="value-desc">Special terms for designers and developers</div></div>
+<div class="value-item reveal reveal-delay-2"><div class="value-icon">◉</div><div class="value-name">Certification</div><div class="value-desc">CE, EN ISO 10874 — certified for the European market</div></div>
+<div class="value-item reveal reveal-delay-3"><div class="value-icon">◈</div><div class="value-name">Technical support</div><div class="value-desc">Consultation and project support</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- BLOG -->
+<section class="blog" id="blog">
+<div class="blog-header">
+<div>
+<div class="section-tag reveal">Inspiration</div>
+<h2 class="section-title reveal"><span>Interiors and <em>ideas</em></span></h2>
+</div>
+<a class="view-all reveal" href="#">All articles →</a>
+</div>
+<div class="blog-grid">
+<div class="blog-card reveal">
+<div class="blog-img"><div class="blog-img-inner blog-img-1" style="display:flex;align-items:center;justify-content:center;"><svg fill="none" height="60" opacity="0.25" viewbox="0 0 80 60" width="80"><rect height="40" rx="2" stroke="#8a6e3e" stroke-width="1" width="60" x="10" y="10"></rect><line stroke="#8a6e3e" stroke-width="0.5" x1="10" x2="70" y1="25" y2="25"></line><line stroke="#8a6e3e" stroke-width="0.5" x1="10" x2="70" y1="40" y2="40"></line><line stroke="#8a6e3e" stroke-width="0.5" x1="30" x2="30" y1="10" y2="50"></line></svg></div></div>
+<div class="blog-body">
+<div class="blog-meta"><span class="blog-tag">Design</span><span>May 14, 2025</span></div>
+<div class="blog-title">How to choose flooring for an open office space</div>
+<div class="blog-excerpt">Open offices are here to stay. But choosing flooring is not only about aesthetics, but also acoustics, wear resistance and maintenance...</div>
+</div>
+</div>
+
+<div class="blog-card reveal reveal-delay-2">
+<div class="blog-img"><div class="blog-img-inner blog-img-3"></div></div>
+<div class="blog-body">
+<div class="blog-meta"><span class="blog-tag">B2B</span></div>
+<div class="blog-title">Lino floor partner program for designers</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="contact-grid">
+<div class="contact-info">
+<div class="section-tag reveal">Contact</div>
+<h2 class="section-title reveal"><span>Let's discuss <em>the project</em></span></h2>
+<p class="section-sub reveal">Leave a request and our manager will contact you within 2 hours. Free consultation.</p>
+<div class="contact-items">
+
+<div class="contact-item reveal"><div class="contact-icon">@</div><div><div class="contact-item-label">Email</div><div class="contact-item-value">info@linofloor.ua</div></div></div>
+<div class="contact-item reveal"><div class="contact-icon">◷</div><div><div class="contact-item-label">Working hours</div><div class="contact-item-value">Mon–Fri, 9:00–18:00</div></div></div>
+</div>
+</div>
+<div class="contact-form reveal">
+<div class="contact-form-title">Send inquiry</div>
+<div class="contact-form-sub">Tell us about your project — we'll find the optimal solution</div>
+<div class="form-grid">
+<div class="form-group"><label class="form-label">Name *</label><input class="form-input" placeholder="John Smith" type="text"/></div>
+<div class="form-group"><label class="form-label">Company</label><input class="form-input" placeholder="Acme Corp" type="text"/></div>
+
+<div class="form-group"><label class="form-label">Email</label><input class="form-input" placeholder="you@company.com" type="email"/></div>
+<div class="form-group"><label class="form-label">Project type</label><select class="form-select"><option>Office building</option><option>Hotel / restaurant</option><option>Shopping center</option><option>Residential complex</option><option>Medical facility</option><option>Other</option></select></div>
+<div class="form-group"><label class="form-label">Area (m²)</label><input class="form-input" placeholder="500" type="number"/></div>
+<div class="form-group form-full"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Describe your project, flooring preferences, timeline..."></textarea></div>
+</div>
+<div class="form-checkbox"><input id="agree" type="checkbox"/><label for="agree">I agree to personal data processing per Privacy Policy</label></div>
+<div class="form-submit">
+<button class="btn-primary" onclick="submitForm()"><span>Send inquiry</span></button>
+<span class="submit-note">Response within 2 hours</span>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<div class="footer-top">
+<div>
+<div class="footer-logo"><img alt="Linofloor" src="images/logo.png" style="height:48px;width:auto;display:block;filter:brightness(0) invert(1);"/></div>
+<div class="footer-tagline">Premium floor coverings. Own manufacturing. Partner program since 2009.</div>
+<div class="footer-social"><div class="social-btn">in</div><div class="social-btn">ig</div><div class="social-btn">fb</div></div>
+</div>
+<div>
+<div class="footer-col-title">Products</div>
+<ul class="footer-links"><li><a href="#">Linoleum</a></li><li><a href="#">Vinyl tile</a></li></ul>
+</div>
+<div>
+<div class="footer-col-title">Company</div>
+<ul class="footer-links"><li><a href="#about">About us</a></li><li><a href="#blog">Inspiration</a></li><li><a href="#">Projects</a></li><li><a href="#">For partners</a></li></ul>
+</div>
+<div>
+<div class="footer-col-title">Contacts</div>
+<ul class="footer-links"><li><a href="mailto:info@linofloor.ua">info@linofloor.ua</a></li><li></li></ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2025 Lino floor. All rights reserved.</span>
+<div style="display:flex; gap:2rem;"><a href="#">Privacy policy</a></div>
+</div>
+</footer>
+<script>
+let currentLang = 'uk';
+
+
+function setFilter(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.coll-card').forEach(card => {
+    const cats = card.dataset.cat || '';
+    card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+
+function filterCollection(cat) {
+  document.getElementById('collections').scrollIntoView({ behavior: 'smooth' });
+  setTimeout(() => {
+    const btn = [...document.querySelectorAll('.filter-btn')].find(b => b.dataset.cat === cat);
+    if (btn) setFilter(btn, cat);
+  }, 600);
+}
+
+function toggleCalcType() {
+  const type = document.getElementById('calcType').value;
+  document.getElementById('dimensionsBlock').style.display = type === 'dimensions' ? '' : 'none';
+  document.getElementById('areaBlock').style.display = type === 'area' ? '' : 'none';
+}
+
+function calculate() {
+  const type = document.getElementById('calcType').value;
+  const wasteVal = parseFloat(document.getElementById('coveringType').value);
+  const waste = wasteVal / 100;
+  const coveringType = document.getElementById('coveringType');
+  const isLinoleum = coveringType.options[coveringType.selectedIndex].text.toLowerCase().includes('linoleum');
+  let baseArea = 0;
+  if (type === 'dimensions') {
+    const l = parseFloat(document.getElementById('length').value) || 0;
+    const w = parseFloat(document.getElementById('width').value) || 0;
+    baseArea = l * w;
+  } else {
+    baseArea = parseFloat(document.getElementById('area').value) || 0;
+  }
+  if (baseArea <= 0) { alert('Please enter room dimensions'); return; }
+  const withWaste = Math.ceil(baseArea * (1 + waste) * 10) / 10;
+
+  let resultHTML = withWaste.toFixed(1);
+  let subText = `Base area: ${baseArea.toFixed(1)} m² + ${wasteVal}% waste allowance = ${withWaste.toFixed(1)} m²`;
+
+  if (isLinoleum) {
+    const rollArea = 2 * 20; // 2m wide × 20m long = 40 m²
+    const rolls = Math.ceil(withWaste / rollArea);
+    resultHTML = rolls.toString();
+    document.getElementById('resultValue').textContent = rolls;
+    document.querySelector('.result-label').textContent = 'Required rolls';
+    document.querySelector('.result-value').innerHTML = `<span id="resultValue">${rolls}</span> rolls`;
+    subText = `Base area: ${baseArea.toFixed(1)} m² + ${wasteVal}% = ${withWaste.toFixed(1)} m² — roll size 2×20 m (40 m²)`;
+  } else {
+    document.querySelector('.result-label').textContent = 'Required quantity';
+    document.querySelector('.result-value').innerHTML = `<span id="resultValue">${withWaste.toFixed(1)}</span> m²`;
+    subText = `Base area: ${baseArea.toFixed(1)} m² + ${wasteVal}% waste allowance`;
+  }
+
+  document.getElementById('resultSub').textContent = subText;
+  document.getElementById('calcResult').classList.add('show');
+}
+
+
+function switchColor(dot, imgId, imgSrc) {
+    var container = dot.closest('.coll-colors');
+    container.querySelectorAll('.color-dot').forEach(function(d) { d.classList.remove('active'); });
+    dot.classList.add('active');
+    var img = document.getElementById(imgId);
+    if (img) img.src = imgSrc;
+}
+
+function submitColor() {}
+
+function showCert(btn, prefix, num) {
+    var modal = btn.closest('.cert-modal-box');
+    modal.querySelectorAll('.cert-content').forEach(function(c) { c.classList.remove('active'); });
+    modal.querySelectorAll('.cert-tab').forEach(function(t) { t.classList.remove('active'); });
+    document.getElementById('cert' + prefix + '-' + num).classList.add('active');
+    btn.classList.add('active');
+}
+document.addEventListener('click', function(e) {
+    var overlay2 = document.getElementById('concreteModal');
+    if (overlay2 && e.target === overlay2) overlay2.classList.remove('open');
+});
+
+
+function showCertModal(btn, modalId, num) {
+    var modal = document.getElementById(modalId);
+    modal.querySelectorAll('.cert-content').forEach(function(c) { c.classList.remove('active'); });
+    modal.querySelectorAll('.cert-tab').forEach(function(t) { t.classList.remove('active'); });
+    var content = document.getElementById('cert' + modalId.replace('Modal','').toLowerCase() + '-' + num);
+    if (content) content.classList.add('active');
+    btn.classList.add('active');
+}
+
+function submitForm() {
+  alert('Thank you! We will contact you within 2 hours.');
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+  nav.style.padding = window.scrollY > 60 ? '1rem 4rem' : '1.5rem 4rem';
+});
+
+document.querySelectorAll('.coll-colors').forEach(c => {
+  c.querySelectorAll('.color-dot').forEach(dot => {
+    dot.addEventListener('click', function() {
+      c.querySelectorAll('.color-dot').forEach(d => d.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
+});
+</script>
+<div class="modal-overlay" id="concreteModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('concreteModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Concrete</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Main parameters</td></tr>
+<tr><td>Thickness</td><td>2.0 mm</td></tr>
+<tr><td>Width</td><td>2 m</td></tr>
+<tr><td>Length</td><td>20 m</td></tr>
+<tr><td>Weight</td><td>2800 g/m²</td></tr>
+<tr><td class="specs-section" colspan="2">Safety</td></tr>
+<tr><td>Fire rating</td><td>B1</td></tr>
+<tr><td>Toxic testing</td><td>Good</td></tr>
+<tr><td>Electrical resistance</td><td>&gt;10⁹⁻¹⁰ kv</td></tr>
+<tr><td class="specs-section" colspan="2">Performance</td></tr>
+<tr><td>Slip resistance dry</td><td>≥0.3</td></tr>
+<tr><td>Slip resistance wet</td><td>R10</td></tr>
+<tr><td>Abrasion group</td><td>T</td></tr>
+<tr><td>Abrasion resistance</td><td>≤0.18 mm</td></tr>
+<tr><td>Castor wheel test</td><td>Suitable</td></tr>
+<tr><td>Colour fastness</td><td>≥6</td></tr>
+<tr><td>Chemical products resistance</td><td>Good</td></tr>
+<tr><td>Dimensional stability</td><td>≤0.40%</td></tr>
+<tr><td>Flexibility</td><td>Excellent</td></tr>
+<tr><td>Residual indentation</td><td>≤0.10 mm</td></tr>
+<tr><td>Effect of castor chair</td><td>No delamination no cracks</td></tr>
+<tr><td>Hygiene treatment</td><td>Very good</td></tr>
+<tr><td>Impact sound reduction</td><td>Approx. +4 dB</td></tr>
+<tr><td>Indentation</td><td>≈0.09 Approx. 0.05 mm</td></tr>
+<tr><td>Thermal conductive</td><td>≈0.25 W/(m.K)</td></tr>
+<tr><td>Underfloor heating</td><td>Suitable max. 30°C</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="powerModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('powerModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Power</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Main parameters</td></tr>
+<tr><td>Thickness</td><td>2.0 mm</td></tr>
+<tr><td>Width</td><td>2 m</td></tr>
+<tr><td>Length</td><td>20 m</td></tr>
+<tr><td>Weight</td><td>3150 g/m²</td></tr>
+<tr><td class="specs-section" colspan="2">Safety</td></tr>
+<tr><td>Fire rating</td><td>B1</td></tr>
+<tr><td>Toxic testing</td><td>Good</td></tr>
+<tr><td>Electrical resistance</td><td>&gt;10⁹⁻¹⁰ kv</td></tr>
+<tr><td class="specs-section" colspan="2">Performance</td></tr>
+<tr><td>Slip resistance dry</td><td>≥0.3</td></tr>
+<tr><td>Slip resistance wet</td><td>R9</td></tr>
+<tr><td>Abrasion group</td><td>P</td></tr>
+<tr><td>Abrasion resistance</td><td>≤0.18 mm</td></tr>
+<tr><td>Castor wheel test</td><td>Suitable</td></tr>
+<tr><td>Colour fastness</td><td>≥6</td></tr>
+<tr><td>Chemical products resistance</td><td>Good</td></tr>
+<tr><td>Dimensional stability</td><td>≤0.40%</td></tr>
+<tr><td>Flexibility</td><td>Excellent</td></tr>
+<tr><td>Residual indentation</td><td>≤0.10 mm</td></tr>
+<tr><td>Effect of castor chair</td><td>No delamination no cracks</td></tr>
+<tr><td>Hygiene treatment</td><td>Very good</td></tr>
+<tr><td>Impact sound reduction</td><td>Approx. +4 dB</td></tr>
+<tr><td>Indentation</td><td>≈0.09 Approx. 0.05 mm</td></tr>
+<tr><td>Thermal conductive</td><td>≈0.25 W/(m.K)</td></tr>
+<tr><td>Underfloor heating</td><td>Suitable max. 30°C</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="modal-overlay" id="conceptModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('conceptModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Concept</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Description</td></tr>
+<tr><td>Construction</td><td>Compact heterogeneous</td></tr>
+<tr><td>Total thickness</td><td>2.0 mm</td></tr>
+<tr><td>Wear layer thickness</td><td>0.4 mm</td></tr>
+<tr><td>Width of roll</td><td>2 m</td></tr>
+<tr><td>Length of roll</td><td>20 m</td></tr>
+<tr><td>Total weight</td><td>3050 g/m²</td></tr>
+<tr><td class="specs-section" colspan="2">Classification</td></tr>
+<tr><td>European classification</td><td>32</td></tr>
+<tr><td>Dimensional stability</td><td>max. 0.13%</td></tr>
+<tr><td>Light fastness</td><td>&gt;6 grade</td></tr>
+<tr><td class="specs-section" colspan="2">Performance</td></tr>
+<tr><td>Abrasion group</td><td>T</td></tr>
+<tr><td>Fire resistance</td><td>B1</td></tr>
+<tr><td>Slip resistance</td><td>R9</td></tr>
+<tr><td>Static indentation</td><td>0.16</td></tr>
+<tr><td>Chemical resistance</td><td>✓</td></tr>
+<tr><td>Castor chair resistance</td><td>✓</td></tr>
+<tr><td>Acoustic insulation</td><td>19 Db</td></tr>
+<tr><td>Bacterial resistance</td><td>✓</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="conceptModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('conceptModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Concept</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Description</td></tr>
+<tr><td>Construction</td><td>compact heterogeneous</td></tr>
+<tr><td>Total thickness</td><td>2,0 mm</td></tr>
+<tr><td>Wear layer thickness</td><td>0,4 mm</td></tr>
+<tr><td>Width of roll</td><td>2 m</td></tr>
+<tr><td>Length of roll</td><td>20 m</td></tr>
+<tr><td>Total weight</td><td>3050 g/m²</td></tr>
+<tr><td class="specs-section" colspan="2">Classification</td></tr>
+<tr><td>European classification</td><td>32</td></tr>
+<tr><td>Dimensional stability</td><td>max. 0,13%</td></tr>
+<tr><td>Light fastness</td><td>&gt;6 grade</td></tr>
+<tr><td class="specs-section" colspan="2">Performance</td></tr>
+<tr><td>Abrasion group</td><td>T class</td></tr>
+<tr><td>Fire resistance</td><td>B1</td></tr>
+<tr><td>Slip resistance</td><td>R9</td></tr>
+<tr><td>Static indentation</td><td>0,16</td></tr>
+<tr><td>Chemical resistance</td><td>✓</td></tr>
+<tr><td>Castor chair resistance</td><td>✓</td></tr>
+<tr><td>Acoustic insulation</td><td>19 Db</td></tr>
+<tr><td>Bacterial resistance</td><td>✓</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="powerModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('powerModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Power</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Main parameters</td></tr>
+<tr><td>Thickness</td><td>2.0 mm</td></tr>
+<tr><td>Width</td><td>2 m</td></tr>
+<tr><td>Length</td><td>20 m</td></tr>
+<tr><td>Weight</td><td>3150 g/m²</td></tr>
+<tr><td class="specs-section" colspan="2">Safety</td></tr>
+<tr><td>Fire rating</td><td>B1</td></tr>
+<tr><td>Toxic testing</td><td>Good</td></tr>
+<tr><td>Electrical resistance</td><td>&gt;10⁹⁻¹⁰ kv</td></tr>
+<tr><td class="specs-section" colspan="2">Performance</td></tr>
+<tr><td>Slip resistance dry</td><td>≥0.3</td></tr>
+<tr><td>Slip resistance wet</td><td>R9</td></tr>
+<tr><td>Abrasion group</td><td>P</td></tr>
+<tr><td>Abrasion resistance</td><td>≤0.18 mm</td></tr>
+<tr><td>Castor wheel test</td><td>Suitable</td></tr>
+<tr><td>Colour fastness</td><td>≥6</td></tr>
+<tr><td>Chemical products resistance</td><td>Good</td></tr>
+<tr><td>Dimensional stability</td><td>≤0.40%</td></tr>
+<tr><td>Flexibility</td><td>Excellent</td></tr>
+<tr><td>Residual indentation</td><td>≤0.10 mm</td></tr>
+<tr><td>Effect of castor chair</td><td>No delamination no cracks</td></tr>
+<tr><td>Hygiene treatment</td><td>Very good</td></tr>
+<tr><td>Impact sound reduction</td><td>Approx. +4 dB</td></tr>
+<tr><td>Indentation</td><td>≈0.09 Approx. 0.05 mm</td></tr>
+<tr><td>Thermal conductive</td><td>≈0.25 W/(m.K)</td></tr>
+<tr><td>Underfloor heating</td><td>Suitable max. 30°C</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="sportModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('sportModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Sport Power Flex</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="3">Main parameters</td></tr>
+<tr><td>Thickness</td><td>mm</td><td>4.0</td></tr>
+<tr><td>Size</td><td>m</td><td>20×2 m (Gem/Lychee) / 20×1.8 m (Wood)</td></tr>
+<tr><td>Weight</td><td>g/m²</td><td>2900 (Gem/Lychee) / 2800 (Wood)</td></tr>
+<tr><td>Top Layer</td><td>mm</td><td>0.85</td></tr>
+<tr><td class="specs-section" colspan="3">Shock Absorption</td></tr>
+<tr><td>Shock Absorption (0°C ± 2°C)</td><td>%</td><td>20.4</td></tr>
+<tr><td>Shock Absorption (23°C + 2°C)</td><td>%</td><td>20.8</td></tr>
+<tr><td>Shock Absorption (50°C + 2°C)</td><td>%</td><td>21.6</td></tr>
+<tr><td class="specs-section" colspan="3">Performance</td></tr>
+<tr><td>Vertical Deformation</td><td>mm</td><td>1.4</td></tr>
+<tr><td>Anti-slip Value</td><td>BPN, 20°C</td><td>84</td></tr>
+<tr><td>Tensile Strength</td><td>Mpa</td><td>3.1</td></tr>
+<tr><td>Laser Elongation</td><td>%</td><td>200</td></tr>
+<tr><td>Flame Retardant Properties</td><td>level</td><td>I</td></tr>
+<tr><td class="specs-section" colspan="3">Ecology</td></tr>
+<tr><td>Soluble Lead Content</td><td>mg/kg</td><td>0.5</td></tr>
+<tr><td>Soluble Tin Content</td><td>mg/kg</td><td>not detected</td></tr>
+<tr><td>Soluble Chromium Content</td><td>mg/kg</td><td>not detected</td></tr>
+<tr><td>Soluble Mercury Content</td><td>mg/kg</td><td>not detected</td></tr>
+<tr><td>Formaldehyde Emission</td><td>mg/(m².h)</td><td>0.04</td></tr>
+<tr><td>Benzene Release</td><td>mg/(m².h)</td><td>not detected</td></tr>
+<tr><td>Total Release Of Toluene</td><td>mg/(m².h)</td><td>not detected</td></tr>
+<tr><td>Disulfide Release Amount</td><td>mg/(m².h)</td><td>not detected</td></tr>
+</table>
+</div>
+</div>
+</div>
+<div class="modal-overlay" id="amperageModal">
+<div class="modal-box">
+<button class="modal-close" onclick="document.getElementById('amperageModal').classList.remove('open')">✕</button>
+<div>
+<div class="modal-title">Amperage</div>
+<div class="modal-subtitle">Technical specifications</div>
+<table class="specs-table">
+<tr><td class="specs-section" colspan="2">Product information</td></tr>
+<tr><td>Type of flooring</td><td>Homogeneous</td></tr>
+<tr><td>Material</td><td>Polyvinyl chloride</td></tr>
+<tr><td>Cover</td><td>PUR</td></tr>
+<tr><td class="specs-section" colspan="2">Safety criteria</td></tr>
+<tr><td>Flammability</td><td>BFL-S1</td></tr>
+<tr><td>Slip resistance</td><td>R9</td></tr>
+<tr><td>Dynamic coefficient of friction</td><td>DS</td></tr>
+<tr><td class="specs-section" colspan="2">Performance behaviour</td></tr>
+<tr><td>Width of roll</td><td>2 m</td></tr>
+<tr><td>Length of roll</td><td>20 m</td></tr>
+<tr><td>Total thickness</td><td>2.0 mm</td></tr>
+<tr><td>Total weight</td><td>3.2 kg/m²</td></tr>
+<tr><td>Dimensional stability</td><td>x: ≤0.4% y: ≤0.4%</td></tr>
+<tr><td>Electrical resistance</td><td>≤ 1×10⁶ Ω</td></tr>
+<tr><td>Residual indentation</td><td>≤ 1 mm</td></tr>
+<tr><td>Soundproofing</td><td>2 db</td></tr>
+<tr><td class="specs-section" colspan="2">Classification</td></tr>
+<tr><td>Domestic</td><td>Class 23 heavy duty</td></tr>
+<tr><td>Commercial</td><td>Class 34 very heavy duty</td></tr>
+<tr><td>Industrial</td><td>Class 43 heavy duty</td></tr>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
