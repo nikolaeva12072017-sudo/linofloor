@@ -268,6 +268,7 @@
   }
   .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
   .collections-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .collections-grid::after { content: ""; background: var(--cream); }
   .coll-card { background: var(--white); cursor: pointer; transition: background 0.3s; overflow: hidden; }
   .coll-img { background: var(--cream); }
   .coll-card:hover { background: var(--cream); }
@@ -731,7 +732,7 @@
 </div>
 <div class="blog-grid">
 <div class="blog-card reveal" onclick="document.getElementById('articleModal').classList.add('open')" style="cursor:pointer;">
-<div class="blog-img"><img src="images/blog_office.jpg" alt="Office interior" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;" class="blog-img-inner"/></div>
+<div class="blog-img" style="height:280px;overflow:hidden;"><img src="images/blog_office.jpg" alt="Office interior" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div>
 <div class="blog-body">
 <div class="blog-meta"><span class="blog-tag">Design</span><span>May 14, 2025</span></div>
 <div class="blog-title">How to choose flooring for an open office space</div>
@@ -740,7 +741,7 @@
 </div>
 
 <div class="blog-card reveal reveal-delay-2">
-<div class="blog-img" style="background:var(--cream2);"></div>
+<div class="blog-img" style="background:var(--cream2);height:140px;display:block;"></div>
 <div class="blog-body">
 <div class="blog-meta"><span class="blog-tag">B2B</span></div>
 <div class="blog-title">Lino floor partner program for designers</div>
@@ -757,7 +758,7 @@
 </div>
 <div>
 <div class="footer-col-title">Products</div>
-<ul class="footer-links"><li><a href="#">Linoleum</a></li><li><a href="#">Vinyl tile</a></li></ul>
+<ul class="footer-links"><li><a href="linoleum.html">Linoleum</a></li><li><a href="vinyl.html">Vinyl tile</a></li></ul>
 </div>
 <div>
 <div class="footer-col-title">Company</div>
