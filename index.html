@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Lino floor -- Premium Flooring</title>
+<title>Lino floor &#8212; Premium Flooring</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
 <style>
@@ -62,7 +62,7 @@
   .nav-links a:hover { color: var(--gold); }
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-  .nav-dropdown > a::after { content: '>'; font-size: 0.9rem; transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
+  .nav-dropdown > a::after { content: '&#8250;'; font-size: 0.9rem; transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
   .nav-dropdown:hover > a::after { transform: rotate(270deg); }
   .dropdown-menu {
     display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
@@ -529,7 +529,7 @@
 </nav>
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-<button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">x</button>
+<button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&#10005;</button>
 <a href="#categories" onclick="document.getElementById('mobileMenu').classList.remove('open')">Products</a>
 <a href="#collections" onclick="document.getElementById('mobileMenu').classList.remove('open')">Collections</a>
 <a href="#calculator" onclick="document.getElementById('mobileMenu').classList.remove('open')">Calculator</a>
@@ -556,7 +556,7 @@
 <div class="hero-deco-letter">L</div>
 
 <div class="hero-stat-badge reveal reveal-delay-2">
-<div class="hero-stat-num" style="font-size:1.6rem;line-height:1.2;">v</div>
+<div class="hero-stat-num" style="font-size:1.6rem;line-height:1.2;">&#10003;</div>
 <div class="hero-stat-label">Certified<br/>products</div>
 </div>
 </div>
@@ -565,7 +565,7 @@
 <div class="stats-bar">
 <div class="stat-item reveal"><div class="stat-number">15+</div><div class="stat-label">Years experience</div></div>
 <div class="stat-item reveal reveal-delay-1"><div class="stat-number">10000+</div><div class="stat-label">Projects</div></div>
-<div class="stat-item reveal reveal-delay-2"><div class="stat-number" style="font-size:2rem;">v</div><div class="stat-label">Certified products</div></div>
+<div class="stat-item reveal reveal-delay-2"><div class="stat-number" style="font-size:2rem;">&#10003;</div><div class="stat-label">Certified products</div></div>
 <div class="stat-item reveal reveal-delay-3"><div class="stat-number">B2B</div><div class="stat-label">Partner program</div></div>
 </div>
 <!-- CATEGORIES -->
@@ -575,7 +575,7 @@
 <div class="section-tag reveal">Assortment</div>
 <h2 class="section-title reveal"><span>Two categories of <em>flooring</em></span></h2>
 </div>
-<a class="view-all reveal" href="#collections">Full catalog -></a>
+<a class="view-all reveal" href="#collections">Full catalog &#8594;</a>
 </div>
 <div class="categories-grid">
 <div class="cat-card cat-1 reveal" onclick="filterCollection('linoleum')" style="min-height:280px">
@@ -585,7 +585,7 @@
 <svg class="cat-icon" fill="none" stroke="#8a6e3e" stroke-width="1" viewbox="0 0 36 36"><rect height="28" rx="1" width="28" x="4" y="4"></rect><line x1="4" x2="32" y1="12" y2="12"></line><line x1="4" x2="32" y1="20" y2="20"></line><line x1="4" x2="32" y1="28" y2="28"></line></svg>
 <div class="cat-name">Linoleum</div>
 <div class="cat-count">5 collections</div>
-<div class="cat-arrow">Browse -></div>
+<div class="cat-arrow">Browse &#8594;</div>
 </div>
 </div>
 <div class="cat-card cat-3 reveal reveal-delay-1" onclick="filterCollection('pvc')" style="min-height:280px">
@@ -595,7 +595,7 @@
 <svg class="cat-icon" fill="none" stroke="#8a6e3e" stroke-width="1" viewbox="0 0 36 36"><rect height="12" rx="0.5" width="12" x="4" y="4"></rect><rect height="12" rx="0.5" width="12" x="20" y="4"></rect><rect height="12" rx="0.5" width="12" x="4" y="20"></rect><rect height="12" rx="0.5" width="12" x="20" y="20"></rect></svg>
 <div class="cat-name">Vinyl tile</div>
 <div class="cat-count">3 collections</div>
-<div class="cat-arrow">Browse -></div>
+<div class="cat-arrow">Browse &#8594;</div>
 </div>
 </div>
 </div>
@@ -613,31 +613,31 @@
 <button class="filter-btn" onclick="setFilter(this,'linoleum')"><span>Linoleum</span></button>
 <button class="filter-btn" onclick="setFilter(this,'pvc')"><span>Vinyl tile</span></button>
 </div>
-<div class="collections-grid" id="collectionsGrid"><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Power" id="img-power" src="images/linoleum/power_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">Bestseller</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Power</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34 -- very heavy duty. Suitable for healthcare, education, hotels, offices and trade.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-power','images/linoleum/power_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_steel_en.jpg')" style="background:#888888" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_sky_en.jpg')" style="background:#7090b0" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_beige_en.jpg')" style="background:#c8b090" title="Beige"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<div class="collections-grid" id="collectionsGrid"><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Power" id="img-power" src="images/linoleum/power_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">Bestseller</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Power</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34 &#8212; very heavy duty. Suitable for healthcare, education, hotels, offices and trade.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-power','images/linoleum/power_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_steel_en.jpg')" style="background:#888888" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_sky_en.jpg')" style="background:#7090b0" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-power','images/linoleum/power_beige_en.jpg')" style="background:#c8b090" title="Beige"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('powerModal').classList.add('open')">= Specifications</button>
+<button class="btn-specs" onclick="document.getElementById('powerModal').classList.add('open')">&#9776; Specifications</button>
 
-</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Concept" id="img-concept" src="images/linoleum/concept_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Heterogeneous linoleum</div><div class="coll-name">Concept</div><div class="coll-desc">Compact heterogeneous flooring. Class 32. Wear resistant, antibacterial, with 19 dB acoustic insulation.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concept','images/linoleum/concept_gray_en.jpg')" style="background:#6a6a6a" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-concept','images/linoleum/concept_silver_en.jpg')" style="background:#a0a090" title="Silver"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Concept" id="img-concept" src="images/linoleum/concept_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Heterogeneous linoleum</div><div class="coll-name">Concept</div><div class="coll-desc">Compact heterogeneous flooring. Class 32. Wear resistant, antibacterial, with 19 dB acoustic insulation.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concept','images/linoleum/concept_gray_en.jpg')" style="background:#6a6a6a" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-concept','images/linoleum/concept_silver_en.jpg')" style="background:#a0a090" title="Silver"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('conceptModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="linoleum"><div class="coll-img"><img alt="Amperage" id="img-amperage" src="images/linoleum/amperage_sky_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Amperage</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34. Electrical resistance, 2 dB soundproofing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_sky_en.jpg')" style="background:#8898b8" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_dark_gray_en.jpg')" style="background:#585858" title="Dark Gray"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_coast_en.jpg')" style="background:#909090" title="Coast"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('conceptModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="linoleum"><div class="coll-img"><img alt="Amperage" id="img-amperage" src="images/linoleum/amperage_sky_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Amperage</div><div class="coll-desc">Homogeneous PVC flooring with PUR protection. Class 34. Electrical resistance, 2 dB soundproofing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_sky_en.jpg')" style="background:#8898b8" title="Sky"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_dark_gray_en.jpg')" style="background:#585858" title="Dark Gray"></div><div class="color-dot" onclick="switchColor(this,'img-amperage','images/linoleum/amperage_coast_en.jpg')" style="background:#909090" title="Coast"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('amperageModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Concrete" id="img-concrete" src="images/linoleum/concrete_steel_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Concrete</div><div class="coll-desc">Thickness 2.0 mm, weight 2800 g/m2. Flexibility -- excellent. Suitable for underfloor heating up to 30degC. Fire rating B1.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_steel_en.jpg')" style="background:#8a8a8a" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_anthracite_en.jpg')" style="background:#505050" title="Anthracite"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('amperageModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal" data-cat="linoleum"><div class="coll-img"><img alt="Concrete" id="img-concrete" src="images/linoleum/concrete_steel_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Commercial linoleum</div><div class="coll-name">Concrete</div><div class="coll-desc">Thickness 2.0 mm, weight 2800 g/m&#178;. Flexibility &#8212; excellent. Suitable for underfloor heating up to 30&#176;C. Fire rating B1.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_steel_en.jpg')" style="background:#8a8a8a" title="Steel"></div><div class="color-dot" onclick="switchColor(this,'img-concrete','images/linoleum/concrete_anthracite_en.jpg')" style="background:#505050" title="Anthracite"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('concreteModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Sport Power Flex" id="img-sport" src="images/linoleum/sport_wood_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Sports linoleum</div><div class="coll-name">Sport Power Flex</div><div class="coll-desc">Thickness 4.0 mm. Shock absorption 20.4-21.6%. Anti-slip value 84 BPN. For sports halls.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-sport','images/linoleum/sport_wood_en.jpg')" style="background:#c8a060" title="Wood"></div><div class="color-dot" onclick="switchColor(this,'img-sport','images/linoleum/sport_blue_en.jpg')" style="background:#5080b0" title="Blue"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('concreteModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="linoleum"><div class="coll-img"><img alt="Sport Power Flex" id="img-sport" src="images/linoleum/sport_wood_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Sports linoleum</div><div class="coll-name">Sport Power Flex</div><div class="coll-desc">Thickness 4.0 mm. Shock absorption 20.4&#8211;21.6%. Anti-slip value 84 BPN. For sports halls.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-sport','images/linoleum/sport_wood_en.jpg')" style="background:#c8a060" title="Wood"></div><div class="color-dot" onclick="switchColor(this,'img-sport','images/linoleum/sport_blue_en.jpg')" style="background:#5080b0" title="Blue"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('sportModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal" data-cat="pvc"><div class="coll-img"><img alt="Fortress" id="img-fortress" src="images/pvc/fortress_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Fortress</div><div class="coll-desc">Luxury Vinyl Tile 2.5 mm thick. Class 23/31. Formaldehyde free.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-fortress','images/pvc/fortress_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_black_en.jpg')" style="background:#3a3a3a" title="Calacatta Black"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_white_en.jpg')" style="background:#e0e0d8" title="Calacatta White"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('sportModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal" data-cat="pvc"><div class="coll-img"><img alt="Fortress" id="img-fortress" src="images/pvc/fortress_anthracite_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Fortress</div><div class="coll-desc">Luxury Vinyl Tile 2.5 mm thick. Class 23/31. Formaldehyde free.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-fortress','images/pvc/fortress_anthracite_en.jpg')" style="background:#4a4a4a" title="Anthracite"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_black_en.jpg')" style="background:#3a3a3a" title="Calacatta Black"></div><div class="color-dot" onclick="switchColor(this,'img-fortress','images/pvc/fortress_calacatta_white_en.jpg')" style="background:#e0e0d8" title="Calacatta White"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('fortressModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="pvc"><div class="coll-img"><img alt="Urban" id="img-urban" src="images/pvc/urban_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Urban</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.7 mm top layer. Class 34. Pure PVC 100%.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-urban','images/pvc/urban_gray_en.jpg')" style="background:#707070" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_silver_en.jpg')" style="background:#a0a0a0" title="Silver"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_alicante_en.jpg')" style="background:#706860" title="Alicante"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('fortressModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-1" data-cat="pvc"><div class="coll-img"><img alt="Urban" id="img-urban" src="images/pvc/urban_gray_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/><div class="coll-badge">New 2025</div></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Urban</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.7 mm top layer. Class 34. Pure PVC 100%.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-urban','images/pvc/urban_gray_en.jpg')" style="background:#707070" title="Gray"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_silver_en.jpg')" style="background:#a0a0a0" title="Silver"></div><div class="color-dot" onclick="switchColor(this,'img-urban','images/pvc/urban_alicante_en.jpg')" style="background:#706860" title="Alicante"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('urbanModal').classList.add('open')">= Specifications</button>
-</div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="pvc"><div class="coll-img"><img alt="Loft" id="img-loft" src="images/pvc/loft_sevilla_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Loft</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.55 mm top layer. Class 34. MA embossing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-loft','images/pvc/loft_sevilla_en.jpg')" style="background:#b0a090" title="Sevilla"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_toledo_en.jpg')" style="background:#987040" title="Toledo"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_valencia_en.jpg')" style="background:#c8b898" title="Valencia"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample -></a></div>
+<button class="btn-specs" onclick="document.getElementById('urbanModal').classList.add('open')">&#9776; Specifications</button>
+</div></div></div><div class="coll-card reveal reveal-delay-2" data-cat="pvc"><div class="coll-img"><img alt="Loft" id="img-loft" src="images/pvc/loft_sevilla_en.jpg" style="width:100%;height:220px;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;"/></div><div class="coll-body"><div class="coll-category">Vinyl tile</div><div class="coll-name">Loft</div><div class="coll-desc">Dry back vinyl tile 2.5 mm thick, 0.55 mm top layer. Class 34. MA embossing.</div><div class="coll-colors"><div class="color-dot active" onclick="switchColor(this,'img-loft','images/pvc/loft_sevilla_en.jpg')" style="background:#b0a090" title="Sevilla"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_toledo_en.jpg')" style="background:#987040" title="Toledo"></div><div class="color-dot" onclick="switchColor(this,'img-loft','images/pvc/loft_valencia_en.jpg')" style="background:#c8b898" title="Valencia"></div></div><div class="coll-footer"><a class="coll-link" href="#contact">Request sample &#8594;</a></div>
 <div class="doc-buttons" style="margin-top:1rem;padding-top:0.8rem;border-top:0.5px solid var(--border);">
-<button class="btn-specs" onclick="document.getElementById('loftModal').classList.add('open')">= Specifications</button>
+<button class="btn-specs" onclick="document.getElementById('loftModal').classList.add('open')">&#9776; Specifications</button>
 </div></div></div>
 </section>
 <!-- CALCULATOR -->
@@ -677,7 +677,7 @@
 </div>
 <div id="areaBlock" style="display:none">
 <div class="form-group">
-<label class="form-label">Area (m2)</label>
+<label class="form-label">Area (m&#178;)</label>
 <input class="form-input" id="area" min="0" placeholder="100" step="1" type="number"/>
 </div>
 </div>
@@ -690,11 +690,11 @@
 </div>
 <div class="calc-result" id="calcResult">
 <div class="result-label">Required quantity</div>
-<div class="result-value"><span id="resultValue">--</span> m2</div>
+<div class="result-value"><span id="resultValue">&#8212;</span> m&#178;</div>
 <div class="result-sub" id="resultSub"></div>
 </div>
 <button class="btn-primary" onclick="calculate()" style="width:100%; margin-bottom: 1rem;"><span>Calculate</span></button>
-<button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="width:100%;"><span>Send to manager -></span></button>
+<button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="width:100%;"><span>Send to manager &#8594;</span></button>
 </div>
 </div>
 </section>
@@ -709,13 +709,13 @@
 </div>
 <div class="about-text">
 <div class="section-tag reveal">About</div>
-<h2 class="section-title reveal"><span>Lino floor -- <em>standard</em> of quality</span></h2>
+<h2 class="section-title reveal"><span>Lino floor &#8212; <em>standard</em> of quality</span></h2>
 <p class="section-sub reveal">We manufacture and supply premium floor coverings since 2009. Specialization: commercial and corporate spaces.</p>
 <div class="values-grid">
-<div class="value-item reveal"><div class="value-icon">*</div><div class="value-name">Own production</div><div class="value-desc">Full quality control from raw materials to finished product</div></div>
-<div class="value-item reveal reveal-delay-1"><div class="value-icon">*</div><div class="value-name">B2B partnership</div><div class="value-desc">Special terms for designers and developers</div></div>
-<div class="value-item reveal reveal-delay-2"><div class="value-icon">*</div><div class="value-name">Certification</div><div class="value-desc">CE, EN ISO 10874 -- certified for the European market</div></div>
-<div class="value-item reveal reveal-delay-3"><div class="value-icon">*</div><div class="value-name">Technical support</div><div class="value-desc">Consultation and project support</div></div>
+<div class="value-item reveal"><div class="value-icon">&#9672;</div><div class="value-name">Own production</div><div class="value-desc">Full quality control from raw materials to finished product</div></div>
+<div class="value-item reveal reveal-delay-1"><div class="value-icon">&#9671;</div><div class="value-name">B2B partnership</div><div class="value-desc">Special terms for designers and developers</div></div>
+<div class="value-item reveal reveal-delay-2"><div class="value-icon">&#9673;</div><div class="value-name">Certification</div><div class="value-desc">CE, EN ISO 10874 &#8212; certified for the European market</div></div>
+<div class="value-item reveal reveal-delay-3"><div class="value-icon">&#9672;</div><div class="value-name">Technical support</div><div class="value-desc">Consultation and project support</div></div>
 </div>
 </div>
 </div>
@@ -727,11 +727,11 @@
 <div class="section-tag reveal">Inspiration</div>
 <h2 class="section-title reveal"><span>Interiors and <em>ideas</em></span></h2>
 </div>
-<a class="view-all reveal" href="#">All articles -></a>
+<a class="view-all reveal" href="#">All articles &#8594;</a>
 </div>
 <div class="blog-grid">
-<div class="blog-card reveal">
-<div class="blog-img"><div class="blog-img-inner blog-img-1" style="display:flex;align-items:center;justify-content:center;"><svg fill="none" height="60" opacity="0.25" viewbox="0 0 80 60" width="80"><rect height="40" rx="2" stroke="#8a6e3e" stroke-width="1" width="60" x="10" y="10"></rect><line stroke="#8a6e3e" stroke-width="0.5" x1="10" x2="70" y1="25" y2="25"></line><line stroke="#8a6e3e" stroke-width="0.5" x1="10" x2="70" y1="40" y2="40"></line><line stroke="#8a6e3e" stroke-width="0.5" x1="30" x2="30" y1="10" y2="50"></line></svg></div></div>
+<div class="blog-card reveal" onclick="document.getElementById('articleModal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-img"><img src="images/blog_office.jpg" alt="Office interior" style="width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.5s ease;display:block;" class="blog-img-inner"/></div>
 <div class="blog-body">
 <div class="blog-meta"><span class="blog-tag">Design</span><span>May 14, 2025</span></div>
 <div class="blog-title">How to choose flooring for an open office space</div>
@@ -740,7 +740,7 @@
 </div>
 
 <div class="blog-card reveal reveal-delay-2">
-<div class="blog-img"><div class="blog-img-inner blog-img-3"></div></div>
+<div class="blog-img" style="background:var(--cream2);"></div>
 <div class="blog-body">
 <div class="blog-meta"><span class="blog-tag">B2B</span></div>
 <div class="blog-title">Lino floor partner program for designers</div>
@@ -769,7 +769,7 @@
 </div>
 </div>
 <div class="footer-bottom">
-<span>(c) 2025 Lino floor. All rights reserved.</span>
+<span>&#169; 2025 Lino floor. All rights reserved.</span>
 <div style="display:flex; gap:2rem;"><a href="#">Privacy policy</a></div>
 </div>
 </footer>
@@ -818,20 +818,20 @@ function calculate() {
   const withWaste = Math.ceil(baseArea * (1 + waste) * 10) / 10;
 
   let resultHTML = withWaste.toFixed(1);
-  let subText = `Base area: ${baseArea.toFixed(1)} m2 + ${wasteVal}% waste allowance = ${withWaste.toFixed(1)} m2`;
+  let subText = `Base area: ${baseArea.toFixed(1)} m&#178; + ${wasteVal}% waste allowance = ${withWaste.toFixed(1)} m&#178;`;
 
   if (isLinoleum) {
-    const rollArea = 2 * 20; // 2m wide x 20m long = 40 m2
+    const rollArea = 2 * 20; // 2m wide &#215; 20m long = 40 m&#178;
     const rolls = Math.ceil(withWaste / rollArea);
     resultHTML = rolls.toString();
     document.getElementById('resultValue').textContent = rolls;
     document.querySelector('.result-label').textContent = 'Required rolls';
     document.querySelector('.result-value').innerHTML = `<span id="resultValue">${rolls}</span> rolls`;
-    subText = `Base area: ${baseArea.toFixed(1)} m2 + ${wasteVal}% = ${withWaste.toFixed(1)} m2 -- roll size 2x20 m (40 m2)`;
+    subText = `Base area: ${baseArea.toFixed(1)} m&#178; + ${wasteVal}% = ${withWaste.toFixed(1)} m&#178; &#8212; roll size 2&#215;20 m (40 m&#178;)`;
   } else {
     document.querySelector('.result-label').textContent = 'Required quantity';
-    document.querySelector('.result-value').innerHTML = `<span id="resultValue">${withWaste.toFixed(1)}</span> m2`;
-    subText = `Base area: ${baseArea.toFixed(1)} m2 + ${wasteVal}% waste allowance`;
+    document.querySelector('.result-value').innerHTML = `<span id="resultValue">${withWaste.toFixed(1)}</span> m&#178;`;
+    subText = `Base area: ${baseArea.toFixed(1)} m&#178; + ${wasteVal}% waste allowance`;
   }
 
   document.getElementById('resultSub').textContent = subText;
@@ -898,7 +898,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </script>
 <div class="modal-overlay" id="concreteModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('concreteModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('concreteModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Concrete</div>
 <div class="modal-subtitle">Technical specifications</div>
@@ -907,7 +907,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Thickness</td><td>2.0 mm</td></tr>
 <tr><td>Width</td><td>2 m</td></tr>
 <tr><td>Length</td><td>20 m</td></tr>
-<tr><td>Weight</td><td>2800 g/m2</td></tr>
+<tr><td>Weight</td><td>2800 g/m&#178;</td></tr>
 <tr><td class="specs-section" colspan="2">Safety</td></tr>
 <tr><td>Fire rating</td><td>B1</td></tr>
 <tr><td>Toxic testing</td><td>Good</td></tr>
@@ -928,14 +928,14 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Impact sound reduction</td><td>Approx. +4 dB</td></tr>
 <tr><td>Indentation</td><td>&#8776;0.09 Approx. 0.05 mm</td></tr>
 <tr><td>Thermal conductive</td><td>&#8776;0.25 W/(m.K)</td></tr>
-<tr><td>Underfloor heating</td><td>Suitable max. 30degC</td></tr>
+<tr><td>Underfloor heating</td><td>Suitable max. 30&#176;C</td></tr>
 </table>
 </div>
 </div>
 </div>
 <div class="modal-overlay" id="powerModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('powerModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('powerModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Power</div>
 <div class="modal-subtitle">Technical specifications</div>
@@ -944,7 +944,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Thickness</td><td>2.0 mm</td></tr>
 <tr><td>Width</td><td>2 m</td></tr>
 <tr><td>Length</td><td>20 m</td></tr>
-<tr><td>Weight</td><td>3150 g/m2</td></tr>
+<tr><td>Weight</td><td>3150 g/m&#178;</td></tr>
 <tr><td class="specs-section" colspan="2">Safety</td></tr>
 <tr><td>Fire rating</td><td>B1</td></tr>
 <tr><td>Toxic testing</td><td>Good</td></tr>
@@ -965,7 +965,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Impact sound reduction</td><td>Approx. +4 dB</td></tr>
 <tr><td>Indentation</td><td>&#8776;0.09 Approx. 0.05 mm</td></tr>
 <tr><td>Thermal conductive</td><td>&#8776;0.25 W/(m.K)</td></tr>
-<tr><td>Underfloor heating</td><td>Suitable max. 30degC</td></tr>
+<tr><td>Underfloor heating</td><td>Suitable max. 30&#176;C</td></tr>
 </table>
 </div>
 </div>
@@ -973,7 +973,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 
 <div class="modal-overlay" id="conceptModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('conceptModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('conceptModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Concept</div>
 <div class="modal-subtitle">Technical specifications</div>
@@ -984,7 +984,7 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Wear layer thickness</td><td>0.4 mm</td></tr>
 <tr><td>Width of roll</td><td>2 m</td></tr>
 <tr><td>Length of roll</td><td>20 m</td></tr>
-<tr><td>Total weight</td><td>3050 g/m2</td></tr>
+<tr><td>Total weight</td><td>3050 g/m&#178;</td></tr>
 <tr><td class="specs-section" colspan="2">Classification</td></tr>
 <tr><td>European classification</td><td>32</td></tr>
 <tr><td>Dimensional stability</td><td>max. 0.13%</td></tr>
@@ -994,10 +994,10 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Fire resistance</td><td>B1</td></tr>
 <tr><td>Slip resistance</td><td>R9</td></tr>
 <tr><td>Static indentation</td><td>0.16</td></tr>
-<tr><td>Chemical resistance</td><td>v</td></tr>
-<tr><td>Castor chair resistance</td><td>v</td></tr>
+<tr><td>Chemical resistance</td><td>&#10003;</td></tr>
+<tr><td>Castor chair resistance</td><td>&#10003;</td></tr>
 <tr><td>Acoustic insulation</td><td>19 Db</td></tr>
-<tr><td>Bacterial resistance</td><td>v</td></tr>
+<tr><td>Bacterial resistance</td><td>&#10003;</td></tr>
 </table>
 </div>
 </div>
@@ -1006,23 +1006,23 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 
 <div class="modal-overlay" id="sportModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('sportModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('sportModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Sport Power Flex</div>
 <div class="modal-subtitle">Technical specifications</div>
 <table class="specs-table">
 <tr><td class="specs-section" colspan="3">Main parameters</td></tr>
 <tr><td>Thickness</td><td>mm</td><td>4.0</td></tr>
-<tr><td>Size</td><td>m</td><td>20x2 m (Gem/Lychee) / 20x1.8 m (Wood)</td></tr>
-<tr><td>Weight</td><td>g/m2</td><td>2900 (Gem/Lychee) / 2800 (Wood)</td></tr>
+<tr><td>Size</td><td>m</td><td>20&#215;2 m (Gem/Lychee) / 20&#215;1.8 m (Wood)</td></tr>
+<tr><td>Weight</td><td>g/m&#178;</td><td>2900 (Gem/Lychee) / 2800 (Wood)</td></tr>
 <tr><td>Top Layer</td><td>mm</td><td>0.85</td></tr>
 <tr><td class="specs-section" colspan="3">Shock Absorption</td></tr>
-<tr><td>Shock Absorption (0degC &#177; 2degC)</td><td>%</td><td>20.4</td></tr>
-<tr><td>Shock Absorption (23degC + 2degC)</td><td>%</td><td>20.8</td></tr>
-<tr><td>Shock Absorption (50degC + 2degC)</td><td>%</td><td>21.6</td></tr>
+<tr><td>Shock Absorption (0&#176;C &#177; 2&#176;C)</td><td>%</td><td>20.4</td></tr>
+<tr><td>Shock Absorption (23&#176;C + 2&#176;C)</td><td>%</td><td>20.8</td></tr>
+<tr><td>Shock Absorption (50&#176;C + 2&#176;C)</td><td>%</td><td>21.6</td></tr>
 <tr><td class="specs-section" colspan="3">Performance</td></tr>
 <tr><td>Vertical Deformation</td><td>mm</td><td>1.4</td></tr>
-<tr><td>Anti-slip Value</td><td>BPN, 20degC</td><td>84</td></tr>
+<tr><td>Anti-slip Value</td><td>BPN, 20&#176;C</td><td>84</td></tr>
 <tr><td>Tensile Strength</td><td>Mpa</td><td>3.1</td></tr>
 <tr><td>Laser Elongation</td><td>%</td><td>200</td></tr>
 <tr><td>Flame Retardant Properties</td><td>level</td><td>I</td></tr>
@@ -1031,17 +1031,17 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Soluble Tin Content</td><td>mg/kg</td><td>not detected</td></tr>
 <tr><td>Soluble Chromium Content</td><td>mg/kg</td><td>not detected</td></tr>
 <tr><td>Soluble Mercury Content</td><td>mg/kg</td><td>not detected</td></tr>
-<tr><td>Formaldehyde Emission</td><td>mg/(m2.h)</td><td>0.04</td></tr>
-<tr><td>Benzene Release</td><td>mg/(m2.h)</td><td>not detected</td></tr>
-<tr><td>Total Release Of Toluene</td><td>mg/(m2.h)</td><td>not detected</td></tr>
-<tr><td>Disulfide Release Amount</td><td>mg/(m2.h)</td><td>not detected</td></tr>
+<tr><td>Formaldehyde Emission</td><td>mg/(m&#178;.h)</td><td>0.04</td></tr>
+<tr><td>Benzene Release</td><td>mg/(m&#178;.h)</td><td>not detected</td></tr>
+<tr><td>Total Release Of Toluene</td><td>mg/(m&#178;.h)</td><td>not detected</td></tr>
+<tr><td>Disulfide Release Amount</td><td>mg/(m&#178;.h)</td><td>not detected</td></tr>
 </table>
 </div>
 </div>
 </div>
 <div class="modal-overlay" id="amperageModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('amperageModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('amperageModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Amperage</div>
 <div class="modal-subtitle">Technical specifications</div>
@@ -1058,9 +1058,9 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 <tr><td>Width of roll</td><td>2 m</td></tr>
 <tr><td>Length of roll</td><td>20 m</td></tr>
 <tr><td>Total thickness</td><td>2.0 mm</td></tr>
-<tr><td>Total weight</td><td>3.2 kg/m2</td></tr>
+<tr><td>Total weight</td><td>3.2 kg/m&#178;</td></tr>
 <tr><td>Dimensional stability</td><td>x: &#8804;0.4% y: &#8804;0.4%</td></tr>
-<tr><td>Electrical resistance</td><td>&#8804; 1x10&#8310; &#937;</td></tr>
+<tr><td>Electrical resistance</td><td>&#8804; 1&#215;10&#8310; &#937;</td></tr>
 <tr><td>Residual indentation</td><td>&#8804; 1 mm</td></tr>
 <tr><td>Soundproofing</td><td>2 db</td></tr>
 <tr><td class="specs-section" colspan="2">Classification</td></tr>
@@ -1073,30 +1073,30 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 <div class="modal-overlay" id="fortressModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('fortressModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('fortressModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Fortress</div>
 <div class="modal-subtitle">Technical specifications</div>
 <table class="specs-table">
 <tr><td class="specs-section" colspan="2">Description</td></tr>
 <tr><td>Construction</td><td>Luxury Vinyl Tile</td></tr>
-<tr><td>Dimension</td><td>304.8x609.6 mm / 180x1220 mm</td></tr>
+<tr><td>Dimension</td><td>304.8&#215;609.6 mm / 180&#215;1220 mm</td></tr>
 <tr><td>Total thickness</td><td>2.5 mm</td></tr>
 <tr><td>Wear layer thickness</td><td>0.3 mm</td></tr>
-<tr><td>Total weight</td><td>4.79 kg/m2</td></tr>
-<tr><td>Amount per box</td><td>3.716 m2</td></tr>
+<tr><td>Total weight</td><td>4.79 kg/m&#178;</td></tr>
+<tr><td>Amount per box</td><td>3.716 m&#178;</td></tr>
 <tr><td>Amount of pieces per box</td><td>20 pieces</td></tr>
-<tr><td>Amount per pallet</td><td>252.70 m2</td></tr>
+<tr><td>Amount per pallet</td><td>252.70 m&#178;</td></tr>
 <tr><td class="specs-section" colspan="2">Classification</td></tr>
 <tr><td>European classification</td><td>Class 23/31</td></tr>
 <tr><td class="specs-section" colspan="2">Performance</td></tr>
 <tr><td>Abrasion group</td><td>T</td></tr>
 <tr><td>Residual indentation after exposure to heat</td><td>&#8804;0.2 mm</td></tr>
-<tr><td>Dimensional stability (60degC/6Hr)</td><td>&#8804;0.15%</td></tr>
-<tr><td>Thermal resistance</td><td>0.22 W/m.K</td></tr>
+<tr><td>Dimensional stability (60&#176;C/6Hr)</td><td>&#8804;0.15%</td></tr>
+<tr><td>Thermal resistance</td><td>0.22 W/m&#183;K</td></tr>
 <tr><td>Fire resistance</td><td>Bf1-s1</td></tr>
-<tr><td>Electrical resistance</td><td>v</td></tr>
-<tr><td>Castor chair testing</td><td>v</td></tr>
+<tr><td>Electrical resistance</td><td>&#10003;</td></tr>
+<tr><td>Castor chair testing</td><td>&#10003;</td></tr>
 <tr><td>Chemical resistance</td><td>Class 0</td></tr>
 <tr><td>Slip resistance</td><td>DS</td></tr>
 <tr><td>Formaldehyde emission</td><td>E0 (no Formaldehyde)</td></tr>
@@ -1108,37 +1108,37 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 <div class="modal-overlay" id="urbanModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('urbanModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('urbanModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Urban</div>
 <div class="modal-subtitle">Technical specifications</div>
 <div class="cert-tabs">
-<button class="cert-tab active" onclick="showCertModal(this,'urbanModal',1)">177.8x1219.2 mm</button>
-<button class="cert-tab" onclick="showCertModal(this,'urbanModal',2)">304.8x609.6 mm</button>
+<button class="cert-tab active" onclick="showCertModal(this,'urbanModal',1)">177.8&#215;1219.2 mm</button>
+<button class="cert-tab" onclick="showCertModal(this,'urbanModal',2)">304.8&#215;609.6 mm</button>
 </div>
 <div class="cert-content active" id="certurban-1">
 <table class="specs-table">
-<tr><td class="specs-section" colspan="2">Product Information -- 177.8x1219.2 mm</td></tr>
+<tr><td class="specs-section" colspan="2">Product Information &#8212; 177.8&#215;1219.2 mm</td></tr>
 <tr><td>Total thickness</td><td>2.5 mm</td></tr>
 <tr><td>Top layer</td><td>0.7 mm</td></tr>
 <tr><td>Embossing</td><td>MA embossing</td></tr>
-<tr><td>sqm per box</td><td>2.601 m2</td></tr>
+<tr><td>sqm per box</td><td>2.601 m&#178;</td></tr>
 <tr><td>Number per box</td><td>12 pieces</td></tr>
-<tr><td>Amount per pallet</td><td>208.102 m2</td></tr>
-<tr><td>Amount per 20ft container</td><td>4162.05 m2</td></tr>
+<tr><td>Amount per pallet</td><td>208.102 m&#178;</td></tr>
+<tr><td>Amount per 20ft container</td><td>4162.05 m&#178;</td></tr>
 <tr><td>CE code</td><td>23-0423</td></tr>
-<tr><td>Weight per m2</td><td>4.36 kg</td></tr>
+<tr><td>Weight per m&#178;</td><td>4.36 kg</td></tr>
 <tr><td>Weight per box</td><td>11.6 kg</td></tr>
 <tr><td>Weight per pallet</td><td>953 kg</td></tr>
 <tr><td class="specs-section" colspan="2">Performance</td></tr>
 <tr><td>Product kind</td><td>Dry back vinyl flooring</td></tr>
-<tr><td>Dimensional stability (60degC/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
+<tr><td>Dimensional stability (60&#176;C/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Slip resistance</td><td>DS EN13893</td></tr>
 <tr><td>Residual indentation</td><td>Pass &#8804;0.2 mm</td></tr>
 <tr><td>Wear resistance</td><td>Group T</td></tr>
 <tr><td>Fire resistance</td><td>Bf1-s1</td></tr>
 <tr><td>Castor chair testing</td><td>Pass</td></tr>
-<tr><td>Thermal resistance</td><td>0.22 W/m.K</td></tr>
+<tr><td>Thermal resistance</td><td>0.22 W/m&#183;K</td></tr>
 <tr><td>Electrical resistance</td><td>Pass</td></tr>
 <tr><td>Grade level</td><td>34</td></tr>
 <tr><td>Pure PVC</td><td>100%</td></tr>
@@ -1149,27 +1149,27 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 <div class="cert-content" id="certurban-2">
 <table class="specs-table">
-<tr><td class="specs-section" colspan="2">Product Information -- 304.8x609.6 mm</td></tr>
+<tr><td class="specs-section" colspan="2">Product Information &#8212; 304.8&#215;609.6 mm</td></tr>
 <tr><td>Total thickness</td><td>2.5 mm</td></tr>
 <tr><td>Top layer</td><td>0.7 mm</td></tr>
 <tr><td>Embossing</td><td>MA embossing</td></tr>
-<tr><td>sqm per box</td><td>3.716 m2</td></tr>
+<tr><td>sqm per box</td><td>3.716 m&#178;</td></tr>
 <tr><td>Number per box</td><td>20 pieces</td></tr>
-<tr><td>Amount per pallet</td><td>252.696 m2</td></tr>
-<tr><td>Amount per 20ft container</td><td>5053.92 m2</td></tr>
+<tr><td>Amount per pallet</td><td>252.696 m&#178;</td></tr>
+<tr><td>Amount per 20ft container</td><td>5053.92 m&#178;</td></tr>
 <tr><td>CE code</td><td>23-0423</td></tr>
-<tr><td>Weight per m2</td><td>4.36 kg</td></tr>
+<tr><td>Weight per m&#178;</td><td>4.36 kg</td></tr>
 <tr><td>Weight per box</td><td>16.6 kg</td></tr>
 <tr><td>Weight per pallet</td><td>1150 kg</td></tr>
 <tr><td class="specs-section" colspan="2">Performance</td></tr>
 <tr><td>Product kind</td><td>Dry back vinyl flooring</td></tr>
-<tr><td>Dimensional stability (60degC/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
+<tr><td>Dimensional stability (60&#176;C/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Slip resistance</td><td>DS EN13893</td></tr>
 <tr><td>Residual indentation</td><td>Pass &#8804;0.2 mm</td></tr>
 <tr><td>Wear resistance</td><td>Group T</td></tr>
 <tr><td>Fire resistance</td><td>Bf1-s1</td></tr>
 <tr><td>Castor chair testing</td><td>Pass</td></tr>
-<tr><td>Thermal resistance</td><td>0.22 W/m.K</td></tr>
+<tr><td>Thermal resistance</td><td>0.22 W/m&#183;K</td></tr>
 <tr><td>Electrical resistance</td><td>Pass</td></tr>
 <tr><td>Grade level</td><td>34</td></tr>
 <tr><td>Pure PVC</td><td>100%</td></tr>
@@ -1183,37 +1183,37 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 <div class="modal-overlay" id="loftModal">
 <div class="modal-box">
-<button class="modal-close" onclick="document.getElementById('loftModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById('loftModal').classList.remove('open')">&#10005;</button>
 <div>
 <div class="modal-title">Loft</div>
 <div class="modal-subtitle">Technical specifications</div>
 <div class="cert-tabs">
-<button class="cert-tab active" onclick="showCertModal(this,'loftModal',1)">177.8x1219.2 mm</button>
-<button class="cert-tab" onclick="showCertModal(this,'loftModal',2)">304.8x609.6 mm</button>
+<button class="cert-tab active" onclick="showCertModal(this,'loftModal',1)">177.8&#215;1219.2 mm</button>
+<button class="cert-tab" onclick="showCertModal(this,'loftModal',2)">304.8&#215;609.6 mm</button>
 </div>
 <div class="cert-content active" id="certloft-1">
 <table class="specs-table">
-<tr><td class="specs-section" colspan="2">Product Information -- 177.8x1219.2 mm</td></tr>
+<tr><td class="specs-section" colspan="2">Product Information &#8212; 177.8&#215;1219.2 mm</td></tr>
 <tr><td>Total thickness</td><td>2.5 mm</td></tr>
 <tr><td>Top layer</td><td>0.55 mm</td></tr>
 <tr><td>Embossing</td><td>MA embossing</td></tr>
-<tr><td>sqm per box</td><td>3.901 m2</td></tr>
+<tr><td>sqm per box</td><td>3.901 m&#178;</td></tr>
 <tr><td>Number per box</td><td>18 pieces</td></tr>
-<tr><td>Amount per pallet</td><td>234.06 m2</td></tr>
-<tr><td>Amount per 20ft container</td><td>4681.2 m2</td></tr>
+<tr><td>Amount per pallet</td><td>234.06 m&#178;</td></tr>
+<tr><td>Amount per 20ft container</td><td>4681.2 m&#178;</td></tr>
 <tr><td>CE code</td><td>18-0570</td></tr>
-<tr><td>Weight per m2</td><td>4.36 kg</td></tr>
+<tr><td>Weight per m&#178;</td><td>4.36 kg</td></tr>
 <tr><td>Weight per box</td><td>17.35 kg</td></tr>
 <tr><td>Weight per pallet</td><td>1066 kg</td></tr>
 <tr><td class="specs-section" colspan="2">Performance</td></tr>
 <tr><td>Product kind</td><td>Dry back vinyl flooring</td></tr>
-<tr><td>Dimensional stability (60degC/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
+<tr><td>Dimensional stability (60&#176;C/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Slip resistance</td><td>DS EN13893</td></tr>
 <tr><td>Residual indentation</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Wear resistance</td><td>Group T</td></tr>
 <tr><td>Fire resistance</td><td>Bf1-s1</td></tr>
 <tr><td>Castor chair testing</td><td>Pass</td></tr>
-<tr><td>Thermal resistance</td><td>0.22 W/m.K</td></tr>
+<tr><td>Thermal resistance</td><td>0.22 W/m&#183;K</td></tr>
 <tr><td>Electrical resistance</td><td>Pass</td></tr>
 <tr><td>European classification</td><td>34</td></tr>
 <tr><td>Pure PVC</td><td>100%</td></tr>
@@ -1224,27 +1224,27 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 <div class="cert-content" id="certloft-2">
 <table class="specs-table">
-<tr><td class="specs-section" colspan="2">Product Information -- 304.8x609.6 mm</td></tr>
+<tr><td class="specs-section" colspan="2">Product Information &#8212; 304.8&#215;609.6 mm</td></tr>
 <tr><td>Total thickness</td><td>2.5 mm</td></tr>
 <tr><td>Top layer</td><td>0.55 mm</td></tr>
 <tr><td>Embossing</td><td>MA embossing</td></tr>
-<tr><td>sqm per box</td><td>3.716 m2</td></tr>
+<tr><td>sqm per box</td><td>3.716 m&#178;</td></tr>
 <tr><td>Number per box</td><td>20 pieces</td></tr>
-<tr><td>Amount per pallet</td><td>237.83 m2</td></tr>
-<tr><td>Amount per 20ft container</td><td>4756.63 m2</td></tr>
+<tr><td>Amount per pallet</td><td>237.83 m&#178;</td></tr>
+<tr><td>Amount per 20ft container</td><td>4756.63 m&#178;</td></tr>
 <tr><td>CE code</td><td>18-0570</td></tr>
-<tr><td>Weight per m2</td><td>4.36 kg</td></tr>
+<tr><td>Weight per m&#178;</td><td>4.36 kg</td></tr>
 <tr><td>Weight per box</td><td>16.6 kg</td></tr>
 <tr><td>Weight per pallet</td><td>1082 kg</td></tr>
 <tr><td class="specs-section" colspan="2">Performance</td></tr>
 <tr><td>Product kind</td><td>Dry back vinyl flooring</td></tr>
-<tr><td>Dimensional stability (60degC/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
+<tr><td>Dimensional stability (60&#176;C/6Hr)</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Slip resistance</td><td>DS EN13893</td></tr>
 <tr><td>Residual indentation</td><td>Pass &#8804;0.15%</td></tr>
 <tr><td>Wear resistance</td><td>Group T</td></tr>
 <tr><td>Fire resistance</td><td>Bf1-s1</td></tr>
 <tr><td>Castor chair testing</td><td>Pass</td></tr>
-<tr><td>Thermal resistance</td><td>0.22 W/m.K</td></tr>
+<tr><td>Thermal resistance</td><td>0.22 W/m&#183;K</td></tr>
 <tr><td>Electrical resistance</td><td>Pass</td></tr>
 <tr><td>European classification</td><td>34</td></tr>
 <tr><td>Pure PVC</td><td>100%</td></tr>
@@ -1256,5 +1256,61 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 </div>
 </div>
+
+<!-- ARTICLE MODAL -->
+<div class="modal-overlay" id="articleModal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('articleModal').classList.remove('open')">x</button>
+<img src="images/blog_office.jpg" alt="Office" style="width:100%;height:240px;object-fit:cover;object-position:center;display:block;margin-bottom:2rem;"/>
+<div style="padding:0 2rem 2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Design &middot; May 14, 2025</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">&#1071;&#1082; &#1074;&#1080;&#1073;&#1088;&#1072;&#1090;&#1080; &#1087;&#1110;&#1076;&#1083;&#1086;&#1075;&#1086;&#1074;&#1077; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1076;&#1083;&#1103; &#1074;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1086;&#1075;&#1086; &#1086;&#1092;&#1110;&#1089;&#1085;&#1086;&#1075;&#1086; &#1087;&#1088;&#1086;&#1089;&#1090;&#1086;&#1088;&#1091;</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">&#1042;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1110; &#1086;&#1092;&#1110;&#1089;&#1080; &#1079;&#1072;&#1083;&#1080;&#1096;&#1072;&#1102;&#1090;&#1100;&#1089;&#1103; &#1079; &#1085;&#1072;&#1084;&#1080;. &#1040;&#1083;&#1077; &#1074;&#1080;&#1073;&#1110;&#1088; &#1087;&#1110;&#1076;&#1083;&#1086;&#1075;&#1080; &#8212; &#1094;&#1077; &#1085;&#1077; &#1083;&#1080;&#1096;&#1077; &#1087;&#1080;&#1090;&#1072;&#1085;&#1085;&#1103; &#1077;&#1089;&#1090;&#1077;&#1090;&#1080;&#1082;&#1080;. &#1040;&#1082;&#1091;&#1089;&#1090;&#1080;&#1082;&#1072;, &#1079;&#1085;&#1086;&#1089;&#1086;&#1089;&#1090;&#1110;&#1081;&#1082;&#1110;&#1089;&#1090;&#1100;, &#1073;&#1077;&#1079;&#1087;&#1077;&#1082;&#1072; &#1090;&#1072; &#1074;&#1072;&#1088;&#1090;&#1110;&#1089;&#1090;&#1100; &#1086;&#1073;&#1089;&#1083;&#1091;&#1075;&#1086;&#1074;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;: &#1082;&#1086;&#1078;&#1077;&#1085; &#1110;&#1079; &#1094;&#1080;&#1093; &#1092;&#1072;&#1082;&#1090;&#1086;&#1088;&#1110;&#1074; &#1073;&#1077;&#1079;&#1087;&#1086;&#1089;&#1077;&#1088;&#1077;&#1076;&#1085;&#1100;&#1086; &#1074;&#1087;&#1083;&#1080;&#1074;&#1072;&#1108; &#1085;&#1072; &#1082;&#1086;&#1084;&#1092;&#1086;&#1088;&#1090; &#1110; &#1087;&#1088;&#1086;&#1076;&#1091;&#1082;&#1090;&#1080;&#1074;&#1085;&#1110;&#1089;&#1090;&#1100; &#1082;&#1086;&#1084;&#1072;&#1085;&#1076;&#1080;.</p>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">&#1063;&#1086;&#1084;&#1091; open space &#8212; &#1086;&#1089;&#1086;&#1073;&#1083;&#1080;&#1074;&#1080;&#1081; &#1074;&#1080;&#1087;&#1072;&#1076;&#1086;&#1082;</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">&#1053;&#1072; &#1074;&#1110;&#1076;&#1084;&#1110;&#1085;&#1091; &#1074;&#1110;&#1076; &#1082;&#1072;&#1073;&#1110;&#1085;&#1077;&#1090;&#1085;&#1086;&#1075;&#1086; &#1086;&#1092;&#1110;&#1089;&#1091;, &#1074;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1080;&#1081; &#1087;&#1088;&#1086;&#1089;&#1090;&#1110;&#1088; &#1084;&#1072;&#1108; &#1082;&#1110;&#1083;&#1100;&#1082;&#1072; &#1089;&#1087;&#1077;&#1094;&#1080;&#1092;&#1110;&#1095;&#1085;&#1080;&#1093; &#1074;&#1080;&#1084;&#1086;&#1075; &#1086;&#1076;&#1085;&#1086;&#1095;&#1072;&#1089;&#1085;&#1086;. &#1058;&#1091;&#1090; &#1087;&#1086;&#1089;&#1090;&#1110;&#1081;&#1085;&#1086; &#1088;&#1091;&#1093;&#1072;&#1102;&#1090;&#1100;&#1089;&#1103; &#1083;&#1102;&#1076;&#1080;, &#1082;&#1086;&#1090;&#1103;&#1090;&#1100;&#1089;&#1103; &#1086;&#1092;&#1110;&#1089;&#1085;&#1110; &#1082;&#1088;&#1110;&#1089;&#1083;&#1072;, &#1089;&#1090;&#1086;&#1111;&#1090;&#1100; &#1086;&#1088;&#1075;&#1090;&#1077;&#1093;&#1085;&#1110;&#1082;&#1072;. &#1055;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1084;&#1072;&#1108; &#1074;&#1080;&#1090;&#1088;&#1080;&#1084;&#1091;&#1074;&#1072;&#1090;&#1080; &#1094;&#1077; &#1097;&#1086;&#1076;&#1085;&#1103; &#8212; &#1087;&#1088;&#1086;&#1090;&#1103;&#1075;&#1086;&#1084; &#1088;&#1086;&#1082;&#1110;&#1074;. &#1055;&#1088;&#1080; &#1094;&#1100;&#1086;&#1084;&#1091; &#1073;&#1091;&#1076;&#1100;-&#1103;&#1082;&#1077; &#1090;&#1074;&#1077;&#1088;&#1076;&#1077; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1087;&#1110;&#1076;&#1089;&#1080;&#1083;&#1102;&#1108; &#1074;&#1110;&#1076;&#1083;&#1091;&#1085;&#1085;&#1103;, &#1090;&#1086;&#1084;&#1091; &#1084;&#1072;&#1090;&#1077;&#1088;&#1110;&#1072;&#1083; &#1110; &#1089;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1072; &#1087;&#1086;&#1074;&#1077;&#1088;&#1093;&#1085;&#1110; &#1084;&#1072;&#1102;&#1090;&#1100; &#1079;&#1085;&#1072;&#1095;&#1077;&#1085;&#1085;&#1103; &#1076;&#1083;&#1103; &#1072;&#1082;&#1091;&#1089;&#1090;&#1080;&#1095;&#1085;&#1086;&#1075;&#1086; &#1082;&#1086;&#1084;&#1092;&#1086;&#1088;&#1090;&#1091; &#1074;&#1089;&#1100;&#1086;&#1075;&#1086; &#1087;&#1088;&#1080;&#1084;&#1110;&#1097;&#1077;&#1085;&#1085;&#1103;.</p>
+<hr style="border:none;border-top:0.5px solid var(--border);margin:1.5rem 0;"/>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">&#1050;&#1083;&#1102;&#1095;&#1086;&#1074;&#1110; &#1082;&#1088;&#1080;&#1090;&#1077;&#1088;&#1110;&#1111; &#1074;&#1080;&#1073;&#1086;&#1088;&#1091;</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">1</span><div><strong>&#1047;&#1085;&#1086;&#1089;&#1086;&#1089;&#1090;&#1110;&#1081;&#1082;&#1110;&#1089;&#1090;&#1100;.</strong> &#1044;&#1083;&#1103; &#1086;&#1092;&#1110;&#1089;&#1091; &#1079; &#1110;&#1085;&#1090;&#1077;&#1085;&#1089;&#1080;&#1074;&#1085;&#1080;&#1084; &#1090;&#1088;&#1072;&#1092;&#1110;&#1082;&#1086;&#1084; &#1088;&#1077;&#1082;&#1086;&#1084;&#1077;&#1085;&#1076;&#1086;&#1074;&#1072;&#1085;&#1086; &#1082;&#1083;&#1072;&#1089; &#1074;&#1080;&#1082;&#1086;&#1088;&#1080;&#1089;&#1090;&#1072;&#1085;&#1085;&#1103; &#1085;&#1077; &#1085;&#1080;&#1078;&#1095;&#1077; 33. &#1047;&#1074;&#1077;&#1088;&#1085;&#1110;&#1090;&#1100; &#1091;&#1074;&#1072;&#1075;&#1091; &#1085;&#1072; &#1089;&#1090;&#1110;&#1081;&#1082;&#1110;&#1089;&#1090;&#1100; &#1076;&#1086; &#1087;&#1086;&#1076;&#1088;&#1103;&#1087;&#1080;&#1085; &#1090;&#1072; &#1074;&#1076;&#1072;&#1074;&#1083;&#1102;&#1074;&#1072;&#1085;&#1085;&#1103;.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">2</span><div><strong>&#1040;&#1082;&#1091;&#1089;&#1090;&#1080;&#1082;&#1072;.</strong> &#1058;&#1074;&#1077;&#1088;&#1076;&#1110; &#1075;&#1083;&#1072;&#1076;&#1082;&#1110; &#1087;&#1086;&#1074;&#1077;&#1088;&#1093;&#1085;&#1110; &#1074;&#1110;&#1076;&#1073;&#1080;&#1074;&#1072;&#1102;&#1090;&#1100; &#1079;&#1074;&#1091;&#1082;. &#1055;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1079; &#1084;&rsquo;&#1103;&#1082;&#1086;&#1102; &#1072;&#1073;&#1086; &#1089;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1086;&#1074;&#1072;&#1085;&#1086;&#1102; &#1087;&#1086;&#1074;&#1077;&#1088;&#1093;&#1085;&#1077;&#1102; &#1095;&#1072;&#1089;&#1090;&#1082;&#1086;&#1074;&#1086; &#1087;&#1086;&#1075;&#1083;&#1080;&#1085;&#1072;&#1108; &#1091;&#1076;&#1072;&#1088;&#1085;&#1080;&#1081; &#1096;&#1091;&#1084;.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">3</span><div><strong>&#1057;&#1090;&#1110;&#1081;&#1082;&#1110;&#1089;&#1090;&#1100; &#1076;&#1086; &#1074;&#1086;&#1083;&#1086;&#1075;&#1080;.</strong> &#1047;&#1086;&#1085;&#1080; &#1073;&#1110;&#1083;&#1103; &#1082;&#1091;&#1093;&#1086;&#1085;&#1100;, &#1074;&#1093;&#1086;&#1076;&#1110;&#1074; &#1072;&#1073;&#1086; &#1089;&#1072;&#1085;&#1074;&#1091;&#1079;&#1083;&#1110;&#1074; &#1087;&#1086;&#1090;&#1088;&#1077;&#1073;&#1091;&#1102;&#1090;&#1100; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1079; &#1084;&#1110;&#1085;&#1110;&#1084;&#1072;&#1083;&#1100;&#1085;&#1080;&#1084; &#1074;&#1086;&#1076;&#1086;&#1087;&#1086;&#1075;&#1083;&#1080;&#1085;&#1072;&#1085;&#1085;&#1103;&#1084;.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">4</span><div><strong>&#1055;&#1088;&#1086;&#1089;&#1090;&#1086;&#1090;&#1072; &#1076;&#1086;&#1075;&#1083;&#1103;&#1076;&#1091;.</strong> &#1042;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1080;&#1081; &#1086;&#1092;&#1110;&#1089; &#1087;&#1088;&#1080;&#1073;&#1080;&#1088;&#1072;&#1102;&#1090;&#1100; &#1097;&#1086;&#1076;&#1085;&#1103;. &#1055;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1073;&#1077;&#1079; &#1087;&#1086;&#1088;&#1080;&#1089;&#1090;&#1086;&#1111; &#1089;&#1090;&#1088;&#1091;&#1082;&#1090;&#1091;&#1088;&#1080; &#1085;&#1077; &#1085;&#1072;&#1082;&#1086;&#1087;&#1080;&#1095;&#1091;&#1108; &#1087;&#1080;&#1083; &#1110; &#1083;&#1077;&#1075;&#1082;&#1086; &#1084;&#1080;&#1108;&#1090;&#1100;&#1089;&#1103;.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">5</span><div><strong>&#1043;&#1085;&#1091;&#1095;&#1082;&#1110;&#1089;&#1090;&#1100; &#1091; &#1079;&#1086;&#1085;&#1091;&#1074;&#1072;&#1085;&#1085;&#1110;.</strong> Open space &#1095;&#1072;&#1089;&#1090;&#1086; &#1087;&#1077;&#1088;&#1077;&#1087;&#1083;&#1072;&#1085;&#1086;&#1074;&#1091;&#1108;&#1090;&#1100;&#1089;&#1103;. &#1052;&#1086;&#1076;&#1091;&#1083;&#1100;&#1085;&#1110; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1076;&#1086;&#1079;&#1074;&#1086;&#1083;&#1103;&#1102;&#1090;&#1100; &#1079;&#1072;&#1084;&#1110;&#1085;&#1080;&#1090;&#1080; &#1087;&#1086;&#1096;&#1082;&#1086;&#1076;&#1078;&#1077;&#1085;&#1110; &#1076;&#1110;&#1083;&#1103;&#1085;&#1082;&#1080; &#1073;&#1077;&#1079; &#1087;&#1086;&#1074;&#1085;&#1086;&#1075;&#1086; &#1076;&#1077;&#1084;&#1086;&#1085;&#1090;&#1072;&#1078;&#1091;.</div></li>
+</ul>
+<hr style="border:none;border-top:0.5px solid var(--border);margin:1.5rem 0;"/>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">&#1051;&#1110;&#1085;&#1086;&#1083;&#1077;&#1091;&#1084; &#1110; &#1055;&#1042;&#1061; &#1087;&#1083;&#1080;&#1090;&#1082;&#1072;: &#1087;&#1086;&#1088;&#1110;&#1074;&#1085;&#1103;&#1085;&#1085;&#1103;</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.2rem;">&#1054;&#1073;&#1080;&#1076;&#1074;&#1072; &#1084;&#1072;&#1090;&#1077;&#1088;&#1110;&#1072;&#1083;&#1080; &#1096;&#1080;&#1088;&#1086;&#1082;&#1086; &#1079;&#1072;&#1089;&#1090;&#1086;&#1089;&#1086;&#1074;&#1091;&#1102;&#1090;&#1100;&#1089;&#1103; &#1074; &#1082;&#1086;&#1084;&#1077;&#1088;&#1094;&#1110;&#1081;&#1085;&#1080;&#1093; &#1087;&#1088;&#1080;&#1084;&#1110;&#1097;&#1077;&#1085;&#1085;&#1103;&#1093; &#1110; &#1076;&#1086;&#1073;&#1088;&#1077; &#1072;&#1076;&#1072;&#1087;&#1090;&#1086;&#1074;&#1072;&#1085;&#1110; &#1076;&#1086; &#1091;&#1084;&#1086;&#1074; &#1074;&#1110;&#1076;&#1082;&#1088;&#1080;&#1090;&#1086;&#1075;&#1086; &#1086;&#1092;&#1110;&#1089;&#1091; &#8212; &#1072;&#1083;&#1077; &#1084;&#1072;&#1102;&#1090;&#1100; &#1088;&#1110;&#1079;&#1085;&#1110; &#1089;&#1080;&#1083;&#1100;&#1085;&#1110; &#1089;&#1090;&#1086;&#1088;&#1086;&#1085;&#1080;.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">&#1042;&#1072;&#1088;&#1110;&#1072;&#1085;&#1090; 1</div>
+<div style="font-family:var(--serif);font-size:1rem;color:var(--dark);margin-bottom:0.6rem;">&#1050;&#1086;&#1084;&#1077;&#1088;&#1094;&#1110;&#1081;&#1085;&#1080;&#1081; &#1083;&#1110;&#1085;&#1086;&#1083;&#1077;&#1091;&#1084;</div>
+<p style="font-size:0.82rem;color:var(--brown);line-height:1.6;margin-bottom:0.8rem;">&#1056;&#1091;&#1083;&#1086;&#1085;&#1085;&#1077; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1073;&#1077;&#1079; &#1096;&#1074;&#1110;&#1074;. &#1052;&rsquo;&#1103;&#1082;&#1096;&#1072; &#1086;&#1089;&#1085;&#1086;&#1074;&#1072; &#1076;&#1077;&#1097;&#1086; &#1079;&#1085;&#1080;&#1078;&#1091;&#1108; &#1091;&#1076;&#1072;&#1088;&#1085;&#1080;&#1081; &#1096;&#1091;&#1084;. &#1044;&#1086;&#1073;&#1088;&#1077; &#1087;&#1110;&#1076;&#1093;&#1086;&#1076;&#1080;&#1090;&#1100; &#1076;&#1083;&#1103; &#1074;&#1077;&#1083;&#1080;&#1082;&#1080;&#1093; &#1079;&#1086;&#1085;.</p>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#e1f5ee;color:#0f6e56;border-radius:20px;margin:2px;">&#1041;&#1077;&#1079; &#1096;&#1074;&#1110;&#1074;</span>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#e1f5ee;color:#0f6e56;border-radius:20px;margin:2px;">&#1040;&#1082;&#1091;&#1089;&#1090;&#1080;&#1082;&#1072; &#1082;&#1088;&#1072;&#1097;&#1072;</span>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#faeeda;color:#854f0b;border-radius:20px;margin:2px;">&#1052;&#1086;&#1085;&#1090;&#1072;&#1078; &#1089;&#1082;&#1083;&#1072;&#1076;&#1085;&#1110;&#1096;&#1080;&#1081;</span>
+</div>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">&#1042;&#1072;&#1088;&#1110;&#1072;&#1085;&#1090; 2</div>
+<div style="font-family:var(--serif);font-size:1rem;color:var(--dark);margin-bottom:0.6rem;">&#1055;&#1042;&#1061; &#1087;&#1083;&#1080;&#1090;&#1082;&#1072;</div>
+<p style="font-size:0.82rem;color:var(--brown);line-height:1.6;margin-bottom:0.8rem;">&#1052;&#1086;&#1076;&#1091;&#1083;&#1100;&#1085;&#1077; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1079; &#1096;&#1080;&#1088;&#1086;&#1082;&#1080;&#1084;&#1080; &#1084;&#1086;&#1078;&#1083;&#1080;&#1074;&#1086;&#1089;&#1090;&#1103;&#1084;&#1080; &#1076;&#1083;&#1103; &#1079;&#1086;&#1085;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;. &#1057;&#1090;&#1110;&#1081;&#1082;&#1077; &#1076;&#1086; &#1074;&#1086;&#1083;&#1086;&#1075;&#1080;, &#1083;&#1077;&#1075;&#1082;&#1086; &#1084;&#1086;&#1085;&#1090;&#1091;&#1108;&#1090;&#1100;&#1089;&#1103;.</p>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#e1f5ee;color:#0f6e56;border-radius:20px;margin:2px;">&#1052;&#1086;&#1076;&#1091;&#1083;&#1100;&#1085;&#1110;&#1089;&#1090;&#1100;</span>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#e1f5ee;color:#0f6e56;border-radius:20px;margin:2px;">&#1051;&#1077;&#1075;&#1082;&#1072; &#1079;&#1072;&#1084;&#1110;&#1085;&#1072;</span>
+<span style="display:inline-block;font-size:0.7rem;padding:3px 8px;background:#faeeda;color:#854f0b;border-radius:20px;margin:2px;">&#1057;&#1090;&#1080;&#1082;&#1080; &#1084;&#1110;&#1078; &#1087;&#1083;&#1080;&#1090;&#1082;&#1072;&#1084;&#1080;</span>
+</div>
+</div>
+<hr style="border:none;border-top:0.5px solid var(--border);margin:1.5rem 0;"/>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">&#1055;&#1088;&#1072;&#1082;&#1090;&#1080;&#1095;&#1085;&#1110; &#1088;&#1077;&#1082;&#1086;&#1084;&#1077;&#1085;&#1076;&#1072;&#1094;&#1110;&#1111;</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1rem;">&#1055;&#1077;&#1088;&#1077;&#1076; &#1074;&#1080;&#1073;&#1086;&#1088;&#1086;&#1084; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1082;&#1086;&#1088;&#1080;&#1089;&#1085;&#1086; &#1086;&#1094;&#1110;&#1085;&#1080;&#1090;&#1080; &#1082;&#1110;&#1083;&#1100;&#1082;&#1072; &#1088;&#1077;&#1095;&#1077;&#1081;: &#1110;&#1085;&#1090;&#1077;&#1085;&#1089;&#1080;&#1074;&#1085;&#1110;&#1089;&#1090;&#1100; &#1090;&#1088;&#1072;&#1092;&#1110;&#1082;&#1091; &#1074; &#1088;&#1110;&#1079;&#1085;&#1080;&#1093; &#1079;&#1086;&#1085;&#1072;&#1093; &#1087;&#1088;&#1080;&#1084;&#1110;&#1097;&#1077;&#1085;&#1085;&#1103;, &#1085;&#1072;&#1103;&#1074;&#1085;&#1110;&#1089;&#1090;&#1100; &#1082;&#1088;&#1110;&#1089;&#1077;&#1083; &#1085;&#1072; &#1082;&#1086;&#1083;&#1110;&#1097;&#1072;&#1090;&#1082;&#1072;&#1093;, &#1088;&#1110;&#1074;&#1077;&#1085;&#1100; &#1086;&#1089;&#1074;&#1110;&#1090;&#1083;&#1077;&#1085;&#1085;&#1103; &#1090;&#1072; &#1073;&#1102;&#1076;&#1078;&#1077;&#1090; &#1085;&#1072; &#1086;&#1073;&#1089;&#1083;&#1091;&#1075;&#1086;&#1074;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103;.</p>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">&#1058;&#1072;&#1082;&#1086;&#1078; &#1074;&#1072;&#1088;&#1090;&#1086; &#1091;&#1090;&#1086;&#1095;&#1085;&#1080;&#1090;&#1080; &#1091; &#1087;&#1086;&#1089;&#1090;&#1072;&#1095;&#1072;&#1083;&#1100;&#1085;&#1080;&#1082;&#1072; &#1082;&#1083;&#1072;&#1089; &#1082;&#1086;&#1084;&#1077;&#1088;&#1094;&#1110;&#1081;&#1085;&#1086;&#1075;&#1086; &#1085;&#1072;&#1074;&#1072;&#1085;&#1090;&#1072;&#1078;&#1077;&#1085;&#1085;&#1103; &#1090;&#1072; &#1085;&#1072;&#1103;&#1074;&#1085;&#1110;&#1089;&#1090;&#1100; &#1074;&#1110;&#1076;&#1087;&#1086;&#1074;&#1110;&#1076;&#1085;&#1080;&#1093; &#1089;&#1077;&#1088;&#1090;&#1080;&#1092;&#1110;&#1082;&#1072;&#1090;&#1110;&#1074;.</p>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>&#1055;&#1110;&#1076;&#1089;&#1091;&#1084;&#1086;&#1082;:</strong> &#1055;&#1088;&#1072;&#1074;&#1080;&#1083;&#1100;&#1085;&#1077; &#1087;&#1110;&#1076;&#1083;&#1086;&#1075;&#1086;&#1074;&#1077; &#1087;&#1086;&#1082;&#1088;&#1080;&#1090;&#1090;&#1103; &#1076;&#1083;&#1103; open space &#8212; &#1094;&#1077; &#1073;&#1072;&#1083;&#1072;&#1085;&#1089; &#1084;&#1110;&#1078; &#1079;&#1085;&#1086;&#1089;&#1086;&#1089;&#1090;&#1110;&#1081;&#1082;&#1110;&#1089;&#1090;&#1102;, &#1079;&#1088;&#1091;&#1095;&#1085;&#1110;&#1089;&#1090;&#1102; &#1086;&#1073;&#1089;&#1083;&#1091;&#1075;&#1086;&#1074;&#1091;&#1074;&#1072;&#1085;&#1085;&#1103; &#1090;&#1072; &#1072;&#1082;&#1091;&#1089;&#1090;&#1080;&#1095;&#1085;&#1080;&#1084;&#1080; &#1074;&#1083;&#1072;&#1089;&#1090;&#1080;&#1074;&#1086;&#1089;&#1090;&#1103;&#1084;&#1080;. &#1054;&#1087;&#1090;&#1080;&#1084;&#1072;&#1083;&#1100;&#1085;&#1080;&#1081; &#1074;&#1080;&#1073;&#1110;&#1088; &#1079;&#1072;&#1083;&#1077;&#1078;&#1080;&#1090;&#1100; &#1074;&#1110;&#1076; &#1082;&#1086;&#1085;&#1082;&#1088;&#1077;&#1090;&#1085;&#1086;&#1075;&#1086; &#1087;&#1088;&#1080;&#1084;&#1110;&#1097;&#1077;&#1085;&#1085;&#1103;, &#1073;&#1102;&#1076;&#1078;&#1077;&#1090;&#1091; &#1090;&#1072; &#1088;&#1077;&#1078;&#1080;&#1084;&#1091; &#1074;&#1080;&#1082;&#1086;&#1088;&#1080;&#1089;&#1090;&#1072;&#1085;&#1085;&#1103;.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
 </body>
 </html>
