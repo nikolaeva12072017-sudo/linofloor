@@ -62,8 +62,7 @@
   .nav-links a:hover { color: var(--gold); }
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-  .nav-dropdown > a::after { content: '&#8250;'; font-size: 0.9rem; transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
-  .nav-dropdown:hover > a::after { transform: rotate(270deg); }
+  .nav-dropdown > a::after { display: none; }
   .dropdown-menu {
     display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
     padding-top: 0.8rem;
@@ -337,6 +336,15 @@
   .value-desc { font-size: 0.78rem; color: var(--brown); line-height: 1.6; }
 
   /* BLOG */
+  .blog-new-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  .blog-card-main { background: var(--white); transition: background 0.3s; }
+  .blog-card-main:hover { background: var(--cream); }
+  .blog-side-list { background: var(--white); display: flex; flex-direction: column; }
+  .blog-side-card { padding: 1.4rem 1.8rem; border-bottom: 0.5px solid var(--border); flex: 1; display: flex; flex-direction: column; justify-content: center; transition: background 0.3s; }
+  .blog-side-card:last-child { border-bottom: none; }
+  .blog-side-card:hover { background: var(--cream); }
+  .blog-side-tag { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; }
+  .blog-side-title { font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--dark); line-height: 1.35; }
   .blog { background: var(--cream2); }
   .blog-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
   .blog-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1px; background: var(--border); }
@@ -728,23 +736,38 @@
 <div class="section-tag reveal">Inspiration</div>
 <h2 class="section-title reveal"><span>Interiors and <em>ideas</em></span></h2>
 </div>
-<a class="view-all reveal" href="#">All articles &#8594;</a>
 </div>
-<div class="blog-grid">
-<div class="blog-card reveal" onclick="document.getElementById('articleModal').classList.add('open')" style="cursor:pointer;">
-<div class="blog-img" style="height:auto;overflow:hidden;background:var(--cream2);"><img src="images/blog_office.jpg" alt="Office interior" style="width:80%;height:auto;display:block;margin:0 auto;transition:transform 0.5s ease;"/></div>
+<div class="blog-new-grid">
+<div class="blog-card-main reveal" onclick="document.getElementById('articleModal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-img" style="overflow:hidden;background:var(--cream2);">
+<img src="images/blog_office.jpg" alt="Office interior" style="width:80%;height:auto;display:block;margin:0 auto;transition:transform 0.5s ease;"/>
+</div>
 <div class="blog-body">
 <div class="blog-meta"><span class="blog-tag">Design</span><span>May 14, 2025</span></div>
 <div class="blog-title">How to choose flooring for an open office space</div>
 <div class="blog-excerpt">Open offices are here to stay. But choosing flooring is not only about aesthetics, but also acoustics, wear resistance and maintenance...</div>
 </div>
 </div>
-
-<div class="blog-card reveal reveal-delay-2">
-<div class="blog-img" style="background:var(--cream2);height:140px;display:block;"></div>
-<div class="blog-body">
-<div class="blog-meta"><span class="blog-tag">B2B</span></div>
-<div class="blog-title">Lino floor partner program for designers</div>
+<div class="blog-side-list">
+<div class="blog-side-card reveal" onclick="document.getElementById('article1Modal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-side-tag">Maintenance</div>
+<div class="blog-side-title">How to care for commercial linoleum</div>
+</div>
+<div class="blog-side-card reveal reveal-delay-1" onclick="document.getElementById('article2Modal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-side-tag">Guide</div>
+<div class="blog-side-title">How long does commercial flooring last -- and what affects it</div>
+</div>
+<div class="blog-side-card reveal reveal-delay-2" onclick="document.getElementById('article3Modal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-side-tag">Installation</div>
+<div class="blog-side-title">How to prepare a subfloor before installation</div>
+</div>
+<div class="blog-side-card reveal" onclick="document.getElementById('article4Modal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-side-tag">Comparison</div>
+<div class="blog-side-title">Linoleum vs vinyl tile -- which is right for your project?</div>
+</div>
+<div class="blog-side-card reveal reveal-delay-1" onclick="document.getElementById('article5Modal').classList.add('open')" style="cursor:pointer;">
+<div class="blog-side-tag">B2B</div>
+<div class="blog-side-title">How to specify flooring for a large commercial project</div>
 </div>
 </div>
 </div>
@@ -1331,6 +1354,166 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 </div>
 
+
+<!-- ARTICLE 1: How to care for commercial linoleum -->
+<div class="modal-overlay" id="article1Modal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('article1Modal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Maintenance</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">How to Care for Commercial Linoleum</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">Commercial linoleum is one of the most durable floor coverings available -- but its longevity depends directly on the quality of day-to-day maintenance. A consistent care routine not only preserves the appearance of the floor, but can extend its service life by decades.</p>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Daily cleaning</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">For routine maintenance, dry sweeping or dust-mopping is sufficient to remove loose debris. Damp mopping with a pH-neutral cleaner diluted in clean water is recommended for daily or high-frequency cleaning. Avoid using excessive water -- linoleum should never be flooded, as moisture can penetrate seams and cause dimensional instability over time.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Periodic maintenance</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">Depending on traffic levels, periodic deep cleaning using a scrubbing machine with a mild cleaning agent is advisable. After deep cleaning, applying a maintenance polish or floor finish helps restore surface sheen and provides an additional protective layer against scuffs and wear.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">What to avoid</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div>Abrasive scrubbing pads or steel wool -- these permanently damage the PUR surface layer</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div>Solvent-based or highly alkaline cleaning products -- they break down the binder and accelerate wear</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div>Prolonged standing water -- even water-resistant linoleum is not fully waterproof at the seams</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div>Rubber-backed mats left in place for long periods -- they can cause discolouration through chemical reaction</div></li>
+</ul>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>Summary:</strong> Consistent, gentle cleaning with appropriate products is the single most effective way to protect your linoleum investment. The floor covering itself is highly durable -- the care routine determines how long it stays looking its best.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ARTICLE 2: How long does commercial flooring last -->
+<div class="modal-overlay" id="article2Modal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('article2Modal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Guide</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">How Long Does Commercial Flooring Last -- and What Affects It</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">The lifespan of a commercial floor covering is rarely determined by the material alone. Installation quality, subfloor condition, traffic intensity and maintenance practices all play an equally important role.</p>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Typical service life by material</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-family:var(--serif);font-size:1rem;color:var(--dark);margin-bottom:0.4rem;">Commercial linoleum</div>
+<div style="font-size:0.82rem;color:var(--brown);line-height:1.6;">20 to 40 years under standard commercial conditions. The natural linseed oil composition means the material continues to harden and stabilise over time.</div>
+</div>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-family:var(--serif);font-size:1rem;color:var(--dark);margin-bottom:0.4rem;">LVT vinyl tile</div>
+<div style="font-size:0.82rem;color:var(--brown);line-height:1.6;">15 to 25 years. Wear layer thickness is the primary factor -- a 0.7 mm wear layer is substantially more durable than a 0.3 mm alternative.</div>
+</div>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Key factors that affect longevity</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">1</span><div><strong>Wear class specification.</strong> Using a Class 33 or 34 product in very heavy-traffic areas is the most important single decision. Under-specifying leads to premature wear regardless of maintenance quality.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">2</span><div><strong>Subfloor preparation.</strong> An uneven or damp subfloor causes adhesive failure, lifting and cracking. Proper levelling and moisture testing before installation are non-negotiable.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">3</span><div><strong>Maintenance consistency.</strong> Floors maintained correctly from day one retain their surface protection far longer. Deferred maintenance is the most common cause of early deterioration.</div></li>
+<li style="display:flex;gap:1rem;padding:0.85rem 0;font-size:0.88rem;color:var(--dark);line-height:1.7;"><span style="color:var(--gold);font-family:var(--serif);font-size:1.2rem;flex-shrink:0;">4</span><div><strong>Furniture and equipment loads.</strong> Static loads from heavy shelving or machinery concentrate pressure. Felt pads and load-spreading plates prevent permanent indentation.</div></li>
+</ul>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>Summary:</strong> A well-specified, correctly installed and properly maintained commercial floor covering should comfortably reach or exceed its rated service life. The investment in quality at the specification stage pays dividends across the full lifecycle of the building.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ARTICLE 3: How to prepare a subfloor -->
+<div class="modal-overlay" id="article3Modal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('article3Modal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Installation</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">How to Prepare a Subfloor Before Installation</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">Subfloor preparation is the foundation of a successful flooring installation. No matter how high the quality of the floor covering, a poorly prepared substrate will compromise the result -- causing lifting, cracking, visible irregularities and premature failure of the adhesive bond.</p>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Step 1 -- Assessment</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.2rem;">Begin with a thorough inspection of the existing subfloor. Check for cracks, soft spots, delamination and any signs of previous water damage. Any structural defects must be repaired before proceeding.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Step 2 -- Moisture testing</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.2rem;">Moisture is the most common cause of adhesive failure. Conduct a calcium chloride test or use a relative humidity probe to verify that moisture levels are within the adhesive manufacturer's tolerances. For concrete subfloors, a reading below 75% RH is typically required.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Step 3 -- Levelling</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.2rem;">The subfloor must be flat to within 3 mm over a 2-metre span for most resilient floor coverings. Apply a self-levelling compound to fill dips, low spots and surface irregularities. Allow full cure time before proceeding -- typically 24 hours minimum.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Step 4 -- Surface preparation</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">Remove all dust, grease, paint residues and adhesive from previous installations. A clean, dry and contaminant-free surface is essential for reliable adhesive bonding. Prime the subfloor if recommended by the adhesive manufacturer.</p>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>Summary:</strong> Subfloor preparation is time-consuming but non-negotiable. A properly prepared substrate is the single most important factor in ensuring a long-lasting, problem-free floor installation.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ARTICLE 4: Linoleum vs vinyl tile -->
+<div class="modal-overlay" id="article4Modal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('article4Modal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Comparison</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">Linoleum vs Vinyl Tile -- Which Is Right for Your Project?</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">Both linoleum and LVT vinyl tile are established commercial flooring solutions with strong performance credentials. Understanding their respective strengths is essential to making the right specification for a given project.</p>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">Linoleum</div>
+<ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--brown);line-height:1.7;">
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Natural, biodegradable composition</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Service life up to 40 years</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Inherently antibacterial surface</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Superior acoustic performance</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Seamless roll format available</li>
+<li style="padding:0.4rem 0;">Best for: healthcare, education, offices</li>
+</ul>
+</div>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem;">
+<div style="font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem;">LVT Vinyl tile</div>
+<ul style="list-style:none;padding:0;margin:0;font-size:0.82rem;color:var(--brown);line-height:1.7;">
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">100% waterproof construction</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Authentic stone and wood aesthetics</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Modular -- easy partial replacement</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Compatible with underfloor heating</li>
+<li style="padding:0.4rem 0;border-bottom:0.5px solid var(--border);">Wide design range</li>
+<li style="padding:0.4rem 0;">Best for: hotels, retail, residential</li>
+</ul>
+</div>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">How to decide</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1rem;">Choose linoleum when natural composition, acoustic performance and long-term durability are the primary requirements -- particularly in healthcare, education or large office environments. Choose LVT when waterproofing, design flexibility or modular replacement are the deciding factors -- particularly in hospitality, retail and mixed-use developments.</p>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">In larger or more complex projects, combining both materials -- linoleum in general circulation areas and LVT in wet zones, feature areas or high-load corridors -- often delivers the best overall result.</p>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>Summary:</strong> There is no universal answer. The right choice depends on the specific functional requirements, the aesthetic brief and the long-term maintenance strategy of the project. Contact our team for a specification consultation.</p>
+</div>
+</div>
+</div>
+</div>
+
+<!-- ARTICLE 5: How to specify flooring for large commercial project -->
+<div class="modal-overlay" id="article5Modal">
+<div class="modal-box" style="max-width:760px;max-height:85vh;overflow-y:auto;">
+<button class="modal-close" onclick="document.getElementById('article5Modal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">B2B</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:1.5rem;">How to Specify Flooring for a Large Commercial Project</h2>
+<div style="border-left:3px solid var(--gold);padding:0.75rem 0 0.75rem 1.25rem;margin-bottom:2rem;background:var(--cream2);">
+<p style="margin:0;font-size:0.95rem;color:var(--brown);line-height:1.8;">Specifying flooring for a large commercial project involves considerably more than selecting a product. It requires a systematic approach to performance requirements, logistics, certifications and long-term costs -- all of which have a direct bearing on the success of the installation.</p>
+</div>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Define performance requirements by zone</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">Large commercial buildings typically have several distinct zones, each with different loading conditions. Entrance areas and main corridors require Class 34 (very heavy commercial). Office floors may be adequately served by Class 33. Back-of-house and service areas may have specific requirements for chemical resistance, ESD protection or hygiene standards. Map each zone before specifying a product.</p>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Certifications to request</h3>
+<ul style="list-style:none;padding:0;margin:0 0 1.5rem;">
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div><strong>EN ISO 10582 / EN 649</strong> -- European classification for resilient floor coverings</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div><strong>EN 13501-1</strong> -- Fire reaction classification (Bf1-s1 or better for commercial use)</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;border-bottom:0.5px solid var(--border);font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div><strong>ASTM D570-98 / VOC emission</strong> -- Formaldehyde-free and low-emission certification</div></li>
+<li style="display:flex;gap:1rem;padding:0.7rem 0;font-size:0.88rem;color:var(--dark);line-height:1.6;"><span style="color:var(--gold);flex-shrink:0;">--</span><div><strong>EN 13893</strong> -- Slip resistance classification (DS class minimum for commercial spaces)</div></li>
+</ul>
+<h3 style="font-family:var(--serif);font-size:1.2rem;font-weight:400;color:var(--dark);margin:0 0 0.8rem;">Logistics and lead times</h3>
+<p style="font-size:0.88rem;color:var(--brown);line-height:1.8;margin-bottom:1.5rem;">For large-volume orders, confirm batch consistency with your supplier -- colour and texture variations between production batches are a common source of disputes on large projects. Request samples from the specific production batch if possible, and confirm delivery schedules against the installation programme well in advance.</p>
+<div style="background:var(--cream2);border:0.5px solid var(--border-mid);padding:1.2rem 1.5rem;">
+<p style="margin:0;font-size:0.85rem;color:var(--brown);line-height:1.7;"><strong>Summary:</strong> Successful large-scale flooring specification requires early engagement with a knowledgeable supplier, a zone-by-zone performance analysis and rigorous documentation of certifications. Our team has extensive experience supporting architects, designers and project managers through the full specification process.</p>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 </html>
