@@ -42,8 +42,7 @@
   /* DROPDOWN */
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-  .nav-dropdown > a::after { content: '&#8250;'; font-size: 0.9rem; transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
-  .nav-dropdown:hover > a::after { transform: rotate(270deg); }
+  .nav-dropdown > a::after { display: none; }
   .dropdown-menu {
     display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
     padding-top: 0.8rem;
