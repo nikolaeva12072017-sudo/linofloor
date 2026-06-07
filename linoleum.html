@@ -75,9 +75,7 @@
   }
   .page-hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    background:
-      repeating-linear-gradient(90deg, rgba(138,110,62,0.04) 0px, rgba(138,110,62,0.04) 1px, transparent 1px, transparent 28px),
-      repeating-linear-gradient(0deg, rgba(138,110,62,0.04) 0px, rgba(138,110,62,0.04) 1px, transparent 1px, transparent 14px);
+    background: none;
   }
   .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
   .page-hero-img {
@@ -86,14 +84,9 @@
   }
   .page-hero-img-inner {
     width: 100%; height: 100%;
-    background: var(--cream3);
-    /* Replace with: background: url('images/linoleum_hero.jpg') center/cover no-repeat; */
-    background: repeating-linear-gradient(135deg, #e8dcc8 0px, #e8dcc8 20px, #ddd0bc 20px, #ddd0bc 40px);
+    background: none;
   }
-  .page-hero-img::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 120px; z-index: 1;
-    background: linear-gradient(to right, var(--cream2), transparent);
-  }
+  .page-hero-img::before { display: none; }
   .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
   .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--gold); }
   .page-hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--dark); margin-bottom: 1.5rem; }
@@ -116,9 +109,8 @@
   .what-is { background: var(--white); }
   .what-is-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
   .what-is-visual { position: relative; height: 480px; }
-  .what-is-main { width: 85%; height: 380px; position: absolute; top: 0; right: 0; background: repeating-linear-gradient(30deg, rgba(138,110,62,0.06) 0px, rgba(138,110,62,0.06) 1px, transparent 1px, transparent 36px), linear-gradient(135deg, #f0e8d8 0%, #e8dcc8 100%); border: 0.5px solid var(--border-mid); overflow: hidden; }
-  /* Replace .what-is-main with: background: url('images/linoleum_interior.jpg') center/cover */
-  .what-is-accent { width: 45%; height: 160px; position: absolute; bottom: 0; left: 0; background: repeating-conic-gradient(#e8e4dc 0% 25%, #e0dcd4 0% 50%) 0 0 / 18px 18px; border: 0.5px solid var(--border); }
+  .what-is-main { width: 85%; height: 380px; position: absolute; top: 0; right: 0; border: 0.5px solid var(--border-mid); overflow: hidden; }
+  .what-is-accent { width: 45%; height: 160px; position: absolute; bottom: 0; left: 0; border: 0.5px solid var(--border); overflow: hidden; }
   .what-is-badge { position: absolute; bottom: 2rem; right: 1.5rem; background: var(--dark); color: var(--cream); padding: 0.8rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
   .what-is-text p { font-size: 0.9rem; color: var(--brown); line-height: 1.85; margin-bottom: 1.2rem; }
 
@@ -253,7 +245,7 @@
 <!-- HERO -->
 <div class="page-hero">
   <div class="page-hero-bg"></div>
-  <div class="page-hero-img"><div class="page-hero-img-inner"></div></div>
+  <div class="page-hero-img"><img src="images/lino_hero.jpg" alt="Linoleum interior" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/></div>
   <div class="page-hero-content">
     <div class="hero-eyebrow reveal">Commercial Flooring</div>
     <h1 class="reveal reveal-delay-1">Commercial <em>Linoleum</em><br/>Built to Last</h1>
@@ -269,10 +261,10 @@
 <section class="what-is" id="what-is">
   <div class="what-is-grid">
     <div class="what-is-visual">
-      <div class="what-is-main">
+      <div class="what-is-main"><img src="images/lino_interior_main.jpg" alt="Linoleum interior" style="width:100%;height:100%;object-fit:cover;display:block;"/>
         <!-- Replace with: <img src="images/linoleum_interior.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
       </div>
-      <div class="what-is-accent"></div>
+      <div class="what-is-accent"><img src="images/lino_interior_accent.jpg" alt="Linoleum kitchen" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
       <div class="what-is-badge">Natural materials</div>
     </div>
     <div class="what-is-text">
