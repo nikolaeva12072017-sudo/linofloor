@@ -75,7 +75,7 @@
   }
   .page-hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    background: repeating-conic-gradient(rgba(138,110,62,0.04) 0% 25%, transparent 0% 50%) 0 0 / 32px 32px;
+    background: none;
   }
   .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
   .page-hero-img {
@@ -85,10 +85,10 @@
   .page-hero-img-inner {
     width: 100%; height: 100%;
     /* Replace with: background: url('images/vinyl_hero.jpg') center/cover no-repeat; */
-    background: repeating-conic-gradient(#3a3228 0% 25%, #2e2820 0% 50%) 0 0 / 40px 40px;
+    background: var(--dark2);
   }
   .page-hero-img::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 120px; z-index: 1;
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 200px; z-index: 1;
     background: linear-gradient(to right, var(--dark2), transparent);
   }
   .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
