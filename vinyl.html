@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vinyl Tile &#8212; Lino Floor Premium Flooring</title>
+<title>Vinyl Tile — Lino Floor Premium Flooring</title>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -42,7 +42,8 @@
   /* DROPDOWN */
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { display: flex; align-items: center; gap: 4px; }
-  .nav-dropdown > a::after { display: none; }
+  .nav-dropdown > a::after { content: '›'; font-size: 0.9rem; transform: rotate(90deg); display: inline-block; transition: transform 0.2s; }
+  .nav-dropdown:hover > a::after { transform: rotate(270deg); }
   .dropdown-menu {
     display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
     padding-top: 0.8rem;
@@ -75,7 +76,7 @@
   }
   .page-hero-bg {
     position: absolute; inset: 0; z-index: 0;
-    background: none;
+    background: repeating-conic-gradient(rgba(138,110,62,0.04) 0% 25%, transparent 0% 50%) 0 0 / 32px 32px;
   }
   .page-hero-content { position: relative; z-index: 1; max-width: 700px; }
   .page-hero-img {
@@ -85,9 +86,12 @@
   .page-hero-img-inner {
     width: 100%; height: 100%;
     /* Replace with: background: url('images/vinyl_hero.jpg') center/cover no-repeat; */
-    background: var(--dark2);
+    background: repeating-conic-gradient(#3a3228 0% 25%, #2e2820 0% 50%) 0 0 / 40px 40px;
   }
-  .page-hero-img::before { display: none; }
+  .page-hero-img::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 120px; z-index: 1;
+    background: linear-gradient(to right, var(--dark2), transparent);
+  }
   .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold-mid); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
   .hero-eyebrow::before { content: ''; display: block; width: 32px; height: 0.5px; background: var(--gold-mid); }
   .page-hero h1 { font-family: var(--serif); font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--cream); margin-bottom: 1.5rem; }
@@ -118,7 +122,9 @@
     background: repeating-conic-gradient(#e4e0d8 0% 25%, #dcd8d0 0% 50%) 0 0 / 28px 28px;
     border: 0.5px solid var(--border-mid); overflow: hidden; }
   /* Replace with: background: url('images/vinyl_interior.jpg') center/cover */
-  .what-is-accent { width: 48%; height: 180px; position: absolute; bottom: 0; left: 0; border: 0.5px solid var(--border); overflow: hidden; }
+  .what-is-accent { width: 45%; height: 160px; position: absolute; bottom: 0; left: 0;
+    background: repeating-linear-gradient(45deg, #e0d8c8, #e0d8c8 4px, #d4cbb8 4px, #d4cbb8 8px);
+    border: 0.5px solid var(--border); }
   .what-is-badge { position: absolute; bottom: 2rem; right: 1.5rem; background: var(--dark); color: var(--cream); padding: 0.8rem 1.2rem; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; }
   .what-is-text p { font-size: 0.9rem; color: var(--brown); line-height: 1.85; margin-bottom: 1.2rem; }
 
@@ -237,7 +243,7 @@
     <a href="index.html#blog">Inspiration</a>
   </div>
   <div class="nav-right">
-    <button class="nav-cta" id="open-contact-btn">Contact manager</button>
+    <button class="nav-cta" onclick="window.location='mailto:info@linofloor.ua'">Contact manager</button>
     <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')">
       <svg fill="none" height="16" viewbox="0 0 22 16" width="22">
         <line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
@@ -250,7 +256,7 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&#10005;</button>
+  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">✕</button>
   <a href="linoleum.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Linoleum</a>
   <a href="vinyl.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Vinyl tile</a>
   <a href="index.html#collections" onclick="document.getElementById('mobileMenu').classList.remove('open')">Collections</a>
@@ -260,14 +266,14 @@
 <!-- HERO -->
 <div class="page-hero">
   <div class="page-hero-bg"></div>
-  <div class="page-hero-img"><img src="images/vinyl_hero.jpg" alt="Vinyl interior" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/></div>
+  <div class="page-hero-img"><div class="page-hero-img-inner"></div></div>
   <div class="page-hero-content">
     <div class="hero-eyebrow reveal">Luxury Vinyl Tile</div>
     <h1 class="reveal reveal-delay-1">Design meets <em>performance</em><br/>Vinyl tile LVT</h1>
-    <p class="page-hero-sub reveal reveal-delay-2">The most versatile commercial flooring solution &#8212; 100% waterproof, scratch-resistant, with authentic stone and wood aesthetics. Class 34 for the heaviest demands.</p>
+    <p class="page-hero-sub reveal reveal-delay-2">The most versatile commercial flooring solution — 100% waterproof, scratch-resistant, with authentic stone and wood aesthetics. Class 34 for the heaviest demands.</p>
     <div style="display:flex;gap:1.2rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
       <a class="btn-dark" href="index.html#collections">View collections</a>
-      <button class="btn-outline" onclick="openModal('sampleModal')">Request sample</button>
+      <a class="btn-outline" href="mailto:info@linofloor.ua">Request sample</a>
     </div>
   </div>
 </div>
@@ -276,17 +282,17 @@
 <section class="what-is" id="what-is">
   <div class="what-is-grid">
     <div class="what-is-visual">
-      <div class="what-is-main"><img src="images/vinyl_interior2.jpg" alt="Vinyl interior" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+      <div class="what-is-main"></div>
       <!-- Replace with: <img src="images/vinyl_interior.jpg" ...> -->
-      <div class="what-is-accent"><img src="images/vinyl_interior.jpg" alt="Vinyl waterproof" style="width:100%;height:100%;object-fit:cover;display:block;"/></div>
+      <div class="what-is-accent"></div>
       <div class="what-is-badge">100% Waterproof</div>
     </div>
     <div class="what-is-text">
       <div class="section-tag reveal">What is vinyl tile</div>
       <h2 class="section-title reveal">The <em>modern</em> flooring revolution</h2>
       <p class="reveal">Luxury Vinyl Tile (LVT) is a multi-layer flooring construction made from 100% pure PVC. Originally designed to authentically replicate the look of stone, ceramic and hardwood, LVT has evolved into one of the most sought-after commercial flooring solutions worldwide.</p>
-      <p class="reveal">Unlike natural materials, LVT is completely waterproof, dimensionally stable, and impervious to humidity &#8212; making it suitable for any room, including areas where other materials would fail. The 0.7 mm wear layer with PUR coating ensures exceptional resistance to scratches, scuffs and heavy rolling loads.</p>
-      <p class="reveal">With a grade level of 34 (very heavy commercial use), our dry-back vinyl tiles are formaldehyde-free, phthalate-free (DOTP softener), and certified E0 &#8212; safe for people and the environment.</p>
+      <p class="reveal">Unlike natural materials, LVT is completely waterproof, dimensionally stable, and impervious to humidity — making it suitable for any room, including areas where other materials would fail. The 0.7 mm wear layer with PUR coating ensures exceptional resistance to scratches, scuffs and heavy rolling loads.</p>
+      <p class="reveal">With a grade level of 34 (very heavy commercial use), our dry-back vinyl tiles are formaldehyde-free, phthalate-free (DOTP softener), and certified E0 — safe for people and the environment.</p>
     </div>
   </div>
 </section>
@@ -295,7 +301,7 @@
 <section class="layers" id="layers">
   <div class="section-tag reveal">Construction</div>
   <h2 class="section-title reveal">5-layer <em>engineering</em></h2>
-  <p class="section-sub reveal">Every LVT tile is built from five precisely engineered layers &#8212; each contributing to performance, durability and design.</p>
+  <p class="section-sub reveal">Every LVT tile is built from five precisely engineered layers — each contributing to performance, durability and design.</p>
   <div class="layers-grid">
     <div class="layer-list">
       <div class="layer-item reveal">
@@ -304,7 +310,7 @@
       </div>
       <div class="layer-item reveal reveal-delay-1">
         <div class="layer-num">2</div>
-        <div><div class="layer-name">Decorative film</div><div class="layer-desc">High-definition printed film with MA embossing &#8212; replicates stone, wood and concrete textures with remarkable realism.</div></div>
+        <div><div class="layer-name">Decorative film</div><div class="layer-desc">High-definition printed film with MA embossing — replicates stone, wood and concrete textures with remarkable realism.</div></div>
       </div>
       <div class="layer-item reveal reveal-delay-2">
         <div class="layer-num">3</div>
@@ -323,13 +329,13 @@
       <div class="layers-diagram">
         <div class="diagram-title">LVT cross-section</div>
         <div class="diagram-layers">
-          <div class="dl dl-1">&#9312; PUR wear layer &#8212; 0.7 mm</div>
-          <div class="dl dl-2">&#9313; Decorative film + MA embossing</div>
-          <div class="dl dl-3">&#9314; Glass fibre stabiliser</div>
-          <div class="dl dl-4">&#9315; PVC core &#8212; 100% pure</div>
-          <div class="dl dl-5">&#9316; Backing layer</div>
+          <div class="dl dl-1">① PUR wear layer — 0.7 mm</div>
+          <div class="dl dl-2">② Decorative film + MA embossing</div>
+          <div class="dl dl-3">③ Glass fibre stabiliser</div>
+          <div class="dl dl-4">④ PVC core — 100% pure</div>
+          <div class="dl dl-5">⑤ Backing layer</div>
         </div>
-        <div style="margin-top:1.5rem;padding-top:1rem;border-top:0.5px solid var(--border);font-size:0.75rem;color:var(--brown);">Total thickness: <strong>2.5 mm</strong> &#183; Weight: <strong>4.36&#8211;4.79 kg/m&#178;</strong></div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:0.5px solid var(--border);font-size:0.75rem;color:var(--brown);">Total thickness: <strong>2.5 mm</strong> · Weight: <strong>4.36–4.79 kg/m²</strong></div>
       </div>
     </div>
   </div>
@@ -339,37 +345,37 @@
 <section class="advantages" id="advantages">
   <div class="section-tag reveal">Why choose LVT</div>
   <h2 class="section-title reveal">Key <em>advantages</em></h2>
-  <p class="advantages-intro reveal">LVT delivers the aesthetic appeal of premium natural materials with the practical performance of modern engineering &#8212; at a fraction of the cost.</p>
+  <p class="advantages-intro reveal">LVT delivers the aesthetic appeal of premium natural materials with the practical performance of modern engineering — at a fraction of the cost.</p>
   <div class="advantages-grid">
     <div class="adv-item reveal">
-      <div class="adv-icon">&#9672;</div>
+      <div class="adv-icon">◈</div>
       <div class="adv-title">100% Waterproof</div>
       <div class="adv-desc">Unlike linoleum or wood, LVT is completely impervious to water. Suitable for kitchens, bathrooms, and any area where moisture is a concern.</div>
     </div>
     <div class="adv-item reveal reveal-delay-1">
-      <div class="adv-icon">&#9673;</div>
+      <div class="adv-icon">◉</div>
       <div class="adv-title">Authentic aesthetics</div>
       <div class="adv-desc">High-definition print with MA embossing replicates stone, marble, concrete and wood with tactile realism. Achieve luxury looks at commercial prices.</div>
     </div>
     <div class="adv-item reveal reveal-delay-2">
-      <div class="adv-icon">&#9671;</div>
+      <div class="adv-icon">◇</div>
       <div class="adv-title">Class 34 performance</div>
       <div class="adv-desc">Rated for very heavy commercial use. Handles rolling loads, high foot traffic and castor chairs without delamination or surface damage.</div>
     </div>
     <div class="adv-item reveal">
-      <div class="adv-icon">&#9672;</div>
+      <div class="adv-icon">◈</div>
       <div class="adv-title">Zero formaldehyde</div>
-      <div class="adv-desc">E0 certified &#8212; no formaldehyde emissions. DOTP phthalate-free softener and pure PVC composition ensure safe indoor air quality.</div>
+      <div class="adv-desc">E0 certified — no formaldehyde emissions. DOTP phthalate-free softener and pure PVC composition ensure safe indoor air quality.</div>
     </div>
     <div class="adv-item reveal reveal-delay-1">
-      <div class="adv-icon">&#9673;</div>
+      <div class="adv-icon">◉</div>
       <div class="adv-title">Easy maintenance</div>
       <div class="adv-desc">Simple damp mopping keeps LVT looking new. No waxing, stripping or specialist products required. Resistant to most chemical cleaning agents.</div>
     </div>
     <div class="adv-item reveal reveal-delay-2">
-      <div class="adv-icon">&#9671;</div>
+      <div class="adv-icon">◇</div>
       <div class="adv-title">Thermal compatibility</div>
-      <div class="adv-desc">Fully compatible with underfloor heating systems. Excellent thermal conductivity (0.22 W/m&#183;K) ensures efficient heat transfer and comfort underfoot.</div>
+      <div class="adv-desc">Fully compatible with underfloor heating systems. Excellent thermal conductivity (0.22 W/m·K) ensures efficient heat transfer and comfort underfoot.</div>
     </div>
   </div>
 </section>
@@ -381,22 +387,22 @@
   <p class="section-sub reveal">LVT's waterproof construction and design versatility make it the go-to choice across the widest range of commercial environments.</p>
   <div class="applications-grid">
     <div class="app-card reveal">
-      <div class="app-icon">&#9672;</div>
+      <div class="app-icon">◈</div>
       <div class="app-name">Offices</div>
       <div class="app-desc">Premium stone and wood aesthetics create an impressive environment. Handles rolling office chairs and heavy foot traffic with ease.</div>
     </div>
     <div class="app-card reveal reveal-delay-1">
-      <div class="app-icon">&#9673;</div>
+      <div class="app-icon">◉</div>
       <div class="app-name">Hotels & restaurants</div>
-      <div class="app-desc">Waterproof and stain-resistant &#8212; ideal for hospitality. Authentic luxury appearance at a fraction of natural material cost.</div>
+      <div class="app-desc">Waterproof and stain-resistant — ideal for hospitality. Authentic luxury appearance at a fraction of natural material cost.</div>
     </div>
     <div class="app-card reveal reveal-delay-2">
-      <div class="app-icon">&#9671;</div>
+      <div class="app-icon">◇</div>
       <div class="app-name">Retail spaces</div>
       <div class="app-desc">Wide range of formats and designs for branded environments. Withstands trolleys, heavy shelving and intense daily foot traffic.</div>
     </div>
     <div class="app-card reveal reveal-delay-3">
-      <div class="app-icon">&#9672;</div>
+      <div class="app-icon">◈</div>
       <div class="app-name">Residential complexes</div>
       <div class="app-desc">Perfect for apartments, corridors and common areas. Beautiful, quiet, and maintenance-free for years of trouble-free service.</div>
     </div>
@@ -409,54 +415,27 @@
     <div>
       <div class="section-tag reveal">Our collections</div>
       <h2 class="section-title reveal">Three <em>vinyl</em> collections</h2>
-      <p class="section-sub reveal">Fortress, Urban and Loft &#8212; each engineered for specific performance requirements and aesthetic preferences. All Class 34, all formaldehyde-free, all made from 100% pure PVC.</p>
+      <p class="section-sub reveal">Fortress, Urban and Loft — each engineered for specific performance requirements and aesthetic preferences. All Class 34, all formaldehyde-free, all made from 100% pure PVC.</p>
       <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;" class="reveal">
         <a class="btn-dark-light" href="index.html#collections">View all collections</a>
-        <button class="btn-outline" onclick="openModal('sampleModal')">Request sample</button>
+        <a class="btn-outline-dark" href="mailto:info@linofloor.ua">Request sample</a>
       </div>
     </div>
     <div class="cta-cards reveal">
-      <div class="cta-card" style="padding:0;overflow:hidden;">
-        <div style="position:relative;">
-          <img id="vinyl-fortress-img" src="images/pvc/fortress_anthracite_en.jpg" style="width:100%;height:140px;object-fit:cover;display:block;"/>
-        </div>
-        <div style="padding:1rem 1.2rem;">
-          <div class="cta-card-name">Fortress</div>
-          <div class="cta-card-sub">LVT &#183; 2.5 mm</div>
-          <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_anthracite_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#5a5a5a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_calacatta_black_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#2a2a2a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_calacatta_white_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#d8d0c8;cursor:pointer;padding:0;"></button>
-          </div>
-        </div>
+      <div class="cta-card">
+        <div class="cta-card-swatch swatch-fortress"></div>
+        <div class="cta-card-name">Fortress</div>
+        <div class="cta-card-sub">LVT · 2.5 mm</div>
       </div>
-      <div class="cta-card" style="padding:0;overflow:hidden;">
-        <div style="position:relative;">
-          <img id="vinyl-urban-img" src="images/pvc/urban_gray_en.jpg" style="width:100%;height:140px;object-fit:cover;display:block;"/>
-        </div>
-        <div style="padding:1rem 1.2rem;">
-          <div class="cta-card-name">Urban</div>
-          <div class="cta-card-sub">LVT &#183; 0.7mm wear</div>
-          <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_gray_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#7a7a7a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_silver_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#a0a0a0;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_alicante_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8a870;cursor:pointer;padding:0;"></button>
-          </div>
-        </div>
+      <div class="cta-card">
+        <div class="cta-card-swatch swatch-urban"></div>
+        <div class="cta-card-name">Urban</div>
+        <div class="cta-card-sub">LVT · 0.7mm wear</div>
       </div>
-      <div class="cta-card" style="padding:0;overflow:hidden;">
-        <div style="position:relative;">
-          <img id="vinyl-loft-img" src="images/pvc/loft_sevilla_en.jpg" style="width:100%;height:140px;object-fit:cover;display:block;"/>
-        </div>
-        <div style="padding:1rem 1.2rem;">
-          <div class="cta-card-name">Loft</div>
-          <div class="cta-card-sub">LVT &#183; MA embossing</div>
-          <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_sevilla_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#b8a070;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_toledo_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#8a7060;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_valencia_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8b898;cursor:pointer;padding:0;"></button>
-          </div>
-        </div>
+      <div class="cta-card">
+        <div class="cta-card-swatch swatch-loft"></div>
+        <div class="cta-card-name">Loft</div>
+        <div class="cta-card-sub">LVT · MA embossing</div>
       </div>
     </div>
   </div>
@@ -479,138 +458,24 @@
     </div>
     <div>
       <div class="footer-col-title">Contacts</div>
-      <ul class="footer-links"><li><a href="mailto:info@linofloor.ua">info@linofloor.ua</a></li><li><a href="#">Mon&#8211;Fri, 9:00&#8211;18:00</a></li></ul>
+      <ul class="footer-links"><li><a href="mailto:info@linofloor.ua">info@linofloor.ua</a></li><li><a href="#">Mon–Fri, 9:00–18:00</a></li></ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&#169; 2025 Lino floor. All rights reserved.</span>
+    <span>© 2025 Lino floor. All rights reserved.</span>
     <div style="display:flex;gap:2rem;"><a href="#">Privacy policy</a></div>
   </div>
 </footer>
-<div class="modal-overlay" id="sampleModal">
-<div class="modal-box" style="max-width:520px;">
-<button class="modal-close" onclick="document.getElementById('sampleModal').classList.remove('open')">&#x2715;</button>
-<div style="padding:2rem;">
-<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
-<h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Request a sample</h2>
-<p style="font-size:0.82rem;color:var(--brown);line-height:1.7;margin-bottom:1.8rem;">Leave your details and we will get back to you shortly.</p>
-<div style="display:flex;flex-direction:column;gap:1rem;">
-<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Full name *</label>
-<input id="sm-name" type="text" placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
-<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Company</label>
-<input id="sm-company" type="text" placeholder="Acme Corp" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
-<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Email *</label>
-<input id="sm-email" type="email" placeholder="you@company.com" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
-<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Message</label>
-<textarea id="sm-message" placeholder="Describe your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;resize:vertical;box-sizing:border-box;"></textarea></div>
-<button id="sm-submit" style="background:var(--dark);color:var(--cream);padding:0.9rem 2rem;border:none;cursor:pointer;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;width:100%;">Send enquiry</button>
-</div></div></div></div>
-<script>
-document.getElementById('sm-submit').addEventListener('click', function() {
-  var n=document.getElementById('sm-name').value.trim();
-  var c=document.getElementById('sm-company').value.trim();
-  var e=document.getElementById('sm-email').value.trim();
-  var m=document.getElementById('sm-message').value.trim();
-  if(!n||!e){alert('Please fill in name and email.');return;}
-  var s='Sample request from '+n+(c?' ('+c+')':'');
-  var b='Name: '+n+'\nCompany: '+c+'\nEmail: '+e+'\n\nMessage:\n'+m;
-  window.location='mailto:info@linofloor.ua?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
-  document.getElementById('sampleModal').classList.remove('open');
-});
-</script>
-<div class="modal-overlay" id="contactModal">
-<div class="modal-box" style="max-width:520px;">
-<button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">x</button>
-<div style="padding:2rem;">
-<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
-<h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Contact manager</h2>
-<p style="font-size:0.82rem;color:var(--brown);line-height:1.7;margin-bottom:1.8rem;">Leave your details and we will get back to you shortly.</p>
-<div style="display:flex;flex-direction:column;gap:1rem;">
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Full name *</label>
-<input id="cm-name" type="text" placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Company</label>
-<input id="cm-company" type="text" placeholder="Acme Corp" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Email *</label>
-<input id="cm-email" type="email" placeholder="you@company.com" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Message</label>
-<textarea id="cm-message" placeholder="Describe your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
-</div>
-<button onclick="sendContactForm()" style="background:var(--dark);color:var(--cream);padding:0.9rem 2rem;border:none;cursor:pointer;font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;width:100%;transition:background 0.25s;">Send enquiry</button>
-</div>
-</div>
-</div>
-</div>
-<script>
-function sendContactForm() {
-  var name = document.getElementById('cm-name').value.trim();
-  var company = document.getElementById('cm-company').value.trim();
-  var email = document.getElementById('cm-email').value.trim();
-  var message = document.getElementById('cm-message').value.trim();
-  if (!name || !email) { alert('Please fill in your name and email.'); return; }
-  var subject = 'Enquiry from ' + name + (company ? ' (' + company + ')' : '');
-  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nMessage:\n' + message;
-  window.location = 'mailto:info@linofloor.ua?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  document.getElementById('contactModal').classList.remove('open');
-}
-</script>
-<div class="modal-overlay" id="aboutModal">
-<div class="modal-box" style="max-width:680px;">
-<button class="modal-close" onclick="document.getElementById('aboutModal').classList.remove('open')">x</button>
-<div style="padding:2.5rem;">
-<div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">About company</div>
-<h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:2rem;">Lino Floor<br/><em style="color:var(--gold);font-style:italic;">Premium Flooring</em></h2>
-<div style="display:flex;flex-direction:column;gap:0;">
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Lino Floor is a manufacturer and supplier of premium floor coverings, established in 2009. We specialise in commercial and corporate interiors: offices, hotels, medical and educational facilities, residential complexes and private homes.</p>
-</div>
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Our own production facilities allow us to control quality at every stage &mdash; from raw materials to the finished product. All coverings are certified to European standards (CE, EN ISO).</p>
-</div>
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">We work with designers, developers and contractors internationally, offering a partner programme, full technical project support and samples for testing.</p>
-</div>
-</div>
-<div style="display:flex;align-items:center;gap:2rem;margin-top:2rem;padding-top:1.5rem;">
-<div style="text-align:center;">
-<div style="font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--gold);line-height:1;">2009</div>
-<div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown-light);margin-top:0.3rem;">Founded</div>
-</div>
-<div style="width:0.5px;height:40px;background:var(--border-mid);"></div>
-<div style="flex:1;text-align:right;">
-<a href="mailto:info@linofloor.ua" style="font-size:0.82rem;color:var(--gold);letter-spacing:0.08em;">info@linofloor.ua</a>
-<div style="font-size:0.72rem;color:var(--brown-light);margin-top:0.2rem;">Mon&ndash;Fri, 9:00&ndash;18:00</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
 <script>
-(function() {
-  function setupBtn(id, modalId) {
-    var btn = document.getElementById(id);
-    if (btn) btn.addEventListener('click', function() {
-      document.getElementById(modalId).classList.add('open');
-    });
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    setupBtn('open-sample-btn', 'sampleModal');
-    setupBtn('open-sample-btn2', 'sampleModal');
-    setupBtn('open-contact-btn', 'contactModal');
-  });
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('modal-overlay')) {
-      e.target.classList.remove('open');
-    }
-  });
-})();
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
 </script>
 </body>
 </html>
