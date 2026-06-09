@@ -523,7 +523,7 @@
   <div class="dropdown-menu"><div class="dropdown-menu-inner"><a href="linoleum.html">Linoleum</a><a href="vinyl.html">Vinyl tile</a></div></div>
 </div>
 <a href="#collections">Collections</a>
-<a href="#about">About company</a>
+<a href="#" onclick="document.getElementById('aboutModal').classList.add('open');return false;">About company</a>
 <a href="#blog">Inspiration</a>
 </div>
 <div style="display:flex; align-items:center; gap:1.5rem; justify-self:end;">
@@ -707,7 +707,7 @@
 </div>
 <div>
 <div class="footer-col-title">Company</div>
-<ul class="footer-links"><li><a href="#about">About us</a></li><li><a href="#blog">Inspiration</a></li></ul>
+<ul class="footer-links"><li><a href="#" onclick="document.getElementById('aboutModal').classList.add('open');return false;">About us</a></li><li><a href="#blog">Inspiration</a></li></ul>
 </div>
 <div>
 <div class="footer-col-title">Contacts</div>
@@ -1542,6 +1542,43 @@ function sendContactForm() {
   document.getElementById('contactModal').classList.remove('open');
 }
 </script>
+
+<div class="modal-overlay" id="aboutModal">
+<div class="modal-box" style="max-width:680px;">
+<button class="modal-close" onclick="document.getElementById('aboutModal').classList.remove('open')">x</button>
+<div style="padding:2.5rem;">
+<div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">About company</div>
+<h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:2rem;">Lino Floor<br/><em style="color:var(--gold);font-style:italic;">Premium Flooring</em></h2>
+<div style="display:flex;flex-direction:column;gap:0;">
+<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
+<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Lino Floor is a manufacturer and supplier of premium floor coverings, established in 2009. We specialise in commercial and corporate interiors: offices, hotels, medical and educational facilities, residential complexes and private homes.</p>
+</div>
+<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
+<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Our own production facilities allow us to control quality at every stage &mdash; from raw materials to the finished product. All coverings are certified to European standards (CE, EN ISO).</p>
+</div>
+<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);">
+<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">We work with designers, developers and contractors internationally, offering a partner programme, full technical project support and samples for testing.</p>
+</div>
+</div>
+<div style="display:flex;align-items:center;gap:2rem;margin-top:2rem;padding-top:1.5rem;">
+<div style="text-align:center;">
+<div style="font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--gold);line-height:1;">2009</div>
+<div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown-light);margin-top:0.3rem;">Founded</div>
+</div>
+<div style="width:0.5px;height:40px;background:var(--border-mid);"></div>
+<div style="text-align:center;">
+<div style="font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--gold);line-height:1;">8</div>
+<div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown-light);margin-top:0.3rem;">Collections</div>
+</div>
+<div style="width:0.5px;height:40px;background:var(--border-mid);"></div>
+<div style="flex:1;text-align:right;">
+<a href="mailto:info@linofloor.ua" style="font-size:0.82rem;color:var(--gold);letter-spacing:0.08em;">info@linofloor.ua</a>
+<div style="font-size:0.72rem;color:var(--brown-light);margin-top:0.2rem;">Mon&ndash;Fri, 9:00&ndash;18:00</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 </html>
