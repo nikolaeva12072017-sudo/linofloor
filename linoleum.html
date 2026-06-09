@@ -222,7 +222,7 @@
     <a href="index.html#blog">Inspiration</a>
   </div>
   <div class="nav-right">
-    <button class="nav-cta" onclick="document.getElementById('contactModal').classList.add('open')">Contact manager</button>
+    <button class="nav-cta" onclick="openModal('contactModal')">Contact manager</button>
     <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.add(&apos;open&apos;)">
       <svg fill="none" height="16" viewbox="0 0 22 16" width="22">
         <line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
@@ -252,7 +252,7 @@
     <p class="page-hero-sub reveal reveal-delay-2">Natural materials, outstanding durability. Linoleum flooring for offices, healthcare, education and high-traffic commercial spaces.</p>
     <div style="display:flex;gap:1.2rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
       <a class="btn-dark" href="index.html#collections">View collections</a>
-      <a class="btn-outline" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
+      <button class="btn-outline" onclick="openModal('sampleModal')">Request sample</button>
     </div>
   </div>
 </div>
@@ -423,7 +423,7 @@
       <p class="section-sub reveal">Five professional collections &#8212; from heavy-duty homogeneous to acoustic heterogeneous and sports linoleum. Each engineered for specific commercial applications.</p>
       <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;" class="reveal">
         <a class="btn-dark" href="index.html#collections">View all collections</a>
-        <a class="btn-outline" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
+        <button class="btn-outline" onclick="openModal('sampleModal')">Request sample</button>
       </div>
     </div>
     <div class="cta-cards reveal">
@@ -503,84 +503,47 @@
     <div style="display:flex;gap:2rem;"><a href="#">Privacy policy</a></div>
   </div>
 </footer>
+
 <div class="modal-overlay" id="sampleModal">
 <div class="modal-box" style="max-width:520px;">
-<button class="modal-close" onclick="document.getElementById('sampleModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="closeModal('sampleModal')">x</button>
 <div style="padding:2rem;">
 <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
 <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Request a sample</h2>
 <p style="font-size:0.82rem;color:var(--brown);line-height:1.7;margin-bottom:1.8rem;">Leave your details and we will get back to you shortly.</p>
 <div style="display:flex;flex-direction:column;gap:1rem;">
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Full name *</label>
-<input id="sm-name" type="text" placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Company</label>
-<input id="sm-company" type="text" placeholder="Acme Corp" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Email *</label>
-<input id="sm-email" type="email" placeholder="you@company.com" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
-</div>
-<div>
-<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Message</label>
-<textarea id="sm-message" placeholder="Describe your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
-</div>
-<button onclick="sendSampleForm()" style="background:var(--dark);color:var(--cream);padding:0.9rem 2rem;border:none;cursor:pointer;font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;width:100%;transition:background 0.25s;">Send enquiry</button>
-</div>
-</div>
-</div>
-<div class="modal-overlay" id="aboutModal">
-<div class="modal-box" style="max-width:680px;">
-<button class="modal-close" onclick="document.getElementById('aboutModal').classList.remove('open')">x</button>
-<div style="padding:2.5rem;">
-<div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">About company</div>
-<h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:2rem;">Lino Floor<br/><em style="color:var(--gold);font-style:italic;">Premium Flooring</em></h2>
-<div style="display:flex;flex-direction:column;gap:0;">
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Lino Floor is a manufacturer and supplier of premium floor coverings, established in 2009. We specialise in commercial and corporate interiors: offices, hotels, medical and educational facilities, residential complexes and private homes.</p>
-</div>
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">Our own production facilities allow us to control quality at every stage &mdash; from raw materials to the finished product. All coverings are certified to European standards (CE, EN ISO).</p>
-</div>
-<div style="padding:1.4rem 0;border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);">
-<p style="font-size:0.92rem;color:var(--dark);line-height:1.85;margin:0;">We work with designers, developers and contractors internationally, offering a partner programme, full technical project support and samples for testing.</p>
-</div>
-</div>
-<div style="display:flex;align-items:center;gap:2rem;margin-top:2rem;padding-top:1.5rem;">
-<div style="text-align:center;">
-<div style="font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--gold);line-height:1;">2009</div>
-<div style="font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--brown-light);margin-top:0.3rem;">Founded</div>
-</div>
-<div style="width:0.5px;height:40px;background:var(--border-mid);"></div>
-<div style="flex:1;text-align:right;">
-<a href="mailto:info@linofloor.ua" style="font-size:0.82rem;color:var(--gold);letter-spacing:0.08em;">info@linofloor.ua</a>
-<div style="font-size:0.72rem;color:var(--brown-light);margin-top:0.2rem;">Mon&ndash;Fri, 9:00&ndash;18:00</div>
-</div>
-</div>
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-</script>
+<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Full name *</label>
+<input id="sm-name" type="text" placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
+<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Company</label>
+<input id="sm-company" type="text" placeholder="Acme Corp" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
+<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Email *</label>
+<input id="sm-email" type="email" placeholder="you@company.com" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;box-sizing:border-box;"/></div>
+<div><label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Message</label>
+<textarea id="sm-message" placeholder="Describe your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;outline:none;resize:vertical;box-sizing:border-box;"></textarea></div>
+<button onclick="sendSampleForm()" style="background:var(--dark);color:var(--cream);padding:0.9rem 2rem;border:none;cursor:pointer;font-family:var(--sans);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;width:100%;">Send enquiry</button>
+</div></div></div></div>
 <script>
 function sendSampleForm() {
-  var name = document.getElementById('sm-name').value.trim();
-  var company = document.getElementById('sm-company').value.trim();
-  var email = document.getElementById('sm-email').value.trim();
-  var message = document.getElementById('sm-message').value.trim();
-  if (!name || !email) { alert('Please fill in your name and email.'); return; }
-  var subject = 'Sample request from ' + name + (company ? ' (' + company + ')' : '');
-  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nMessage:\n' + message;
-  window.location = 'mailto:info@linofloor.ua?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  document.getElementById('sampleModal').classList.remove('open');
+  var n=document.getElementById('sm-name').value.trim();
+  var c=document.getElementById('sm-company').value.trim();
+  var e=document.getElementById('sm-email').value.trim();
+  var m=document.getElementById('sm-message').value.trim();
+  if(!n||!e){alert('Please fill in your name and email.');return;}
+  var s='Sample request from '+n+(c?' ('+c+')':'');
+  var b='Name: '+n+'\nCompany: '+c+'\nEmail: '+e+'\n\nMessage:\n'+m;
+  window.location='mailto:info@linofloor.ua?subject='+encodeURIComponent(s)+'&body='+encodeURIComponent(b);
+  closeModal('sampleModal');
 }
 </script>
+
+
+<script>
+function openModal(id) { document.getElementById(id).classList.add('open'); }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('modal-overlay')) { e.target.classList.remove('open'); }
+});
+</script>
+
 </body>
 </html>
