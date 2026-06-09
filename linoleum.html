@@ -222,7 +222,7 @@
     <a href="index.html#blog">Inspiration</a>
   </div>
   <div class="nav-right">
-    <button class="nav-cta" onclick="document.getElementById(&apos;contactModal&apos;).classList.add(&apos;open&apos;)">Contact manager</button>
+    <button class="nav-cta" onclick="document.getElementById('contactModal').classList.add('open')">Contact manager</button>
     <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.add(&apos;open&apos;)">
       <svg fill="none" height="16" viewbox="0 0 22 16" width="22">
         <line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
@@ -252,7 +252,7 @@
     <p class="page-hero-sub reveal reveal-delay-2">Natural materials, outstanding durability. Linoleum flooring for offices, healthcare, education and high-traffic commercial spaces.</p>
     <div style="display:flex;gap:1.2rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
       <a class="btn-dark" href="index.html#collections">View collections</a>
-      <a class="btn-outline" href="#" onclick="document.getElementById(&apos;sampleModal&apos;).classList.add(&apos;open&apos;);return false;">Request sample</a>
+      <a class="btn-outline" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
     </div>
   </div>
 </div>
@@ -423,7 +423,7 @@
       <p class="section-sub reveal">Five professional collections &#8212; from heavy-duty homogeneous to acoustic heterogeneous and sports linoleum. Each engineered for specific commercial applications.</p>
       <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;" class="reveal">
         <a class="btn-dark" href="index.html#collections">View all collections</a>
-        <a class="btn-outline" href="#" onclick="document.getElementById(&apos;sampleModal&apos;).classList.add(&apos;open&apos;);return false;">Request sample</a>
+        <a class="btn-outline" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
       </div>
     </div>
     <div class="cta-cards reveal">
@@ -503,20 +503,9 @@
     <div style="display:flex;gap:2rem;"><a href="#">Privacy policy</a></div>
   </div>
 </footer>
-
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('navbar');
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-</script>
 <div class="modal-overlay" id="sampleModal">
 <div class="modal-box" style="max-width:520px;">
-<button class="modal-close" onclick="document.getElementById(&apos;sampleModal&apos;).classList.remove(&apos;open&apos;)">x</button>
+<button class="modal-close" onclick="document.getElementById('sampleModal').classList.remove('open')">x</button>
 <div style="padding:2rem;">
 <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
 <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Request a sample</h2>
@@ -542,24 +531,9 @@ window.addEventListener('scroll', () => {
 </div>
 </div>
 </div>
-</div>
-<script>
-function sendSampleForm() {
-  var name = document.getElementById('sm-name').value.trim();
-  var company = document.getElementById('sm-company').value.trim();
-  var email = document.getElementById('sm-email').value.trim();
-  var message = document.getElementById('sm-message').value.trim();
-  if (!name || !email) { alert('Please fill in your name and email.'); return; }
-  var subject = 'Sample request from ' + name + (company ? ' (' + company + ')' : '');
-  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nMessage:\n' + message;
-  window.location = 'mailto:info@linofloor.ua?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  document.getElementById('sampleModal').classList.remove('open');
-}
-</script>
-
 <div class="modal-overlay" id="aboutModal">
 <div class="modal-box" style="max-width:680px;">
-<button class="modal-close" onclick="document.getElementById(&apos;aboutModal&apos;).classList.remove(&apos;open&apos;)">x</button>
+<button class="modal-close" onclick="document.getElementById('aboutModal').classList.remove('open')">x</button>
 <div style="padding:2.5rem;">
 <div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">About company</div>
 <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:2rem;">Lino Floor<br/><em style="color:var(--gold);font-style:italic;">Premium Flooring</em></h2>
@@ -585,9 +559,28 @@ function sendSampleForm() {
 <div style="font-size:0.72rem;color:var(--brown-light);margin-top:0.2rem;">Mon&ndash;Fri, 9:00&ndash;18:00</div>
 </div>
 </div>
-</div>
-</div>
-</div>
-
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+</script>
+<script>
+function sendSampleForm() {
+  var name = document.getElementById('sm-name').value.trim();
+  var company = document.getElementById('sm-company').value.trim();
+  var email = document.getElementById('sm-email').value.trim();
+  var message = document.getElementById('sm-message').value.trim();
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  var subject = 'Sample request from ' + name + (company ? ' (' + company + ')' : '');
+  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+  window.location = 'mailto:info@linofloor.ua?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  document.getElementById('sampleModal').classList.remove('open');
+}
+</script>
 </body>
 </html>
