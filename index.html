@@ -528,7 +528,7 @@
 </div>
 <div style="display:flex; align-items:center; gap:1.5rem; justify-self:end;">
 
-<button class="nav-cta" onclick="window.location='mailto:info@linofloor.ua'">Contact manager</button>
+<button class="nav-cta" onclick="document.getElementById('contactModal').classList.add('open')">Contact manager</button>
 <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')">
 <svg fill="none" height="16" viewbox="0 0 22 16" width="22">
 <line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
@@ -1498,6 +1498,50 @@ document.querySelectorAll('.coll-colors').forEach(c => {
 </div>
 </div>
 </div>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+<div class="modal-box" style="max-width:520px;">
+<button class="modal-close" onclick="document.getElementById('contactModal').classList.remove('open')">x</button>
+<div style="padding:2rem;">
+<div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
+<h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Contact manager</h2>
+<p style="font-size:0.82rem;color:var(--brown);line-height:1.7;margin-bottom:1.8rem;">Leave your details and we will get back to you shortly.</p>
+<div style="display:flex;flex-direction:column;gap:1rem;">
+<div>
+<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Full name *</label>
+<input id="cm-name" type="text" placeholder="John Smith" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
+</div>
+<div>
+<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Company</label>
+<input id="cm-company" type="text" placeholder="Acme Corp" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
+</div>
+<div>
+<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Email *</label>
+<input id="cm-email" type="email" placeholder="you@company.com" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;box-sizing:border-box;"/>
+</div>
+<div>
+<label style="font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brown);display:block;margin-bottom:0.4rem;">Message</label>
+<textarea id="cm-message" placeholder="Describe your project..." rows="4" style="width:100%;padding:0.75rem 1rem;border:0.5px solid var(--border-mid);background:var(--cream);font-family:var(--sans);font-size:0.88rem;color:var(--dark);outline:none;resize:vertical;box-sizing:border-box;"></textarea>
+</div>
+<button onclick="sendContactForm()" style="background:var(--dark);color:var(--cream);padding:0.9rem 2rem;border:none;cursor:pointer;font-family:var(--sans);font-size:0.75rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;width:100%;transition:background 0.25s;">Send enquiry</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+function sendContactForm() {
+  var name = document.getElementById('cm-name').value.trim();
+  var company = document.getElementById('cm-company').value.trim();
+  var email = document.getElementById('cm-email').value.trim();
+  var message = document.getElementById('cm-message').value.trim();
+  if (!name || !email) { alert('Please fill in your name and email.'); return; }
+  var subject = 'Enquiry from ' + name + (company ? ' (' + company + ')' : '');
+  var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email + '\n\nMessage:\n' + message;
+  window.location = 'mailto:info@linofloor.ua?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  document.getElementById('contactModal').classList.remove('open');
+}
+</script>
 
 </body>
 </html>
