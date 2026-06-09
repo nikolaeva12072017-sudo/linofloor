@@ -523,7 +523,7 @@
   <div class="dropdown-menu"><div class="dropdown-menu-inner"><a href="linoleum.html">Linoleum</a><a href="vinyl.html">Vinyl tile</a></div></div>
 </div>
 <a href="#collections">Collections</a>
-<a href="#about">About</a>
+<a href="#about">About company</a>
 <a href="#blog">Inspiration</a>
 </div>
 <div style="display:flex; align-items:center; gap:1.5rem; justify-self:end;">
@@ -584,7 +584,7 @@
 <div class="categories-header">
 <div>
 <div class="section-tag reveal">Assortment</div>
-<h2 class="section-title reveal"><span>Two categories of <em>flooring</em></span></h2>
+<h2 class="section-title reveal"><span>Products</span></h2>
 </div>
 <a class="view-all reveal" href="#collections">Full catalog &#8594;</a>
 </div>
@@ -651,92 +651,6 @@
 <button class="btn-specs" onclick="document.getElementById('loftModal').classList.add('open')">&#9776; Specifications</button>
 </div></div></div>
 </section>
-<!-- CALCULATOR -->
-<section class="calculator" id="calculator">
-<div class="calc-wrapper">
-<div class="calc-info">
-<div class="section-tag reveal">Tool</div>
-<h2 class="section-title reveal"><span>Material <em>calculator</em></span></h2>
-<p class="section-sub reveal">Calculate the required amount of material. Includes allowance for cutting and installation.</p>
-<ul class="calc-list">
-<li class="reveal">Enter room dimensions or total area</li>
-<li class="reveal">Select covering type and collection</li>
-<li class="reveal">Get accurate calculation with waste allowance</li>
-<li class="reveal">Send result to our manager</li>
-</ul>
-</div>
-<div class="calc-box reveal">
-<div class="calc-box-title">Flooring quantity calculator</div>
-<div class="form-group">
-<label class="form-label">Calculation type</label>
-<select class="form-select" id="calcType" onchange="toggleCalcType()">
-<option value="dimensions">By room dimensions</option>
-<option value="area">Total area</option>
-</select>
-</div>
-<div id="dimensionsBlock">
-<div class="form-row">
-<div class="form-group">
-<label class="form-label">Length (m)</label>
-<input class="form-input" id="length" min="0" placeholder="12.5" step="0.1" type="number"/>
-</div>
-<div class="form-group">
-<label class="form-label">Width (m)</label>
-<input class="form-input" id="width" min="0" placeholder="8.0" step="0.1" type="number"/>
-</div>
-</div>
-</div>
-<div id="areaBlock" style="display:none">
-<div class="form-group">
-<label class="form-label">Area (m&#178;)</label>
-<input class="form-input" id="area" min="0" placeholder="100" step="1" type="number"/>
-</div>
-</div>
-<div class="form-group">
-<label class="form-label">Covering type</label>
-<select class="form-select" id="coveringType">
-<option value="7">Roll linoleum (7% waste)</option>
-<option value="5">Vinyl tile (5% waste)</option>
-</select>
-</div>
-<div class="calc-result" id="calcResult">
-<div class="result-label">Required quantity</div>
-<div class="result-value"><span id="resultValue">&#8212;</span> m&#178;</div>
-<div class="result-sub" id="resultSub"></div>
-</div>
-<button class="btn-primary" onclick="calculate()" style="width:100%; margin-bottom: 1rem;"><span>Calculate</span></button>
-<button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" style="width:100%;"><span>Send to manager &#8594;</span></button>
-</div>
-</div>
-</section>
-<!-- ABOUT -->
-<section class="about" id="about">
-<div class="about-grid">
-<div class="about-visual">
-<div class="about-block-main">
-<img src="images/about_warehouse1.jpg" alt="Warehouse" class="about-accent-photo"/>
-<img src="images/about_warehouse2.jpg" alt="Warehouse" class="about-accent-photo"/>
-</div>
-<div class="about-badge">Own manufacturing</div>
-<div class="about-block-accent">
-<img src="images/about_factory.jpg" alt="Lino floor factory" class="about-factory-photo"/>
-</div>
-
-
-</div>
-<div class="about-text">
-<div class="section-tag reveal">About</div>
-<h2 class="section-title reveal"><span>Lino floor &#8212; <em>standard</em> of quality</span></h2>
-<p class="section-sub reveal">We manufacture and supply premium floor coverings since 2009. Specialization: commercial and corporate spaces.</p>
-<div class="values-grid">
-<div class="value-item reveal"><div class="value-icon">&#9672;</div><div class="value-name">Own production</div><div class="value-desc">Full quality control from raw materials to finished product</div></div>
-<div class="value-item reveal reveal-delay-1"><div class="value-icon">&#9671;</div><div class="value-name">B2B partnership</div><div class="value-desc">Special terms for designers and developers</div></div>
-<div class="value-item reveal reveal-delay-2"><div class="value-icon">&#9673;</div><div class="value-name">Certification</div><div class="value-desc">CE, EN ISO 10874 &#8212; certified for the European market</div></div>
-<div class="value-item reveal reveal-delay-3"><div class="value-icon">&#9672;</div><div class="value-name">Technical support</div><div class="value-desc">Consultation and project support</div></div>
-</div>
-</div>
-</div>
-</section>
 <!-- BLOG -->
 <section class="blog" id="blog">
 <div class="blog-header">
@@ -793,7 +707,7 @@
 </div>
 <div>
 <div class="footer-col-title">Company</div>
-<ul class="footer-links"><li><a href="#about">About us</a></li><li><a href="#blog">Inspiration</a></li><li><a href="#">Projects</a></li><li><a href="#">For partners</a></li></ul>
+<ul class="footer-links"><li><a href="#about">About us</a></li><li><a href="#blog">Inspiration</a></li></ul>
 </div>
 <div>
 <div class="footer-col-title">Contacts</div>
