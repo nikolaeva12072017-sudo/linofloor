@@ -237,8 +237,8 @@
     <a href="index.html#blog">Inspiration</a>
   </div>
   <div class="nav-right">
-    <button class="nav-cta" onclick="document.getElementById('contactModal').classList.add('open')">Contact manager</button>
-    <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <button class="nav-cta" onclick="document.getElementById(&apos;contactModal&apos;).classList.add(&apos;open&apos;)">Contact manager</button>
+    <button aria-label="Menu" class="nav-mobile-toggle" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.add(&apos;open&apos;)">
       <svg fill="none" height="16" viewbox="0 0 22 16" width="22">
         <line stroke="#1c1814" stroke-width="1" x1="0" x2="22" y1="1" y2="1"></line>
         <line stroke="#8a6e3e" stroke-width="1" x1="0" x2="22" y1="8" y2="8"></line>
@@ -250,11 +250,11 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="document.getElementById('mobileMenu').classList.remove('open')">&#10005;</button>
-  <a href="linoleum.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Linoleum</a>
-  <a href="vinyl.html" onclick="document.getElementById('mobileMenu').classList.remove('open')">Vinyl tile</a>
-  <a href="index.html#collections" onclick="document.getElementById('mobileMenu').classList.remove('open')">Collections</a>
-  <a href="index.html#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">About</a>
+  <button class="mobile-close" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.remove(&apos;open&apos;)">&#10005;</button>
+  <a href="linoleum.html" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.remove(&apos;open&apos;)">Linoleum</a>
+  <a href="vinyl.html" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.remove(&apos;open&apos;)">Vinyl tile</a>
+  <a href="index.html#collections" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.remove(&apos;open&apos;)">Collections</a>
+  <a href="index.html#about" onclick="document.getElementById(&apos;mobileMenu&apos;).classList.remove(&apos;open&apos;)">About</a>
 </div>
 
 <!-- HERO -->
@@ -267,7 +267,7 @@
     <p class="page-hero-sub reveal reveal-delay-2">The most versatile commercial flooring solution &#8212; 100% waterproof, scratch-resistant, with authentic stone and wood aesthetics. Class 34 for the heaviest demands.</p>
     <div style="display:flex;gap:1.2rem;flex-wrap:wrap;" class="reveal reveal-delay-3">
       <a class="btn-dark" href="index.html#collections">View collections</a>
-      <a class="btn-outline" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
+      <a class="btn-outline" href="#" onclick="document.getElementById(&apos;sampleModal&apos;).classList.add(&apos;open&apos;);return false;">Request sample</a>
     </div>
   </div>
 </div>
@@ -412,7 +412,7 @@
       <p class="section-sub reveal">Fortress, Urban and Loft &#8212; each engineered for specific performance requirements and aesthetic preferences. All Class 34, all formaldehyde-free, all made from 100% pure PVC.</p>
       <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;" class="reveal">
         <a class="btn-dark-light" href="index.html#collections">View all collections</a>
-        <a class="btn-outline-dark" href="#" onclick="document.getElementById('sampleModal').classList.add('open');return false;">Request sample</a>
+        <a class="btn-outline-dark" href="#" onclick="document.getElementById(&apos;sampleModal&apos;).classList.add(&apos;open&apos;);return false;">Request sample</a>
       </div>
     </div>
     <div class="cta-cards reveal">
@@ -424,9 +424,9 @@
           <div class="cta-card-name">Fortress</div>
           <div class="cta-card-sub">LVT &#183; 2.5 mm</div>
           <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_anthracite_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#5a5a5a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_calacatta_black_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#2a2a2a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-fortress-img').src='images/pvc/fortress_calacatta_white_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#d8d0c8;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-fortress-img&apos;).src=&apos;images/pvc/fortress_anthracite_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#5a5a5a;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-fortress-img&apos;).src=&apos;images/pvc/fortress_calacatta_black_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#2a2a2a;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-fortress-img&apos;).src=&apos;images/pvc/fortress_calacatta_white_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#d8d0c8;cursor:pointer;padding:0;"></button>
           </div>
         </div>
       </div>
@@ -438,9 +438,9 @@
           <div class="cta-card-name">Urban</div>
           <div class="cta-card-sub">LVT &#183; 0.7mm wear</div>
           <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_gray_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#7a7a7a;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_silver_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#a0a0a0;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-urban-img').src='images/pvc/urban_alicante_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8a870;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-urban-img&apos;).src=&apos;images/pvc/urban_gray_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#7a7a7a;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-urban-img&apos;).src=&apos;images/pvc/urban_silver_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#a0a0a0;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-urban-img&apos;).src=&apos;images/pvc/urban_alicante_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8a870;cursor:pointer;padding:0;"></button>
           </div>
         </div>
       </div>
@@ -452,9 +452,9 @@
           <div class="cta-card-name">Loft</div>
           <div class="cta-card-sub">LVT &#183; MA embossing</div>
           <div style="display:flex;gap:6px;margin-top:0.6rem;">
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_sevilla_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#b8a070;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_toledo_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#8a7060;cursor:pointer;padding:0;"></button>
-            <button onclick="document.getElementById('vinyl-loft-img').src='images/pvc/loft_valencia_en.jpg'" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8b898;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-loft-img&apos;).src=&apos;images/pvc/loft_sevilla_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:2px solid #8a6e3e;background:#b8a070;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-loft-img&apos;).src=&apos;images/pvc/loft_toledo_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#8a7060;cursor:pointer;padding:0;"></button>
+            <button onclick="document.getElementById(&apos;vinyl-loft-img&apos;).src=&apos;images/pvc/loft_valencia_en.jpg&apos;" style="width:20px;height:20px;border-radius:50%;border:1.5px solid #ccc;background:#c8b898;cursor:pointer;padding:0;"></button>
           </div>
         </div>
       </div>
@@ -500,7 +500,7 @@ window.addEventListener('scroll', () => {
 </script>
 <div class="modal-overlay" id="sampleModal">
 <div class="modal-box" style="max-width:520px;">
-<button class="modal-close" onclick="document.getElementById('sampleModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById(&apos;sampleModal&apos;).classList.remove(&apos;open&apos;)">x</button>
 <div style="padding:2rem;">
 <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;">Contact</div>
 <h2 style="font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--dark);line-height:1.2;margin-bottom:0.5rem;">Request a sample</h2>
@@ -543,7 +543,7 @@ function sendSampleForm() {
 
 <div class="modal-overlay" id="aboutModal">
 <div class="modal-box" style="max-width:680px;">
-<button class="modal-close" onclick="document.getElementById('aboutModal').classList.remove('open')">x</button>
+<button class="modal-close" onclick="document.getElementById(&apos;aboutModal&apos;).classList.remove(&apos;open&apos;)">x</button>
 <div style="padding:2.5rem;">
 <div style="font-size:0.68rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;">About company</div>
 <h2 style="font-family:var(--serif);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:400;color:var(--dark);line-height:1.15;margin-bottom:2rem;">Lino Floor<br/><em style="color:var(--gold);font-style:italic;">Premium Flooring</em></h2>
